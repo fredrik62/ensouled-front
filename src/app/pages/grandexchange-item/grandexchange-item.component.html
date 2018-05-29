@@ -1,0 +1,15 @@
+<div *ngIf="!geItemArray">
+  ..loading
+</div>
+
+<div class="container" *ngFor="let geData of geItemArray">
+  <div class="items">
+  <p>name: {{geData.name}}</p>
+  <p> ba: {{geData.buyAverage}}</p>
+  <p>sa: {{geData.sellAverage}}</p>
+  <p>oa: {{geData.overAllAverage}}</p>
+  <p> sp: {{geData.storePrice}}</p>
+  </div>
+</div>
+
+ 

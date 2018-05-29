@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #191919;
+}
+
+
+/* ---- typography ---- */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: white;
+}
+
+.items {
+  display: flex;
+  justify-content: space-around;
+
+}

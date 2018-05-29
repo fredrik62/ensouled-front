@@ -1,0 +1,9 @@
+<div *ngIf="!geItemArray">
+...loading
+</div>
+
+<div class="container" *ngFor="let alchValue of geItemArray">
+   <p>name: {{alchValue.name}}</p>
+   <p>high alch price: {{alchValue.buyAverage + natPrice}}</p>
+
+</div>
