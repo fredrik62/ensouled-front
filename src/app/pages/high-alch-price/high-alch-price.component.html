@@ -1,9 +1,14 @@
 <div *ngIf="!geItemArray">
 ...loading
 </div>
-
+<div>
+  <p>{{natPrice}} GP per nature</p>
+</div>
 <div class="container" *ngFor="let alchValue of geItemArray">
+  <div class="items">
    <p>name: {{alchValue.name}}</p>
-   <p>high alch price: {{alchValue.buyAverage + natPrice}}</p>
-
+   <p>item price + nature: {{alchValue.sellAverage + natPrice}}</p>
+   <p> profit/losses: {{alchValue.alchPrice - total}} GP</p>
+   <p>alch price: {{alchValue.alchPrice}}</p>
+  </div>
 </div>

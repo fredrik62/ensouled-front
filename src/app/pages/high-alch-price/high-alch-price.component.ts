@@ -12,6 +12,7 @@ export class HighAlchPriceComponent implements OnInit {
   geData: any;
   natPrice: Number;
   price: Number;
+  total: any;
   constructor(private grandExchangeService: GrandExchangeService) {}
   
   ngOnInit() {
@@ -27,16 +28,22 @@ export class HighAlchPriceComponent implements OnInit {
                           buyAverage: this.data[key].buy_average,
                           sellAverage: this.data[key].sell_average,
                           overAllAverage: this.data[key].overall_average,
-                          storePrice: this.data[key].sp
+                          alchPrice: this.data[key].sp * 0.6
   
   
                       }
+                         
                       if (this.geData.name === 'Nature rune') {
                           this.natPrice = this.geData.buyAverage;
                       }
-  
+                      this.total = Number(this.natPrice + this.geData.sellAverage);
+                      
+                      if (this.total < this.geData.alchPrice) {
+                        console.log("item " + this.geData.name + " is profitable " + this.total + " by " + (this.geData.alchPrice-this.total) + " gp " + this.geData.alchPrice);
+                      }
   
                       this.geItemArray.push(this.geData);
+
   
   
                   });
