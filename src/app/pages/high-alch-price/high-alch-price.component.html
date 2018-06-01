@@ -4,7 +4,7 @@
 <div>
   <p>{{natPrice}} GP per nature</p>
 </div>
-<div class="container" *ngFor="let alchValue of geItemArray">
+<div class="container" *ngFor="let alchValue of geItemArray" (click)="displayItemData(alchValue.id)">
   <div class="items">
    <p>name: {{alchValue.name}}</p>
    <p>item price + nature: {{alchValue.sellAverage + natPrice}}</p>

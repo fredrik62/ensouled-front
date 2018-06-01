@@ -1,4 +1,14 @@
 
+<nav>
+  <input type="checkbox" id="nav" class="hidden"/>
+  <label for="nav" class="nav-open"><i></i><i></i><i></i></label>
+  <div class="nav-container">
+    <ul>
+      <li><a [routerLink]="['/']">Home</a></li>
+      <li><a [routerLink]="['/tools']">Tools</a></li>
+    </ul>
+  </div>
+</nav>
 
 <div id="site-main" class="container">
     <router-outlet></router-outlet>

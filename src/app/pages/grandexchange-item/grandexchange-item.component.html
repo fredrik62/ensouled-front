@@ -2,7 +2,7 @@
   ..loading
 </div>
 
-<div class="container" *ngFor="let geData of geItemArray">
+<div class="container" *ngFor="let geData of geItemArray" (click)="displayItemData(geData.id)">
   <div class="items">
   <p>name: {{geData.name}}</p>
   <p> ba: {{geData.buyAverage}}</p>

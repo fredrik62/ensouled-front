@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 //components
 import { AppComponent } from './app.component';
+import { HighAlchChartComponent } from './components/high-alch-chart/high-alch-chart.component';
+import { ToolsComponent } from './components/tools/tools.component';
 
 //pages
 import { IndexPageComponent } from './pages/index-page/index-page.component';
@@ -16,15 +18,18 @@ import { HighAlchPriceComponent } from './pages/high-alch-price/high-alch-price.
 import { GrandExchangeService } from './services/grand-exchange.service';
 import { GrandexchangeItemComponent } from './pages/grandexchange-item/grandexchange-item.component';
 import { GrandExchangeComponent } from './components/grand-exchange/grand-exchange.component';
+import { GrandexchangeItemChartComponent } from './components/grandexchange-item-chart/grandexchange-item-chart.component';
 
 
 const routes: Routes = [
   { path: '',  component: IndexPageComponent },
+  { path: 'tools',  component: ToolsComponent },
   { path: 'ensouled-head-calculator-2007-osrs',  component: EnsouledPrayerCalculatorComponent },
   { path: 'high-alch-calculator-2007-osrs',  component: HighAlchPriceComponent },
+  { path: 'high-alch-calculator-2007-osrs/:id',  component: HighAlchChartComponent},
   { path: 'herblore-calculator-2007-osrs',  component: HerbloreCalculatorComponent },
-  { path: 'grandexchange-2007-osrs',  component: GrandexchangeItemComponent }
-
+  { path: 'grandexchange-2007-osrs',  component: GrandexchangeItemComponent },
+  { path: 'grandexchange-2007-osrs/:id',  component:  GrandexchangeItemChartComponent },
 ];
 @NgModule({
   declarations: [
@@ -34,7 +39,10 @@ const routes: Routes = [
     HighAlchPriceComponent,
     HerbloreCalculatorComponent,
     GrandexchangeItemComponent,
-    GrandExchangeComponent
+    GrandExchangeComponent,
+    HighAlchChartComponent,
+    ToolsComponent,
+    GrandexchangeItemChartComponent
   ],
   imports: [
     BrowserModule,

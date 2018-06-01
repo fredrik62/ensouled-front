@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GrandExchangeService } from '../../services/grand-exchange.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-high-alch-price',
@@ -13,7 +14,7 @@ export class HighAlchPriceComponent implements OnInit {
   natPrice: Number;
   price: Number;
   total: any;
-  constructor(private grandExchangeService: GrandExchangeService) {}
+  constructor(private grandExchangeService: GrandExchangeService, private router: Router) {}
   
   ngOnInit() {
       this.grandExchangeService.getItemId()
@@ -24,6 +25,7 @@ export class HighAlchPriceComponent implements OnInit {
   
                   Object.keys(this.data).forEach(key => {
                       this.geData = {
+                          id: this.data[key].id,
                           name: this.data[key].name,
                           buyAverage: this.data[key].buy_average,
                           sellAverage: this.data[key].sell_average,
@@ -32,15 +34,16 @@ export class HighAlchPriceComponent implements OnInit {
   
   
                       }
+                      console.log(this.geData.id)
                          
                       if (this.geData.name === 'Nature rune') {
                           this.natPrice = this.geData.buyAverage;
                       }
                       this.total = Number(this.natPrice + this.geData.sellAverage);
                       
-                      if (this.total < this.geData.alchPrice) {
-                        console.log("item " + this.geData.name + " is profitable " + this.total + " by " + (this.geData.alchPrice-this.total) + " gp " + this.geData.alchPrice);
-                      }
+                    //   if (this.total < this.geData.alchPrice) {
+                    //     console.log("item " + this.geData.name + " is profitable " + this.total + " by " + (this.geData.alchPrice-this.total) + " gp " + this.geData.alchPrice);
+                    //   }
   
                       this.geItemArray.push(this.geData);
 
@@ -49,11 +52,14 @@ export class HighAlchPriceComponent implements OnInit {
                   });
   
   
-              }
-  
-  
-          )
-  }
+                }
+                
+                
+            )
+        }
+                        displayItemData(id) {
+                            this.router.navigate(['high-alch-calculator-2007-osrs', id]);
+                        }
   }
 //TODO UPDATE OBJECT INSTEAD OF CALCULATING IT IN THE HTML
 // 1. filter out items if they are less than the nature rune price
