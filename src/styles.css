@@ -33,7 +33,46 @@ body {
   cursor: pointer;
 }
 
+.item-name {
+font-size: 3em;
+text-align: center;
 
+}
+.item-description {
+  padding-left: 30px;
+
+}
+.item-image {
+  
+}
+
+.item-guide-price {
+  font-size: 2.5em;
+  padding: 30px;
+}
+.item-price {
+  font-size: 2.5em;
+  padding-right: 10px;
+}
+
+
+.item-coin-stack {
+max-height: 50px;
+}
+.today-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.today-data > .gen-info {
+  display: flex;
+  align-items: center;
+
+}
+
+@media screen and (max-width: 768px) {
+  
+ }
 body {
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: 400;

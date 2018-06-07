@@ -11,41 +11,42 @@ export class HighAlchPriceComponent implements OnInit {
   data: any = [];
   geItemArray = [];
   geData: any;
-  natPrice: Number;
+  natPrice: any;
   price: Number;
   total: any;
+
   constructor(private grandExchangeService: GrandExchangeService, private router: Router) {}
   
   ngOnInit() {
-      this.grandExchangeService.getItemId()
+      this.grandExchangeService.getAllItems()
           .toPromise()
           .then((res) => {
                   this.data = res;
   
   
                   Object.keys(this.data).forEach(key => {
+                 
+
+                    if (this.data[key].name === 'Nature rune') {
+                      this.natPrice = this.data[key].buy_average;
+                    }
                       this.geData = {
                           id: this.data[key].id,
                           name: this.data[key].name,
                           buyAverage: this.data[key].buy_average,
                           sellAverage: this.data[key].sell_average,
                           overAllAverage: this.data[key].overall_average,
-                          alchPrice: this.data[key].sp * 0.6
-  
-  
-                      }
-                      console.log(this.geData.id)
+                          alchPrice: this.data[key].sp * 0.6,
                          
-                      if (this.geData.name === 'Nature rune') {
-                          this.natPrice = this.geData.buyAverage;
-                      }
-                      this.total = Number(this.natPrice + this.geData.sellAverage);
-                      
-                    //   if (this.total < this.geData.alchPrice) {
-                    //     console.log("item " + this.geData.name + " is profitable " + this.total + " by " + (this.geData.alchPrice-this.total) + " gp " + this.geData.alchPrice);
-                    //   }
   
+  
+                      }
+                     
+                      
+                      
+                      
                       this.geItemArray.push(this.geData);
+                    //   console.log(this.geData.alchPrice - (this.geData.buyAverage + this.natPrice))
 
   
   

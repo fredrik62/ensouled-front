@@ -7,8 +7,8 @@
 <div class="container" *ngFor="let alchValue of geItemArray" (click)="displayItemData(alchValue.id)">
   <div class="items">
    <p>name: {{alchValue.name}}</p>
-   <p>item price + nature: {{alchValue.sellAverage + natPrice}}</p>
-   <p> profit/losses: {{alchValue.alchPrice - total}} GP</p>
+    <p>total cost: {{alchValue.sellAverage + natPrice}}</p>
    <p>alch price: {{alchValue.alchPrice}}</p>
+   <p> profit/losses: {{alchValue.alchPrice - (alchValue.sellAverage + natPrice)}} GP</p>
   </div>
 </div>

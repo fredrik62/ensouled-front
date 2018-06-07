@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './grandexchange-item.component.html',
   styleUrls: ['./grandexchange-item.component.css']
 })
-//this is the parent
+
 export class GrandexchangeItemComponent implements OnInit {
 
   data: any = [];
@@ -19,7 +19,7 @@ export class GrandexchangeItemComponent implements OnInit {
   constructor(private grandExchangeService: GrandExchangeService, private router: Router) {}
 
   ngOnInit() {
-      this.grandExchangeService.getItemId()
+      this.grandExchangeService.getAllItems()
           .toPromise()
           .then((res) => {
               this.data = res;

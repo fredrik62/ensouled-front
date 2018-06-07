@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {MomentModule} from 'angular2-moment/moment.module';
 
 //components
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { GrandExchangeService } from './services/grand-exchange.service';
 import { GrandexchangeItemComponent } from './pages/grandexchange-item/grandexchange-item.component';
 import { GrandExchangeComponent } from './components/grand-exchange/grand-exchange.component';
 import { GrandexchangeItemChartComponent } from './components/grandexchange-item-chart/grandexchange-item-chart.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -30,6 +32,7 @@ const routes: Routes = [
   { path: 'herblore-calculator-2007-osrs',  component: HerbloreCalculatorComponent },
   { path: 'grandexchange-2007-osrs',  component: GrandexchangeItemComponent },
   { path: 'grandexchange-2007-osrs/:id',  component:  GrandexchangeItemChartComponent },
+  { path: '**',  component: PageNotFoundComponent  },
 ];
 @NgModule({
   declarations: [
@@ -42,12 +45,14 @@ const routes: Routes = [
     GrandExchangeComponent,
     HighAlchChartComponent,
     ToolsComponent,
-    GrandexchangeItemChartComponent
+    GrandexchangeItemChartComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    MomentModule
    
   ],
   providers: [
