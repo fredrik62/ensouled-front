@@ -1,0 +1,54 @@
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+.item-data {
+  text-align: center;
+}
+.item-data > .item-image {
+  display:block;
+  margin:auto;
+
+}
+
+
+
+.item-current-price{
+  text-align: center;
+}
+.item-current-price > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:-5vh;
+}
+
+
+.item-data, .item-change-data{
+  width: 25%;
+}
+.item-change-data > div {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.item-guide-price {
+  font-size: 2.5em;
+  
+}
+
+.item-coin-stack {
+  max-height: 50px;
+  }
+
+@media screen and (max-width: 768px) {
+  .item-data, .item-change-data{
+    width: 100%;
+  }
+  .chart-btn {
+    font-size: 16px;
+  } 
+}
