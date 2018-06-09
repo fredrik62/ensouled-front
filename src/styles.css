@@ -256,3 +256,28 @@ nav ul li a:hover {
  color: white;
   
 }
+
+/* search filter pipe css */
+
+
+
+.is-one-third{
+  padding: 12px;
+  background: #000026;
+  border-radius: 2px;
+  line-height: 30px
+}
+
+.is-one-third input{
+  padding: 8px;
+  width: 60%;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  float: right;
+}
+
+.is-one-third:after{
+  content: "";
+  display: block;
+  clear: both;
+}

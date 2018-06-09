@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GrandExchangeService } from '../../services/grand-exchange.service';
 import { Router } from '@angular/router';
+import { SearchFilterPipe } from '../../pipes/search-filter.pipe'
 
 @Component({
   selector: 'app-high-alch-price',
@@ -14,6 +15,7 @@ export class HighAlchPriceComponent implements OnInit {
   natPrice: any;
   price: Number;
   total: any;
+  p: number = 1;
 
   constructor(private grandExchangeService: GrandExchangeService, private router: Router) {}
   
