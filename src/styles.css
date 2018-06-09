@@ -246,3 +246,13 @@ nav ul li a:hover {
   max-height: 40vh;
   margin: 0 auto;
 }
+
+/* pagination */
+
+.pagination-control-container {
+ display: flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ color: white;
+  
+}

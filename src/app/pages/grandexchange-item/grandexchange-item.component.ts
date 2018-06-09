@@ -2,10 +2,13 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { GrandExchangeService } from '../../services/grand-exchange.service';
 import { Router } from '@angular/router';
 
+import { SearchFilterPipe } from '../../pipes/search-filter.pipe'
+
 @Component({
   selector: 'app-grandexchange-item',
   templateUrl: './grandexchange-item.component.html',
-  styleUrls: ['./grandexchange-item.component.css']
+  styleUrls: ['./grandexchange-item.component.css'],
+
 })
 
 export class GrandexchangeItemComponent implements OnInit {
@@ -13,6 +16,7 @@ export class GrandexchangeItemComponent implements OnInit {
   data: any = [];
   geItemArray = [];
   geData: any;
+  p: number = 1;
  
 
   

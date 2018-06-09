@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {MomentModule} from 'angular2-moment/moment.module';
+import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+
 
 //components
 import { AppComponent } from './app.component';
@@ -21,6 +23,15 @@ import { GrandexchangeItemComponent } from './pages/grandexchange-item/grandexch
 import { GrandExchangeComponent } from './components/grand-exchange/grand-exchange.component';
 import { GrandexchangeItemChartComponent } from './components/grandexchange-item-chart/grandexchange-item-chart.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+
+
+//pipes
+import { SearchFilterPipe } from './pipes/search-filter.pipe';
+
+
+
+
+
 
 
 const routes: Routes = [
@@ -46,13 +57,18 @@ const routes: Routes = [
     HighAlchChartComponent,
     ToolsComponent,
     GrandexchangeItemChartComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SearchFilterPipe,
+    
+    
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    MomentModule
+    NgxPaginationModule,
+    FormsModule
+ 
    
   ],
   providers: [

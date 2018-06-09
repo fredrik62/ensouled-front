@@ -2,14 +2,18 @@
   ..loading
 </div>
 
-<div class="container" *ngFor="let geData of geItemArray" (click)="displayItemData(geData.id)">
+<div class="column is-one-third">
+    <label class="control">Filter items
+        <input type="text" placeholder="Search for items" [(ngModel)]="searchTerm">
+    </label>
+</div>
+<div class="container" *ngFor="let geData of geItemArray | searchFilter:searchTerm | paginate: { itemsPerPage: 50, currentPage: p }" (click)="displayItemData(geData.id)">
   <div class="items">
   <p>name: {{geData.name}}</p>
-  <p> ba: {{geData.buyAverage}}</p>
-  <p>sa: {{geData.sellAverage}}</p>
-  <p>oa: {{geData.overAllAverage}}</p>
-  <p> sp: {{geData.storePrice}}</p>
   </div>
 </div>
+    <div class="pagination-control-container">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
 
  
