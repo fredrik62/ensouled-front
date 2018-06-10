@@ -1,4 +1,4 @@
-<div *ngIf="!geItemArray">
+<div class="loading" *ngIf="!geItemArray">
 ...loading
 </div>
 
@@ -13,9 +13,9 @@
 <div class="container" *ngFor="let alchValue of geItemArray | searchFilter:searchTerm | paginate: { itemsPerPage: 50, currentPage: p }" (click)="displayItemData(alchValue.id)">
   <div class="items">
    <p>name: {{alchValue.name}}</p>
-    <p>total cost: {{alchValue.sellAverage + natPrice}}</p>
-   <p>alch price: {{alchValue.alchPrice}}</p>
-   <p> profit/losses: {{alchValue.alchPrice - (alchValue.sellAverage + natPrice)}} GP</p>
+    <p>total cost: {{alchValue.total}}</p>
+   <p>alch price: {{alchValue.alchPrice | number : '1.0-1'}}</p>
+   <p> profit/losses: {{alchValue.lossOrProfit | number : '1.0-1'}} GP</p>
   </div>
 </div>
 <div class="pagination-control-container">
