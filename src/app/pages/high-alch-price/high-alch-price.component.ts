@@ -16,6 +16,7 @@ export class HighAlchPriceComponent implements OnInit {
   price: Number;
   total: any;
   p: number = 1;
+  reverseCount: any = 0;
 
   constructor(private grandExchangeService: GrandExchangeService, private router: Router) {}
   
@@ -24,7 +25,8 @@ export class HighAlchPriceComponent implements OnInit {
     .toPromise()
     .then((res) => {
      this.data = res;
-     //if no nature rune price index has changed
+   
+     //if no nature rune price, index has changed
      this.natPrice = this.data[561].sell_average;
      
      Object.keys(this.data).forEach(key => {
@@ -47,13 +49,30 @@ export class HighAlchPriceComponent implements OnInit {
             return b.lossOrProfit - a.lossOrProfit;
           });
           
-
+         
+        }
+        if (this.geData.lossOrProfit < 0) {
+           this.geData.negativeChange = true;
         } 
       
       });
+
       
     })
     }
+
+    reverseOrder() {
+      this.geItemArray.sort(( a, b )  => {
+        return a.lossOrProfit - b.lossOrProfit;
+      });
+      this.reverseCount++;
+      if (this.reverseCount === 2) {
+        this.geItemArray.sort(( a, b )  => {
+          return b.lossOrProfit - a.lossOrProfit;
+        });
+        this.reverseCount = 0;
+      }
+     }
        
     displayItemData(id) {
     this.router.navigate(['high-alch-calculator-2007-osrs', id]);
@@ -71,9 +90,9 @@ export class HighAlchPriceComponent implements OnInit {
                      
                       
   
-//TODO UPDATE OBJECT INSTEAD OF CALCULATING IT IN THE HTML
-// 1. filter out items if they are less than the nature rune price
-// 2. update object and store the nature price in the object
+//done
+// 1. done
+// 2. done
 // 3. red or green background colors depending if profit or loss
 // 4. done
 // 5. done

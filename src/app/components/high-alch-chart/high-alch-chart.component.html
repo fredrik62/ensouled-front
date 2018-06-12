@@ -1,6 +1,7 @@
 
 
 
+
   <p class="item-name">{{itemInfo.itemName}}</p>
 <div class="content-container">
  <div class="item-data">
@@ -16,21 +17,22 @@
   </div>
 
 
-    <div class="item-change-data">
-      <div>
+
+    <!-- <div class="item-change-data">
+      <div class="monthly-change" [ngClass]="{'loss': thirtyDayChange.negative }">
       <p>30 Day Change</p>
-      <p>{{itemInfo.day30}}</p>
+      <p>{{thirtyDayChange}}%</p>
     </div>
-    <div>
+    <div class="monthly-change" [ngClass]="{'loss': ninetyDayChange.negative }">
       <p>90 Day Change</p>
-      <p>{{itemInfo.day90}}</p>
+      <p>{{ninetyDayChange}}%</p>
     </div>
-    <div>
+    <div  class="monthly-change" [ngClass]="{'loss': hundredEightyDayChange.negative }">
     <p>180 Day Change</p>
-    <p>{{itemInfo.day180}}</p>
+    <p>{{hundredEightyDayChange}}%</p>
   </div>
 </div>
-</div>
+</div> -->
   
 
   <div class="chart-btn-container">
@@ -41,16 +43,16 @@
 
   <div class="chart-container">
 
-    <div *ngIf="show30">
-      <p>30 day</p>
+    <div *ngIf="!show30">
+      <app-one-month-chart></app-one-month-chart>
     </div>
   
     <div *ngIf="show90">
-      <p>90 day</p>
+      <app-three-month-chart></app-three-month-chart>
     </div>
   
     <div *ngIf="show180">
-      <p>180 day</p>
+        <app-six-month-chart></app-six-month-chart>
     </div>
   </div>
 

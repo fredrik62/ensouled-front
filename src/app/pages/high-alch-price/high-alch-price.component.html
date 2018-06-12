@@ -9,13 +9,16 @@
 </div>
 <div>
   <p>{{natPrice}} GP per nature</p>
+  <button (click)="reverseOrder()">reverse order</button>
 </div>
 <div class="container" *ngFor="let alchValue of geItemArray | searchFilter:searchTerm | paginate: { itemsPerPage: 50, currentPage: p }" (click)="displayItemData(alchValue.id)">
   <div class="items">
    <p>name: {{alchValue.name}}</p>
-    <p>total cost: {{alchValue.total}}</p>
+    <p>total cost: {{alchValue.total | number : '1.0-1'}}</p>
    <p>alch price: {{alchValue.alchPrice | number : '1.0-1'}}</p>
-   <p> profit/losses: {{alchValue.lossOrProfit | number : '1.0-1'}} GP</p>
+   <div class="high-alch-profit loss-or-profit" [ngClass]="{'high-alch-loss': alchValue.negativeChange }">
+       <p>{{alchValue.lossOrProfit | number : '1.0-1'}} GP</p>
+   </div>
   </div>
 </div>
 <div class="pagination-control-container">

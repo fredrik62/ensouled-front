@@ -1,3 +1,14 @@
 p {
   color: white;
 }
+
+.loss-or-profit {
+  width: 80px;
+}
+.high-alch-profit{
+  background: green;
+}
+
+.high-alch-loss {
+  background: red;
+}

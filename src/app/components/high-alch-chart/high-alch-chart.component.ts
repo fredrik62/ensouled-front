@@ -19,6 +19,9 @@ graph: any;
 daily: any;
 average: any;
 dailyTime180: any;
+thirtyDayChange: any;
+ninetyDayChange: any;
+hundredEightyDayChange: any;
 show30: boolean;
 show90: boolean;
 show180: boolean;
@@ -31,7 +34,7 @@ show180: boolean;
          .toPromise()
            .then((res) => {
             this.data = res;
-
+             this.showDays;
              this.itemInfo = {
               itemName: this.data.itemData.item.name,
               largeIcon: this.data.itemData.item.icon_large,
@@ -42,36 +45,33 @@ show180: boolean;
               day180: this.data.itemData.item.day180.change
                     }
                     
-              const dailyTime180 = [];
-              const averageTime180 = [];
-             
+                  
+                     this.thirtyDayChange = parseInt(this.itemInfo.day30);
+                     this.ninetyDayChange = parseInt(this.itemInfo.day90);
+                     this.hundredEightyDayChange = parseInt(this.itemInfo.day180);
+                     
+                     if (this.thirtyDayChange < 0) {
+                       this.thirtyDayChange.negative = true;
+                     }
 
-              for (var i = 0; i <= 180; i++) {
-                 this.graph = {
-                 dailyTime: Object.entries(this.data.graphData.daily)[i][0],
-                 dailyPrice: Object.entries(this.data.graphData.daily)[i][1],
-                 averageTime: Object.entries(this.data.graphData.average)[i][0],
-                 averagePrice: Object.entries(this.data.graphData.average)[i][1]
-                            }
-                            
-                 const convertedDaily = Number(this.graph.dailyTime);
-                 const convertedAverage = Number(this.graph.averageTime);
-                 dailyTime180.push(this.daily = new Date(convertedDaily));
-                 averageTime180.push(this.average = new Date(convertedAverage));
-                        
-                }
+                     if (this.ninetyDayChange < 0) {
+                      this.ninetyDayChange.negative = true;
+                    }
+                    if (this.hundredEightyDayChange < 0) {
+                      this.hundredEightyDayChange.negative = true;
+                    }
               })
             })
           }
           
            showDays(numOfDays) {
-            this.show30 = false;
+            this.show30 = true;
             this.show90 = false;
             this.show180 = false;
 
             switch(numOfDays) {
                 case 30:
-                this.show30 = true;
+                this.show30 = false;
                 break;
                 case 90:
                 this.show90 = true;
@@ -82,6 +82,9 @@ show180: boolean;
               }
               
 
+          }
+          hello() {
+            console.log("yuupuupup");
           }
           
       

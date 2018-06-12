@@ -4,12 +4,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Pipe } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { Chart } from 'chart.js';
 
 
 //components
 import { AppComponent } from './app.component';
 import { HighAlchChartComponent } from './components/high-alch-chart/high-alch-chart.component';
 import { ToolsComponent } from './components/tools/tools.component';
+import { OneMonthChartComponent } from './components/charts/one-month-chart/one-month-chart.component';
+import { ThreeMonthChartComponent } from './components/charts/three-month-chart/three-month-chart.component';
+import { SixMonthChartComponent } from './components/charts/six-month-chart/six-month-chart.component';
+
 
 //pages
 import { IndexPageComponent } from './pages/index-page/index-page.component';
@@ -34,6 +39,9 @@ import { SearchFilterPipe } from './pipes/search-filter.pipe';
 
 
 
+
+
+
 const routes: Routes = [
   { path: '',  component: IndexPageComponent },
   { path: 'tools',  component: ToolsComponent },
@@ -43,6 +51,7 @@ const routes: Routes = [
   { path: 'herblore-calculator-2007-osrs',  component: HerbloreCalculatorComponent },
   { path: 'grandexchange-2007-osrs',  component: GrandexchangeItemComponent },
   { path: 'grandexchange-2007-osrs/:id',  component:  GrandexchangeItemChartComponent },
+  { path: '6',  component:  SixMonthChartComponent },
   { path: '**',  component: PageNotFoundComponent  },
 ];
 @NgModule({
@@ -59,6 +68,11 @@ const routes: Routes = [
     GrandexchangeItemChartComponent,
     PageNotFoundComponent,
     SearchFilterPipe,
+    OneMonthChartComponent,
+    ThreeMonthChartComponent,
+    SixMonthChartComponent,
+    
+    
     
     
   ],
@@ -67,7 +81,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    
  
    
   ],
