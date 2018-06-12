@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { GrandExchangeService } from '../../../services/grand-exchange.service';
 import { ActivatedRoute } from '@angular/router';
 import { Chart } from 'chart.js';
@@ -11,58 +11,66 @@ import { Chart } from 'chart.js';
 })
 export class SixMonthChartComponent implements OnInit {
 data: any;
-graph: any;
-daily: any;
-dailyTime180: any;
-averageTime180: any = [];
-dailyPrice: any;
-averagePrice: any;
-average: any;
 chart: any;
-can: any;
-  constructor(private activatedRoute: ActivatedRoute, private grandExchangeService: GrandExchangeService) { }
+desktopDisplay: boolean = window.innerWidth > 400;
+@HostListener('window:resize') resizeDetection() { 
+    this.desktopDisplay = window.innerWidth > 800;
+    this.chart.options.scales.xAxes[0].ticks.display = window.innerWidth > 800;
+  }
+constructor(private activatedRoute: ActivatedRoute, private grandExchangeService: GrandExchangeService) { }
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe((params) => {
-      const id = params.id;
-        this.grandExchangeService.getOneItem(id)
-         .toPromise()
-           .then((res) => {
-             this.data = res
-             graph(this.data);
-             
-           })
-        })
-        
+ngOnInit() {
+    const allData = this.grandExchangeService.getGraphData();
+    const dt = allData.dt;
+    const at = allData.at;
+    const dp = allData.dp;
+    const ap = allData.ap;
+   
+
+    this.chart = new Chart('myChart', {
+        type: 'line',
+        data: {
+            labels: dt,at,
+            datasets: [{
+                    data: dp,
+                    borderColor: '#f7931a',
+                    fill: false
+                },
+                {
+                    data: ap,
+                    borderColor: '#f0f0f0',
+                    fill: false
+                },
+            ]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    // display: this.desktopDisplay
+                    display: false
+                    
+                }],
+                yAxes: [{
+                    display: true
+                }]
+            }
+        }
+    })
+    
         
     }
+   
+
     
 }
 
-const graph = (data) => {
-const x = data;
-const dailyTime180 = [];
-const dailyPrice = [];
-const averageTime180 = [];
-const averagePrice = [];
 
 
-for (let i = 0; i < 180; i++) {
-    const a = Object.entries(x.graphData.daily)[i][0];
-    const b = Object.entries(x.graphData.daily)[i][1];
-    const c = Object.entries(x.graphData.average)[i][0]
-    const d = Object.entries(x.graphData.average)[i][1]
 
-    const convertedDaily = Number(a);
-    const convertedAverage = Number(c);
-    const newDailyDate = new Date(convertedDaily);
-    const newAverageDate = new Date(convertedAverage);
-    dailyTime180.push(newDailyDate);
-    dailyPrice.push(b);
-    averageTime180.push(newAverageDate);
-    averagePrice.push(d);
-}
-console.log(dailyTime180.length);
+
 
     
-}  
+ 

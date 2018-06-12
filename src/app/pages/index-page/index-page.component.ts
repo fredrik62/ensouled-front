@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,} from '@angular/core';
 import { GrandExchangeService } from '../../services/grand-exchange.service';
 import { HttpClientModule } from '@angular/common/http';
 
