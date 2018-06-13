@@ -14,40 +14,89 @@ data: any;
 
   constructor(private activatedRoute: ActivatedRoute, private grandExchangeService: GrandExchangeService) { }
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe((params) => {
-      const id = params.id;
-        this.grandExchangeService.getOneItem(id)
-         .toPromise()
-           .then((res) => {
-            this.data = res;
-            const x = this.data;
-            const dailyTime180 = [];
-            const dailyPrice = [];
-            const averageTime180 = [];
-            const averagePrice = [];
+ngOnInit() {
+  this.activatedRoute.params.subscribe((params) => {
+  const id = params.id;
+  this.grandExchangeService.getOneItem(id)
+  .toPromise()
+    .then((res) => {
+    this.data = res;
+    const x = this.data;
+    const dailyTime180 = [];
+    const dailyPrice = [];
+    const averageTime180 = [];
+    const averagePrice = [];
             
-            
-            for (let i = 0; i < 180; i++) {
-                const a = Object.entries(x.graphData.daily)[i][0];
-                const b = Object.entries(x.graphData.daily)[i][1];
-                const c = Object.entries(x.graphData.average)[i][0];
-                const d = Object.entries(x.graphData.average)[i][1];
-            
-                const convertedDaily = Number(a);
-                const convertedAverage = Number(c);
-                const newDailyDate = new Date(convertedDaily);
-                const newAverageDate = new Date(convertedAverage);
-                dailyTime180.push(newDailyDate);
-                dailyPrice.push(b);
-                averageTime180.push(newAverageDate);
-                averagePrice.push(d);
-            }
-            this.grandExchangeService.setGraphData(dailyTime180, dailyPrice, averageTime180, averagePrice);
+    //getting key and value from my object
+    for (let i = 0; i < 180; i++) {
+        const a = Object.entries(x.graphData.daily)[i][0];
+        const b = Object.entries(x.graphData.daily)[i][1];
+        const c = Object.entries(x.graphData.average)[i][0];
+        const d = Object.entries(x.graphData.average)[i][1];
+    
+        const convertedDaily = Number(a);
+        const convertedAverage = Number(c);
+        const newDailyDate = new Date(convertedDaily);
+        const newAverageDate = new Date(convertedAverage);
+        dailyTime180.push(newDailyDate);
+        dailyPrice.push(b);
+        averageTime180.push(newAverageDate);
+        averagePrice.push(d);
+    }
+    //sending data to the service so the other charts can have the data
+    this.grandExchangeService.setGraphData(dailyTime180, dailyPrice, averageTime180, averagePrice);
+    //pushed 30 days of chart data to these variables
+    const dt = [];
+    const dp = [];
+    const at = [];
+    const ap = [];
+             
+
+  for(let x = 179; x >= 150; x--) { 
+    dt.push(dailyTime180[x]);
+    dp.push(dailyPrice[x]);
+    at.push(averageTime180[x]);
+    ap.push(averagePrice[x]);
+    } 
+    //   //reversing the array for the chart
+    const reversedDt = dt.reverse();
+    const reversedAt = at.reverse();
+    const reversedDp = dp.reverse();
+    const reversedAp = ap.reverse();
 
              
-             
-             
+    this.chart = new Chart('myChart', {
+      type: 'line',
+      data: {
+          labels: reversedDt,
+          datasets: [{
+                  data: reversedDp,
+                  borderColor: '#f7931a',
+                  fill: false
+              },
+              {
+                  data: reversedAp,
+                  borderColor: '#f0f0f0',
+                  fill: false
+              },
+          ]
+      },
+      options: {
+          legend: {
+              display: false
+          },
+          scales: {
+              xAxes: [{
+                  // display: this.desktopDisplay
+                  display: false
+                  
+              }],
+              yAxes: [{
+                  display: true
+              }]
+          }
+      }
+  })
              
              
              
