@@ -1,3 +1,12 @@
-<p>
-  ensouled-prayer-calculator works!
-</p>
+<h1>Ensouled Head Calculator</h1>
+
+<div *ngFor="let head of heads">
+  <h6> Level {{head.levelRequired}}</h6>
+  <h6>{{head.itemName}}</h6>
+  <img src="{{head.itemIdIcon}}" alt=" {{head.itemName}}">
+  <input type="number" min="0">
+</div>
+<!-- [(ngModel)]="goblinHead" -->
+
+
+<button (click)="calculate()">calculate</button>
