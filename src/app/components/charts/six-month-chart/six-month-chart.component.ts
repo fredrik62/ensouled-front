@@ -33,12 +33,12 @@ ngOnInit() {
             labels: dt,at,
             datasets: [{
                     data: dp,
-                    borderColor: '#f7931a',
+                    borderColor: '#00CED1',
                     fill: false
                 },
                 {
                     data: ap,
-                    borderColor: '#f0f0f0',
+                    borderColor: '#FFFF00',
                     fill: false
                 },
             ]

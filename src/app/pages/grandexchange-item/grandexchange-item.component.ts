@@ -17,40 +17,44 @@ export class GrandexchangeItemComponent implements OnInit {
   geItemArray = [];
   geData: any;
   p: number = 1;
- 
+  image: String;
+  iconUrl:String;
 
   
   constructor(private grandExchangeService: GrandExchangeService, private router: Router) {}
 
   ngOnInit() {
       this.grandExchangeService.getAllItems()
-          .toPromise()
-          .then((res) => {
-              this.data = res;
+      .toPromise()
+      .then((res) => {
+      this.data = res;
+      this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1528713058107_obj_sprite.gif?id=';      
               
+            
+      Object.keys(this.data).forEach(key => {
+      this.geData = {
 
-              Object.keys(this.data).forEach(key => {
-                      this.geData = {
-                        id: this.data[key].id,
-                        name: this.data[key].name,
-                        buyAverage: this.data[key].buy_average,
-                        sellAverage: this.data[key].sell_average,
-                        overAllAverage: this.data[key].overall_average,
-                        storePrice: this.data[key].sp
-                                        
-                                   }
-               
-                      this.geItemArray.push(this.geData);
-                                   
-                                   
-            });
-            
-            
-            
-          })
+      id: this.data[key].id,
+      name: this.data[key].name,
+      buyAverage: this.data[key].buy_average,
+      sellAverage: this.data[key].sell_average,
+      overAllAverage: this.data[key].overall_average,
+      storePrice: this.data[key].sp,
+      image: this.iconUrl + this.data[key].id
+                                
         }
-        
-        displayItemData(id) {
-          this.router.navigate(['grandexchange-2007-osrs', id]);
-        }
-      }
+    
+      this.geItemArray.push(this.geData);
+          
+                    
+    });
+                    
+  })
+}
+
+
+       //page navigation to the item clicked on  
+  displayItemData(id) {
+    this.router.navigate(['grandexchange-2007-osrs', id]);
+  }
+}

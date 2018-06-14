@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GrandExchangeService } from '../../services/grand-exchange.service';
 
 @Component({
   selector: 'app-grandexchange-item-chart',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GrandexchangeItemChartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private grandExchangeService: GrandExchangeService) { }
 
   ngOnInit() {
+ 
   }
 
 }

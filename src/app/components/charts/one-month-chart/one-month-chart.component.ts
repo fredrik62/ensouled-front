@@ -71,13 +71,13 @@ ngOnInit() {
           labels: reversedDt,
           datasets: [{
                   data: reversedDp,
-                  borderColor: '#f7931a',
-                  fill: false
+                  borderColor: '#00CED1',
+                  fill: false,
               },
               {
                   data: reversedAp,
-                  borderColor: '#f0f0f0',
-                  fill: false
+                  borderColor: '#FFFF00',
+                  fill: false,
               },
           ]
       },

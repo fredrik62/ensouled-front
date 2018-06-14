@@ -34,9 +34,11 @@ show180: boolean;
          .toPromise()
            .then((res) => {
             this.data = res;
-             this.showDays;
+            
+             
              this.itemInfo = {
               itemName: this.data.itemData.item.name,
+              smallIcon: this.data.itemData.item.icon,
               largeIcon: this.data.itemData.item.icon_large,
               itemDescription: this.data.itemData.item.description,
               current: this.data.itemData.item.current.price,
@@ -45,7 +47,10 @@ show180: boolean;
               day180: this.data.itemData.item.day180.change
                     }
                     
-                  
+                    
+                   console.log(this.itemInfo.smallIcon);
+
+                    //positive or negative trends on pagge
                      this.thirtyDayChange = parseInt(this.itemInfo.day30);
                      this.ninetyDayChange = parseInt(this.itemInfo.day90);
                      this.hundredEightyDayChange = parseInt(this.itemInfo.day180);
@@ -62,8 +67,9 @@ show180: boolean;
                     }
               })
             })
+            
           }
-          
+          //buttons to show which graphs to display
            showDays(numOfDays) {
             this.show30 = true;
             this.show90 = false;
@@ -83,9 +89,7 @@ show180: boolean;
               
 
           }
-          hello() {
-            console.log("yuupuupup");
-          }
+        
           
       
         }

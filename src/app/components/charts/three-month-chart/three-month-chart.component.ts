@@ -42,38 +42,40 @@ for(let x = 179; x >= 90; x--) {
 
  //chart
 
- function getColor() {
-	return '#32CD32'
-  }
-
-  var colorArray = [];
-for (var z= 0; z <= 90; z++) {
-  colorArray.push(getColor());
-  }
-
- this.chart = new Chart(("bar-chart"), {
-  type: 'bar',
+ this.chart = new Chart('myChart', {
+  type: 'line',
   data: {
-    labels: reversedDt ,
-    datasets: [
-      {
-        label: "Population (millions)",
-        backgroundColor: colorArray,
-        data: reversedDp,
-      }
-    ]
+      labels: reversedDt,
+      datasets: [{
+              data: reversedDp,
+              borderColor: '#00CED1',
+              fill: false,
+          },
+          {
+              data: reversedAp,
+              borderColor: '#FFFF00',
+              fill: false,
+          },
+      ]
   },
   options: {
-    legend: { display: false },
-    scales:
-    {
-        xAxes: [{
-            display: false
-        }]
-    }
-    
+      legend: {
+          display: false
+      },
+      scales: {
+          xAxes: [{
+              // display: this.desktopDisplay
+              display: false
+              
+          }],
+          yAxes: [{
+              display: true
+          }]
+      }
   }
-});
+})
+         
+
 
 
 

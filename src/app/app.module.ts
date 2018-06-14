@@ -53,6 +53,7 @@ const routes: Routes = [
   { path: 'grandexchange-2007-osrs/:id',  component:  GrandexchangeItemChartComponent },
   { path: '6',  component:  SixMonthChartComponent },
   { path: '**',  component: PageNotFoundComponent  },
+ 
 ];
 @NgModule({
   declarations: [

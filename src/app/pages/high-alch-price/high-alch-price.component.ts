@@ -17,6 +17,7 @@ export class HighAlchPriceComponent implements OnInit {
   total: any;
   p: number = 1;
   reverseCount: any = 0;
+  iconUrl: String;
 
   constructor(private grandExchangeService: GrandExchangeService, private router: Router) {}
   
@@ -25,13 +26,14 @@ export class HighAlchPriceComponent implements OnInit {
     .toPromise()
     .then((res) => {
      this.data = res;
-   
+     this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1528713058107_obj_sprite.gif?id=';  
      //if no nature rune price, index has changed
      this.natPrice = this.data[561].sell_average;
      
      Object.keys(this.data).forEach(key => {
        this.geData = {
            id: this.data[key].id,
+           image: this.iconUrl + this.data[key].id,
            name: this.data[key].name,
            buyAverage: this.data[key].buy_average,
            sellAverage: this.data[key].sell_average,
@@ -39,7 +41,7 @@ export class HighAlchPriceComponent implements OnInit {
            alchPrice: this.data[key].sp * 0.6,
            natureRuneCost: this.natPrice,
            total: this.natPrice + this.data[key].sell_average,
-           lossOrProfit: this.data[key].sp * 0.6 - (this.natPrice + this.data[key].sell_average)
+           lossOrProfit: this.data[key].sp * 0.6 - (this.natPrice + this.data[key].sell_average),
 
 
        }

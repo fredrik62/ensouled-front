@@ -9,7 +9,8 @@ import 'rxjs/add/operator/toPromise';
 export class GrandExchangeService {
 private baseURL = "http://localhost:3000/"
 private apiUrl = "http://localhost:3000/item/"
- public sharedData: any;
+private imgUrl = "http://localhost:3000/img/"
+public sharedData: any;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -31,12 +32,12 @@ private apiUrl = "http://localhost:3000/item/"
        ap: averagePrice
     } 
        
-     
-   }
+  }
 
    getGraphData() {
      return this.sharedData;
    }
+
 
 }
 

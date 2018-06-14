@@ -289,3 +289,6 @@ nav ul li a:hover {
 
 /* css spinner for loading */
 
+.toggleMenuStyle {
+ display: none;
+}
