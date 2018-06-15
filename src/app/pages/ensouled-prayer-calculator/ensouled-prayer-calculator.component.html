@@ -1,12 +1,37 @@
 <h1>Ensouled Head Calculator</h1>
 
-<div *ngFor="let head of heads">
+<div class="ensouled" *ngFor="let head of heads">
   <h6> Level {{head.levelRequired}}</h6>
   <h6>{{head.itemName}}</h6>
-  <img src="{{head.itemIdIcon}}" alt=" {{head.itemName}}">
-  <input type="number" min="0">
-</div>
+  <div class="icon-container">
+    <img class="icon" src="{{head.itemIdIcon}}" alt=" {{head.itemName}}">
+    <input type="number" min="0" [(ngModel)]="{{head.ngModel}}">
+    <h6>{{head.experience}} XP</h6>
+  </div>
+  <div class="rune-wrapper">
+    
+  <div>
+    <img class="runes" src="/assets/images/Blood_rune.png">
+    <p>{{head.bloodRune}}</p>
+  </div>
+  <div>
+    <img class="runes" src="/assets/images/Nature_rune.png">
+    <p>{{head.natureRune}}</p>
+  </div>
+  <div>
+    <img class="runes" src="/assets/images/Soul_rune.png">
+    <p>{{head.soulRune}}</p>
+  </div>
+  <div>
+    <img class="runes" src="/assets/images/Body_rune.png">
+    <p>{{head.bodyRune}}</p>
+  </div>
+  
+  </div>
+  </div>
 <!-- [(ngModel)]="goblinHead" -->
+
+
 
 
 <button (click)="calculate()">calculate</button>
