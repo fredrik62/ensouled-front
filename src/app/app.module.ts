@@ -14,6 +14,7 @@ import { ToolsComponent } from './components/tools/tools.component';
 import { OneMonthChartComponent } from './components/charts/one-month-chart/one-month-chart.component';
 import { ThreeMonthChartComponent } from './components/charts/three-month-chart/three-month-chart.component';
 import { SixMonthChartComponent } from './components/charts/six-month-chart/six-month-chart.component';
+import { TrackPlayerSubmitComponent } from './components/track-player-submit/track-player-submit.component';
 
 
 //pages
@@ -21,17 +22,19 @@ import { IndexPageComponent } from './pages/index-page/index-page.component';
 import { EnsouledPrayerCalculatorComponent } from './pages/ensouled-prayer-calculator/ensouled-prayer-calculator.component';
 import { HerbloreCalculatorComponent } from './pages/herblore-calculator/herblore-calculator.component';
 import { HighAlchPriceComponent } from './pages/high-alch-price/high-alch-price.component';
-
-//services
-import { GrandExchangeService } from './services/grand-exchange.service';
+import { TrackPlayerComponent } from './pages/track-player/track-player.component';
 import { GrandexchangeItemComponent } from './pages/grandexchange-item/grandexchange-item.component';
 import { GrandExchangeComponent } from './components/grand-exchange/grand-exchange.component';
 import { GrandexchangeItemChartComponent } from './components/grandexchange-item-chart/grandexchange-item-chart.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
+//services
+import { GrandExchangeService } from './services/grand-exchange.service';
+
 
 //pipes
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { TrackPlayerService } from './services/track-player.service';
 
 
 
@@ -51,7 +54,8 @@ const routes: Routes = [
   { path: 'herblore-calculator-2007-osrs',  component: HerbloreCalculatorComponent },
   { path: 'grandexchange-2007-osrs',  component: GrandexchangeItemComponent },
   { path: 'grandexchange-2007-osrs/:id',  component:  GrandexchangeItemChartComponent },
-  { path: '6',  component:  SixMonthChartComponent },
+  { path: 'track-player',  component:  TrackPlayerComponent },
+  { path: 'track-player/:username',  component:  TrackPlayerSubmitComponent, },
   { path: '**',  component: PageNotFoundComponent  },
  
 ];
@@ -72,6 +76,8 @@ const routes: Routes = [
     OneMonthChartComponent,
     ThreeMonthChartComponent,
     SixMonthChartComponent,
+    TrackPlayerComponent,
+    TrackPlayerSubmitComponent,
     
     
     
@@ -89,6 +95,7 @@ const routes: Routes = [
   ],
   providers: [
     GrandExchangeService,
+    TrackPlayerService,
   ],
   bootstrap: [AppComponent]
 })
