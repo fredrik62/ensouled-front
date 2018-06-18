@@ -32,11 +32,11 @@ bloodveldHead:Number;
 tzhaarHead:Number;
 demonHead:Number;
 aviansieHead:Number;
-abbysalHead:Number;
-dragonHead:Number;
-value;
+abbysalHead:any;
+dragonHead:any;
+value:Number;
 
-message:any;
+
   constructor() { }
 
   ngOnInit() {
@@ -99,10 +99,11 @@ message:any;
     
     
     calculate() {
-    for(var x = 0; x < this.heads.length; x++) {
-      var totalInputs = this.heads[x].binding || 0;
-      var sum = totalInputs * this.heads[x].experience;
-      console.log(sum);
+    for(let x = 0; x < this.heads.length; x++) {
+      let allInputs = this.heads[x].binding || 0;
+      let sum = this.heads[x].experience * allInputs;
+      this.value = sum;
+      console.log(this.value);
     }
      
 }
