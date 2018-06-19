@@ -1,27 +1,11 @@
 # EnsouledFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+-This project is specifically made for one of the largest MMORPG games, I played this game throughout my childhood and still do to this day. Prior to joining Ironhack coding bootcamp, I built my first website with two simple calculators, which got me to 1500 users per month, I promised that after the bootcamp once I have better knowledge of JS, I will make a better version out of it.
 
-## Development server
+This version will be able to track players in terms of experience gains on the game with other statistics regarding their account. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+It also includes a page with all the game items, prices, charts etc.
 
-## Code scaffolding
+Contains 3 calculators, with experience calculations as my original page website had, able to check what items are profitable for a certain skills as well, in this case (Magic).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+----------------MORE TO COME----------------
