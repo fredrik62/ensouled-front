@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerLookupService } from '../../services/player-lookup.service';
 
 @Component({
   selector: 'app-herblore-calculator',
@@ -8,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
 export class HerbloreCalculatorComponent implements OnInit {
 iconUrl: String;
 herbs: any = [];
+playerStats: any = [];
+playerLevel: Number;
+username: String;
 
 //guam herbs
 attackPotion: Number;
@@ -17,7 +21,7 @@ guamTar: Number;
 antiPotion: Number;
 marrentillTar: Number;
 
-  constructor() { }
+  constructor(private playerLookupService: PlayerLookupService) { }
 
   ngOnInit() {
 
@@ -29,8 +33,8 @@ marrentillTar: Number;
           
                 {"Guam":[{"Name":"Attack Potion", "Xp": 25, "Level": 3, "binding": this.attackPotion, "id": "121"}]}, 
                 {"Guam":[{"Name":"Guam Tar", "Xp": 30, "Level": 3, "binding": this.guamTar, "id": "10142"}]},
-                {"Marrentill":[{"Name":"Anti Potion", "Xp": 37.5, "Level": 5, "binding": this.antiPotion, "id": "175"}]}, 
-                {"Marrentill":[{"Name":"Marrentill Tar", "Xp": 42.5, "Level": 31, "binding": this.marrentillTar, "id": "10143"}]},
+                // {"Marrentill":[{"Name":"Anti Potion", "Xp": 37.5, "Level": 5, "binding": this.antiPotion, "id": "175"}]}, 
+                // {"Marrentill":[{"Name":"Marrentill Tar", "Xp": 42.5, "Level": 31, "binding": this.marrentillTar, "id": "10143"}]},
               
         ]    
                
@@ -60,4 +64,41 @@ marrentillTar: Number;
    
   }
 
-}
+  submitForm(form) {
+    const user = this.username
+    
+   if (user === undefined || user.length === 0 || user.length > 12) {
+     alert("error with name");
+   } else {
+     this.playerLookupService.getOnePlayer(user)
+     .toPromise()
+     .then((result) => {
+       this.playerStats.push(result); 
+       this.checkPlayerLevel();
+       })
+     .catch((err) => {
+      console.log(err);
+     });
+  }
+      
+  }
+
+  checkPlayerLevel() {
+   this.playerLevel = this.playerStats[0].Herblore.level;
+   const playerHerbloreXp = this.playerStats[0].Herblore.xp;
+   console.log(playerHerbloreXp);
+  }
+
+ }
+
+
+ //todo
+
+ /*
+ 
+ find runescape level table and compare xp to current level + check how much their xp will get closer to next lvl
+ 
+ 
+ 
+ 
+ */

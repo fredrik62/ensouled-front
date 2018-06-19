@@ -1,4 +1,13 @@
 <h1>Herblore Calculator</h1>
+
+<h1>Get your Herblore Level</h1>
+
+ <form id="loginForm" (ngSubmit)="submitForm(form)" #form="ngForm">
+  <label>rs username</label>
+  <input type="text" id="password" class="loginInput" name="password" [(ngModel)]="username" #passwordField="ngModel" required minlength="1" [disabled]="processing"/>
+  <button type="submit" id="loginButton" [disabled]="processing">Get Stats</button>
+</form>
+<p>Your Herblore Level: {{playerLevel}}</p>
 <div class="herblore-box-wrapper">
   <div class="herblore-box">
   <p>Guam Leaf</p>

@@ -30,11 +30,12 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 
 //services
 import { GrandExchangeService } from './services/grand-exchange.service';
+import { TrackPlayerService } from './services/track-player.service';
+import { PlayerLookupService } from './services/player-lookup.service';
 
 
 //pipes
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
-import { TrackPlayerService } from './services/track-player.service';
 
 
 
@@ -96,6 +97,7 @@ const routes: Routes = [
   providers: [
     GrandExchangeService,
     TrackPlayerService,
+    PlayerLookupService
   ],
   bootstrap: [AppComponent]
 })
