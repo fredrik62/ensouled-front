@@ -23,15 +23,21 @@ export class TrackPlayerComponent implements OnInit {
   const user = {
   rsn: this.username
   }
-  this.trackPlayerService.startTrackingPlayer(user)
-  this.router.navigate(['track-player', user.rsn])
-  .then((result) => {
-    console.log(result)  // router.navigate here once we got data
-    })
-  .catch((err) => {
-   console.log(err);
-  });
+ if (user.rsn === undefined || user.rsn.length === 0 || user.rsn.length > 12) {
+   alert("error with name");
+ } else {
+   this.trackPlayerService.startTrackingPlayer(user)
+   this.router.navigate(['track-player', user.rsn])
+   .then((result) => {
+     console.log(result)  // router.navigate here once we got data
+     })
+   .catch((err) => {
+    console.log(err);
+   });
+}
     
 }
 
 }
+
+// add proper validation
