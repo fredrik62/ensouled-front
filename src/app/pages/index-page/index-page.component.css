@@ -4,6 +4,39 @@ p {
 
 }
 
-.item-list {
-  border: 1px solid white;
+
+.index-btn-wrap {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+}
+
+.index-btn-wrap > div {
+  padding-bottom: 25px;
+  display: flex;
+  flex-direction: column-reverse;
+ 
+}
+.white-btn {
+  background: #fff;
+  border: 0;
+  cursor: pointer;
+  height: 100%;
+  outline: none;
+  width: 250px;
+  font-family: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 20px;
+  color: #000;
+  height: 45px;
+  text-transform: uppercase;
+
+}
+
+@media only screen and (max-width: 600px) {
+ 
 }

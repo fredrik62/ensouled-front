@@ -36,6 +36,7 @@ import { PlayerLookupService } from './services/player-lookup.service';
 
 //pipes
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 
@@ -79,6 +80,7 @@ const routes: Routes = [
     SixMonthChartComponent,
     TrackPlayerComponent,
     TrackPlayerSubmitComponent,
+    NavBarComponent,
     
     
     

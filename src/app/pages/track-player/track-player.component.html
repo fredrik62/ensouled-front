@@ -1,9 +1,9 @@
 <h1>Here you can start tracking your account</h1>
 
  <form id="loginForm" (ngSubmit)="submitForm(form)" #form="ngForm">
-  <label>rs username</label>
-  <input type="text" id="password" class="loginInput" name="password" [(ngModel)]="username" #passwordField="ngModel" required minlength="1" [disabled]="processing"/>
-  <button type="submit" id="loginButton" [disabled]="processing">Start tracking</button>
+  <h6>rs username</h6>
+    <input type="text" id="password" class="textbox" name="password" [(ngModel)]="username" #passwordField="ngModel" required minlength="1" [disabled]="processing"/>
+    <button class="button" type="submit" id="loginButton" [disabled]="processing">Start tracking</button>
 </form>
 
 <!-- todo, make username length between 1-12 characters -->

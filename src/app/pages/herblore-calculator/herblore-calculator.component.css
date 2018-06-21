@@ -2,6 +2,16 @@ h1 {
   text-align: center;
 }
 
+label {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding-right: 20px;
+}
+
+#loginForm > input {
+  padding-right: 50px;
+}
 
 .herblore-box-wrapper {
   display:flex; 
@@ -23,4 +33,21 @@ h1 {
   max-width: 45px;
   margin: 0 auto;
   padding-bottom: 20px;
+}
+
+.result {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+
+button {
+  background-color: #373737;
+  border: 2px solid #f0f0f0;
+  color: #f0f0f0;
+  height: 40px;
+  max-width: 120px;
+  font-size: 20px;
+
 }

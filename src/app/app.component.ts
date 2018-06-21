@@ -7,10 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  toggleMenu: boolean = false;
+  show: boolean = true;
 
- 
-  }
+
+}
 
 
   

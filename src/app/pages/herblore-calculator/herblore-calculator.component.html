@@ -4,7 +4,7 @@
 
  <form id="loginForm" (ngSubmit)="submitForm(form)" #form="ngForm">
   <label>rs username</label>
-  <input type="text" id="password" class="loginInput" name="password" [(ngModel)]="username" #passwordField="ngModel" required minlength="1" [disabled]="processing"/>
+  <input type="text" id="password" class="charInput" name="password" [(ngModel)]="username" #passwordField="ngModel" required minlength="1" [disabled]="processing"/>
   <button type="submit" id="loginButton" [disabled]="processing">Get Stats</button>
 </form>
 <p>Your Herblore Level: {{playerLevel}}</p>
@@ -37,5 +37,9 @@
   </select>
   </div>
     
-
+</div>
+<div class="result">
+  <form>
+  <button class="result-btn" (click)="calculate()">calculate</button>
+  </form>
 </div>
