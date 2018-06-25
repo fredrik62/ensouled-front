@@ -26,7 +26,7 @@ marrentillTar: Number;
   ngOnInit() {
 
 
-    this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1528713058107_obj_sprite.gif?id='; 
+    this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1529576970247_obj_sprite.gif?id='; 
     const guamData = {
       "herbs": [
 

@@ -26,7 +26,7 @@ export class HighAlchPriceComponent implements OnInit {
     .toPromise()
     .then((res) => {
      this.data = res;
-     this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1528713058107_obj_sprite.gif?id=';  
+     this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1529576970247_obj_sprite.gif?id=';  
      //if no nature rune price, index has changed
      this.natPrice = this.data[561].sell_average;
      

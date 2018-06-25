@@ -3,18 +3,48 @@
 </div>
 
 <div class="column is-one-third">
-    <label class="control">Filter items
-        <input type="text" placeholder="Search for items" [(ngModel)]="searchTerm">
-    </label>
-</div>
-<div class="container" *ngFor="let geData of geItemArray | searchFilter:searchTerm | paginate: { itemsPerPage: 50, currentPage: p }" (click)="displayItemData(geData.id)">
-  <div class="items">
-  <p>name: {{geData.name}}</p>
-  <img src="{{geData.image}}" alt="">
+  <div class="filter-wrapper">
+    <h6 class="control">Filter items
+      <input type="text" placeholder="Search for items" [(ngModel)]="searchTerm">
+    </h6>
   </div>
 </div>
-    <div class="pagination-control-container">
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+
+
+<div class="tablewrapper">
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>item</th>
+            <th>icon</th>
+            <th>BAP</th>
+            <th>SAP</th>
+          </tr>
+        </thead>
+      </table>
     </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0" *ngFor="let geData of geItemArray | searchFilter:searchTerm | paginate: { itemsPerPage: 50, currentPage: p }" (click)="displayItemData(geData.id)">
+        <tbody>
+          <tr>
+            <td>{{geData.name}}</td>
+            <td> <img src="{{geData.image}}" alt="{{geData.name}}"></td>
+            <td>{{geData.buyAverage}}</td>
+            <td>{{geData.sellAverage}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  
+  
+
+<!-- page pagination -->
+<div class="pagination-control-container">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
 
  

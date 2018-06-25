@@ -24,7 +24,7 @@ form {
 form > .textbox {
   outline: 0;
   height: 42px;
-  width: 244px;
+  max-width: 344px;
   line-height: 42px;
   padding: 0 16px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -39,30 +39,7 @@ form > .textbox:focus {
   background-color: #FFF;
 }
 
-.form-btn-container > .button {
-  outline: 0;
-  background: none;
-  background-color: rgba(38, 50, 56, 0.8);
-  height: 42px;
-  width: 100px;
-  text-align: center;
-  line-height: 42px;
-  border: 0;
-  color: #FFF;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: 16px;
-  text-rendering: auto;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-  -webkit-transition: background-color .4s ease;
-  transition: background-color .4s ease;
-  -webkit-border-radius: 0 4px 4px 0;
-  border-radius: 0 4px 4px 0;
-  cursor: pointer;
-}
 
-.form-btn-container > .button:hover {
-  background-color: rgba(0, 150, 136, 0.8);
-}
 
 .form-btn-container{
   padding-top: 20px;
@@ -121,4 +98,59 @@ form > .textbox:focus {
  .hiscore-img, .xpchart-img {
    max-width: 330px;
  }
+}
+
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #58afd1;
+  color: #58afd1;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+.draw-border:hover {
+  color: #ffe593;
+}
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #ffe593;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+.draw-border:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+.draw-border:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.1rem "Roboto Slab", sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+}
+.btn:focus {
+  outline: none;
 }

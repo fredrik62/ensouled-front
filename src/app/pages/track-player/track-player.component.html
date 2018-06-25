@@ -1,4 +1,4 @@
-<h1>Here you can start tracking your account</h1>
+<h1>Track Your Account</h1>
 
 <div class="track-player-details">
   <div class="high-score">
@@ -28,7 +28,7 @@
   <form  (ngSubmit)="submitForm(form)" #form="ngForm">
      <input type="text"  class="textbox" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="1" [disabled]="processing" placeholder="Osrs Username"/>
      <div class="form-btn-container">
-       <button class="button" type="submit" [disabled]="processing">Start tracking</button>
+       <button class="btn draw-border" type="submit" [disabled]="processing">Start tracking</button>
      </div>
  </form>
 </div>
