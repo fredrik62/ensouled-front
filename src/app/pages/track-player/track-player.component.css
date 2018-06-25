@@ -1,5 +1,6 @@
 h1 {
   text-align: center;
+  padding-top: 30px;
 }
 
 h6 {
@@ -8,10 +9,10 @@ h6 {
 }
 
 .form-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px;
+  padding-top: 40px;
 }
 
 form {
@@ -70,6 +71,54 @@ form > .textbox:focus {
 }
 
 
-@media screen and (min-width: 760px) {
+.track-player-details {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.high-score {
+  max-width: 400px;
+  
  
+}
+
+.hiscore-img{
+  width: 400px;
+}
+
+.xpchart-img {
+  width: 400px;
+  height: 330px;
+}
+
+.high-score > p {
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: 400;
+  padding-bottom: 30px;
+}
+
+.high-score > h3{
+  text-align: center;
+  padding-top: 20px;
+  font-size: 22px;
+  
+}
+
+@media screen and (max-width: 760px) {
+
+  .high-score {
+    margin: 0 auto;
+  }
+  .hiscore-img-wrap {
+   display: flex;
+   justify-content: center;
+  }
+ .hiscore-img, .xpchart-img {
+   max-width: 330px;
+ }
 }
