@@ -6,6 +6,7 @@ html {
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  text-decoration:none; list-style:none; margin:0px; padding:0px; outline:none;
   
 }
 
@@ -97,19 +98,21 @@ body {
 
 /* search filter pipe css */
 
-.filter-wrapper {
-  max-width: 90%;
-}
+
 
 .is-one-third{
-  padding: 12px;
+  /* padding: 12px; */
   background: #002e5b;
   border-radius: 2px;
-  line-height: 30px;
+  line-height: 40px;
+}
+
+.is-one-third > h6 {
+font-size: 18px !important;
 }
 
 .is-one-third input{
-  padding: 8px;
+  /* padding: 8px; */
   width: 60%;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
@@ -136,41 +139,83 @@ body {
 /* css for nav */
 
 
-*{text-decoration:none; list-style:none; margin:0px; padding:0px; outline:none;}
-body{margin:0px; padding:0px; font-family: 'Open Sans', sans-serif;}
 section {
-  width:100%;
-  max-width:1200px;
-  margin:0px auto;
-  display:table;
-  position:relative;
+width:100%;
+max-width:1200px;
+margin:0px auto;
+display:table;
+position:relative;
 }
 
 h1 span{
-  font-weight:500;
+font-weight:500;
 }
 
 header {
-  width:100%;
-  display:table;
-  background-color:rgb(0, 0, 0);
+width:100%;
+display:table;
+background-color:rgb(0, 0, 0);
 }
-#logo{float:left; font-size:24px; text-transform:uppercase; color:#f0f0f0; font-weight:600; }
-.main-logo {height: 80px;}
-nav{width:auto; float:right;}
-nav ul{display:table; float:right;}
-nav ul li{float:left;}
-nav ul li:last-child{padding-right:0px;}
-nav ul li a{color:#f0f0f0; text-transform: uppercase; font-size:18px; padding: 33px 20px; display:inline-block; transition: all 0.5s ease 0s;}
-nav ul li a:hover{background-color:#002e5b; color:#fde428; transition: all 0.5s ease 0s;}
-nav ul li a:hover i{color:#fde428; transition: all 0.5s ease 0s;}
-nav ul li a i{padding-right:10px; color:#002e5b; transition: all 0.5s ease 0s;}
+#logo{
+float:left;
+}
+.main-logo {
+height: 70px;
+}
+nav {
+width:auto;
+float:right;
+}
+nav ul {
+display:table;
+float:right;
+}
+nav ul li {
+float:left;
+}
+nav ul li:last-child {
+padding-right:0px;
+}
+nav ul li a {
+color:#f0f0f0;
+text-transform: uppercase;
+font-size:18px;
+padding: 33px 20px;
+display:inline-block;
+transition: all 0.5s ease 0s;
+}
+nav ul li a:hover {
+background-color:#002e5b;
+color:#fde428;
+transition: all 0.5s ease 0s;
+}
+nav ul li a:hover i {
+color:#fde428;
+transition: all 0.5s ease 0s;
+}
+nav ul li a i {
+padding-right:10px;
+color:#002e5b;
+transition: all 0.5s ease 0s;
+}
 
-.toggle-menu ul{display:table; width:25px;}
-.toggle-menu ul li{width:100%; height:3px; background-color:#002e5b; margin-bottom:4px;}
-.toggle-menu ul li:last-child{margin-bottom:0px;}
+.toggle-menu ul {
+display:table;
+width:25px;
+}
+.toggle-menu ul li {
+width:100%;
+height:3px;
+background-color:#002e5b;
+margin-bottom:4px;
+}
+.toggle-menu ul li:last-child {
+margin-bottom:0px;
+}
 
-input[type=checkbox], label{display:none;}
+input[type=checkbox], label {
+display:none;
+}
 
 
 
@@ -178,11 +223,15 @@ input[type=checkbox], label{display:none;}
 
 
 @media only screen and (max-width: 980px) {
-header{padding:20px 0px;}
-#logo{padding:0px;}
+.btn {
+  font-size: 0.7rem !important;
+  text-transform: uppercase;
+}
+/* header{padding:20px 0px;} */
+#logo{padding:0px 10px;}
 input[type=checkbox] {position: absolute; top: -9999px; left: -9999px; background:none;}
 input[type=checkbox]:fous{background:none;}
-label {float:right; padding:8px 0px; display:inline-block; cursor:pointer; }
+label {float:right; padding:28px 10px; display:inline-block; cursor:pointer; }
 input[type=checkbox]:checked ~ nav {display:block;}
 
 nav{display:none; position:absolute; right:0px; top:53px; background-color:#002e5b; padding:0px; z-index:99;}
@@ -192,18 +241,14 @@ nav ul li a{color:#FFF; font-size:15px; padding:10px 20px; display:block; border
 nav ul li a i{color:#fde428; padding-right:13px;}
 }
 
-@media only screen and (max-width: 980px) {
-.content{width:90%;}
-}
 
-
-@media only screen and (max-width: 480px) {
-section {max-width: 90%;}
-}
 
 @media only screen and (max-width: 360px) {
+  .btn {
+    font-size: 0.7rem;
+  }
 h1{font-size:20px;}
-label{padding:5px 0px;}
+label{ padding:28px 10px;}
 #logo{font-size: 20px;}
 nav{top:47px;}
 }
@@ -215,7 +260,7 @@ h1 {padding: 20px 0px;}
 
 
 
-
+/* button */
 
 .draw-border {
   box-shadow: inset 0 0 0 4px #58afd1;

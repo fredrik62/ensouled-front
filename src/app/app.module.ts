@@ -15,6 +15,7 @@ import { OneMonthChartComponent } from './components/charts/one-month-chart/one-
 import { ThreeMonthChartComponent } from './components/charts/three-month-chart/three-month-chart.component';
 import { SixMonthChartComponent } from './components/charts/six-month-chart/six-month-chart.component';
 import { TrackPlayerSubmitComponent } from './components/track-player-submit/track-player-submit.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 
 //pages
@@ -27,6 +28,7 @@ import { GrandexchangeItemComponent } from './pages/grandexchange-item/grandexch
 import { GrandExchangeComponent } from './components/grand-exchange/grand-exchange.component';
 import { GrandexchangeItemChartComponent } from './components/grandexchange-item-chart/grandexchange-item-chart.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { HighscoreComponent } from './pages/highscore/highscore.component';
 
 //services
 import { GrandExchangeService } from './services/grand-exchange.service';
@@ -36,7 +38,7 @@ import { PlayerLookupService } from './services/player-lookup.service';
 
 //pipes
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
 
 
 
@@ -58,6 +60,7 @@ const routes: Routes = [
   { path: 'grandexchange-2007-osrs/:id',  component:  GrandexchangeItemChartComponent },
   { path: 'track-player',  component:  TrackPlayerComponent },
   { path: 'track-player/:username',  component:  TrackPlayerSubmitComponent, },
+  { path: 'highscore',  component:  HighscoreComponent, },
   { path: '**',  component: PageNotFoundComponent  },
  
 ];
@@ -81,6 +84,7 @@ const routes: Routes = [
     TrackPlayerComponent,
     TrackPlayerSubmitComponent,
     NavBarComponent,
+    HighscoreComponent,
     
     
     

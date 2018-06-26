@@ -1,7 +1,50 @@
 h1 {
   text-align: center;
+  padding: 20px 0px;
+}
+
+.tools-wrapper{
+  display: flex !important;
+  justify-content: space-around !important;
+  flex-wrap: wrap !important;
 }
 .tools {
   padding: 20px;
   
+}
+
+.tools > div {
+  max-width: 400px;
+  padding-bottom: 20px;
+}
+.tools-img {
+  min-width: 335px;
+  max-width: 335px;
+  max-height: 225px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+ a {
+  display: block;
+  max-width: 335px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+p {
+  font-size: 22px;
+  text-align: center;
+  padding: 15px 0px;
+}
+
+p span {
+  color: orange;
+  font-weight: 900;
+}
+
+.suggestions > h4 {
+  text-align: center !important;
 }

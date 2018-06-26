@@ -2,26 +2,54 @@
 ...loading
 </div>
 
-<div class="column is-one-third">
-    <label class="control">Filter items
-        <input type="text" placeholder="Search for items" [(ngModel)]="searchTerm">
-    </label>
-</div>
-<div>
+<div class="nat">
   <p>{{natPrice}} GP per nature (Nature rune cost included in "Total Cost".)</p>
-  <button (click)="reverseOrder()">reverse order</button>
+  <button class="btn draw-border" (click)="reverseOrder()">reverse order</button>
 </div>
-<div class="container" *ngFor="let alchValue of geItemArray | searchFilter:searchTerm | paginate: { itemsPerPage: 50, currentPage: p }" (click)="displayItemData(alchValue.id)">
-  <div class="items">
-   <p>name: {{alchValue.name}}</p>
-   <img src="{{alchValue.image}}" alt="{{alchValue.name}}">
-    <p>total cost: {{alchValue.total | number : '1.0-1'}}</p>
-   <p>alch price: {{alchValue.alchPrice | number : '1.0-1'}}</p>
-   <div class="high-alch-profit loss-or-profit" [ngClass]="{'high-alch-loss': alchValue.negativeChange }">
-       <p>{{alchValue.lossOrProfit | number : '1.0-1'}} GP</p>
-   </div>
+
+
+<div class="column is-one-third">
+  <div class="filter-wrapper">
+    <h6 class="control">Filter items
+      <input type="text" placeholder="Search for items" [(ngModel)]="searchTerm">
+    </h6>
   </div>
 </div>
+
+
+
+
+
+<div class="tablewrapper">
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>item</th>
+            <th>icon</th>
+            <th>Total Cost</th>
+            <th>SAP</th>
+            <th>+/-</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0"  *ngFor="let alchValue of geItemArray | searchFilter:searchTerm | paginate: { itemsPerPage: 50, currentPage: p }" (click)="displayItemData(geData.id)">
+        <tbody>
+          <tr>
+            <td>{{alchValue.name}}</td>
+            <td> <img src="{{alchValue.image}}" alt="{{alchValue.name}}"></td>
+            <td>{{alchValue.total | number : '1.0-1'}}</td>
+            <td>{{alchValue.sellAverage | number : '1.0-1'}}</td>
+            <td class="high-alch-profit loss-or-profit" [ngClass]="{'high-alch-loss': alchValue.negativeChange }">{{alchValue.lossOrProfit | number : '1.0-1'}} GP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
 <div class="pagination-control-container">
     <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
