@@ -1,45 +1,260 @@
 <h1>Herblore Calculator</h1>
 
-<h1>Get your Herblore Level</h1>
 
- <form id="loginForm" (ngSubmit)="submitForm(form)" #form="ngForm">
-  <label>rs username</label>
-  <input type="text" id="password" class="charInput" name="password" [(ngModel)]="username" #passwordField="ngModel" required minlength="1" [disabled]="processing"/>
-  <button type="submit" id="loginButton" [disabled]="processing">Get Stats</button>
+ <form id="searchform" (ngSubmit)="submitForm(form)" #form="ngForm">
+   <div class="form-input">
+     <input type="text" class="textbox" name="username" placeholder="OSRS USERNAME" [(ngModel)]="username" #usernameField="ngModel"  />
+  </div>
+  <button type="submit" class="btn draw-border">Get Stats</button>
 </form>
-<p>Your Herblore Level: {{playerLevel}}</p>
+
+<div class="herblore-lvl">
+  <p>Your Herblore Level:</p>
+  <div *ngIf="!playerLevel" class="spinner-container">
+      <div [ngClass]="{'spinner-1': loading }"></div>
+  </div>
+  <p class="lvl">{{playerLevel}}</p>
+</div>
+<!-- todo, add loading symbol while fetching data for herblore lvl -->
+
+<!-- class="spinner-1" -->
 <div class="herblore-box-wrapper">
-  <div class="herblore-box">
-  <p>Guam Leaf</p>
-  <img src="{{herbs[0].guamIcon}}" alt="guam">
-  <input>
-  <select name="" id="">
-    <option value="Select Herb" *ngFor="let herb of herbs">{{herb.name}}</option>
-  </select>
-  </div>
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>  
+
+<div class="herblore-box">
+<p>Guam Leaf</p>
+<img src="{{herbs[0].guamIcon}}" alt="guam">
+<input class="textbox" placeholder="Input herb amount">
+<div class="select">
+<select name="slct" id="slct">
+<option>Choose an option</option>
+<option *ngFor="let herb of herbs">{{herb.name}}</option>
+</select>
+</div>
+</div>
   
-  <div class="herblore-box">
-  <p>Guam Leaf</p>
-  <img src="{{herbs[0].guamIcon}}" alt="guam">
-  <input>
-  <select name="" id="">
-    <option value="Select Herb" *ngFor="let herb of herbs">{{herb.name}}</option>
-  </select>
-  </div>
 
-
-  <div class="herblore-box">
-  <p>Guam Leaf</p>
-  <img src="{{herbs[0].guamIcon}}" alt="guam">
-  <input>
-  <select name="" id="">
-    <option value="Select Herb" *ngFor="let herb of herbs">{{herb.name}}</option>
-  </select>
-  </div>
+                                                                          
     
 </div>
+
 <div class="result">
   <form>
-  <button class="result-btn" (click)="calculate()">calculate</button>
+  <button class="btn draw-border" (click)="calculate()">calculate</button>
   </form>
 </div>

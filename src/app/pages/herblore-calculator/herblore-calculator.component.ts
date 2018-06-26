@@ -12,6 +12,7 @@ herbs: any = [];
 playerStats: any = [];
 playerLevel: Number;
 username: String;
+loading: boolean = false;
 
 //guam herbs
 attackPotion: Number;
@@ -74,7 +75,9 @@ marrentillTar: Number;
 
   submitForm(form) {
     const user = this.username
-    
+    if (user.length > 1 ) {
+      this.loading = true;
+    }
    if (user === undefined || user.length === 0 || user.length > 12) {
      alert("error with name");
    } else {

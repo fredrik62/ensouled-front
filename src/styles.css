@@ -227,6 +227,23 @@ display:none;
   font-size: 0.7rem !important;
   text-transform: uppercase;
 }
+
+#searchform {
+  width: 100%;
+ 
+}
+
+#searchform button {
+  width: 100%;
+}
+
+.form-input {
+  padding-bottom: 20px;
+}
+
+.herblore-box {
+  max-width: 150px;
+}
 /* header{padding:20px 0px;} */
 #logo{padding:0px 10px;}
 input[type=checkbox] {position: absolute; top: -9999px; left: -9999px; background:none;}
@@ -247,10 +264,18 @@ nav ul li a i{color:#fde428; padding-right:13px;}
   .btn {
     font-size: 0.7rem;
   }
-h1{font-size:20px;}
-label{ padding:28px 10px;}
-#logo{font-size: 20px;}
-nav{top:47px;}
+h1 {
+  font-size:20px;
+}
+label { 
+  padding:28px 10px;
+}
+#logo {
+font-size: 20px;
+}
+nav {
+top:47px;
+}
 }
 
 @media only screen and (max-width: 320px) {
