@@ -1,60 +1,63 @@
 
-
-
-
-  <p class="item-name">{{itemInfo.itemName}}</p>
-<div class="content-container">
- <div class="item-data">
-   <p class="item-description">{{itemInfo.itemDescription}}</p>
-   <img class="item-image" src="{{itemInfo.largeIcon}}" alt="{{itemInfo.itemName}}">
-</div>
-  <div class="item-current-price">
-      <p class="item-guide-price">Current Guide Price</p>
-      <div>
-        <p class="item-price">{{itemInfo.current}}</p>
-        <img class="item-coin-stack" src="assets/images/Coins_detail.png" alt="">
-     </div>
+<div class="item-data" *ngFor="let x of item">
+<h3>{{x.name}}</h3>
+<div class="item-wrapper">
+  <div class="info">
+  <p>{{x.itemDescription}}</p>
+  <img class="item-image" src="{{x.largeIcon}}" alt="{{x.name}}">
+  
+  </div>
+  <div class="item-price">
+    <p>{{x.current}} GP</p>
   </div>
 
-
-
-    <div class="item-change-data">
-      <div class="monthly-change" [ngClass]="{'loss': thirtyDayChange.negative }">
-      <p>30 Day Change</p>
-      <p>{{thirtyDayChange}}%</p>
-    </div>
-    <div class="monthly-change" [ngClass]="{'loss': ninetyDayChange.negative }">
-      <p>90 Day Change</p>
-      <p>{{ninetyDayChange}}%</p>
-    </div>
-    <div  class="monthly-change" [ngClass]="{'loss': hundredEightyDayChange.negative }">
-    <p>180 Day Change</p>
-    <p>{{hundredEightyDayChange}}%</p>
-  </div>
 </div>
 </div>
-  
 
-  <div class="chart-btn-container">
-    <button class="btn draw-border" (click)="showDays(30)">30 day</button>
-    <button class="btn draw-border" (click)="showDays(90)">90 day</button>
-    <button class="btn draw-border" (click)="showDays(180)">180 day</button>
-  </div>
 
-  <div class="chart-container">
+   
 
-    <div *ngIf="!show30">
-      <app-one-month-chart></app-one-month-chart>
-    </div>
-  
-    <div *ngIf="show90">
-      <app-three-month-chart></app-three-month-chart>
-    </div>
-  
-    <div *ngIf="show180">
-        <app-six-month-chart></app-six-month-chart>
-    </div>
-  </div>
+
+<div class="item-change-data">
+<div class="change">
+<p>30 Day Change</p>
+<p id="monthly-change" [ngClass]="{'loss': thirty }" >{{thirtyDayChange}}%</p>
+</div>
+
+<div class="change">
+<p>90 Day Change</p>
+<p id="monthly-change" [ngClass]="{'loss': ninety }">{{ninetyDayChange}}%</p>
+</div>
+
+<div class="change">
+<p>180 Day Change</p>
+<p id="monthly-change" [ngClass]="{'loss': hundredEighty }">{{hundredEightyDayChange}}%</p>
+</div>
+</div> 
+
+
+
+<div class="chart-btn-container">
+<button class="btn draw-border" (click)="showDays(30)">30 day</button>
+<button class="btn draw-border" (click)="showDays(90)">90 day</button>
+<button class="btn draw-border" (click)="showDays(180)">180 day</button>
+</div>
+
+<div class="chart-container">
+
+<div *ngIf="!show30">
+<app-one-month-chart></app-one-month-chart>
+</div>
+
+<div *ngIf="show90">
+<app-three-month-chart></app-three-month-chart>
+</div>
+
+<div *ngIf="show180">
+<app-six-month-chart></app-six-month-chart>
+</div>
+
+</div>
 
 
 

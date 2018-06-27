@@ -1,63 +1,76 @@
-.content-container {
-  display: flex;
+
+
+h3 {
+  text-align: center;
+  padding: 20px;
+  font-size: 22px;
+  color: 	#00CED1;
+}
+
+.item-wrapper {
+  display: flex; 
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
-  
+  align-items:center;
 }
-.item-data {
+
+.item-wrapper > .info {
+  padding: 20px;
+  color: 	#00CED1;
+}
+
+.item-wrapper > .item-price p {
+ color:#DAA520;
+ font-weight: 900;
+}
+
+
+.change {
+  position: relative;
+  display: block;
+  width: 300px;
+  max-width: 344px;
+  line-height: 2;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+  border-bottom: 1px solid black;
+ 
+}
+
+.change p {
   text-align: center;
-}
-.item-data > .item-image {
-  display:block;
-  margin:auto;
-
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #f0f0f0;
 }
 
 
-
-.item-current-price{
-  text-align: center;
+#monthly-change {
+  color: green;
+  font-weight: 900;
+  font-size: 20px;
 }
-.item-current-price > div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top:-5vh;
-}
-
-
-.item-data, .item-change-data{
-  width: 25%;
-}
-.item-change-data > div {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.item-guide-price {
-  font-size: 2.5em;
-  
-}
-
-.item-coin-stack {
-  max-height: 50px;
-  }
-
-@media screen and (max-width: 768px) {
-  .item-data, .item-change-data{
-    width: 100%;
-  }
-  .chart-btn {
-    font-size: 16px;
-  } 
-}
-
-
-.monthly-change {
-  background: green;
-}
-
 .loss {
   background:red;
+  font-weight: 900;
+  font-size: 20px;
 }
+
+
+.item-change-data{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+
+.chart-btn-container {
+  padding: 30px 0px;
+}
+
+.chart-container {
+  max-height: 300px;
+}
+

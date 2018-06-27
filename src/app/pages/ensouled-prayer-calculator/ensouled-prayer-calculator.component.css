@@ -3,10 +3,12 @@ p {
   color: white;
 }
 
-h1 {
+h3 {
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
+  color: #00CED1;
+  font-size: 22px;
 }
 
 

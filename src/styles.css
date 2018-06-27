@@ -78,11 +78,11 @@ body {
 }
 
 .chart-container{
-  /* border: 1px solid white; */
-  height: 1000px;
-  width: 1000px;
-  /* max-height: 40vh; */
   margin: 0 auto;
+}
+
+#myChart {
+  padding-bottom: 30px;
 }
 
 /* pagination */
@@ -243,6 +243,20 @@ display:none;
 
 .herblore-box {
   max-width: 150px;
+}
+
+.item-wrapper > .info {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.item-wrapper  p {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.item-wrapper > .item-price {
+  margin: 0 auto;
 }
 /* header{padding:20px 0px;} */
 #logo{padding:0px 10px;}
