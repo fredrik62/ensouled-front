@@ -1,74 +1,14 @@
-p {
-  text-align: center;
-  color: white;
-}
+
 
 h3 {
+  color:rgba(0, 206, 209, 1);
+  padding: 20px;
   text-align: center;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  color: #00CED1;
   font-size: 22px;
 }
 
 
-h6 {
-  text-align: center;
-  font-size: 18px;
-  padding-bottom: 20px;
-}
-
-.wtf {
-  
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-
-}
-
-.ensouled-container {
- 
-  height: 300px;
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  border: 3px solid #f0f0f0;
-
- 
-}
-
-.icon-container {
-  margin: 0 auto;
-  padding-bottom: 20px;
-}
-
-.icon-container > h6{
- padding-top: 20px;
-}
-
-.icon-container > .icon {
-  margin: 0 auto;
-  display: block !important;
-  padding-bottom: 20px;
-}
-
-.calculate-prayer {
- display: flex;
- justify-content: center;
- padding-top: 50px;
- padding-bottom: 50px;
-}
-
-
-
-.rune-wrapper {
-  display: flex;
-  justify-content: space-around;
-}
-.runes {
-  max-width: 30px !important;
-}
+/* button */
 
 .draw-border {
   box-shadow: inset 0 0 0 4px #58afd1;
@@ -122,4 +62,125 @@ h6 {
 }
 .btn:focus {
   outline: none;
+}
+
+/* card content */
+
+
+h6 {
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  color: #f39c12;
+
+}
+
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: inherit;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0, 206, 209, 1), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0, 206, 209, 1), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+.icon {
+  display: block;
+  height: 45px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.card-input {
+display: flex;
+justify-content: center;
+}
+.user-input {
+outline: 0;
+height: 32px;
+max-width: 344px;
+padding: 0 16px;
+background: #2c3e50;
+color: #212121;
+border: 0;
+-webkit-border-radius: 4px 0 0 4px;
+border-radius: 4px 0 0 4px;
+}
+.user-input:focus {
+outline: 0;
+background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+.icon-container {
+margin: 0 auto;
+padding-bottom: 20px;
+}
+
+.icon-container > h6{
+padding-top: 20px;
+}
+
+.icon-container > .icon {
+margin: 0 auto;
+display: block !important;
+padding-bottom: 20px;
+}
+
+/* hide input arrows */
+input[type="number"] {
+-webkit-appearance: textfield;
+-moz-appearance: textfield;
+appearance: textfield;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+-webkit-appearance: none;
+}
+
+
+.rune-wrapper {
+display: flex;
+justify-content: space-around;
+padding:25px;
+}
+
+.rune-wrapper p {
+  text-align: center;
+  color:#00CED1;
+}
+.runes {
+max-width: 30px !important;
+}
+
+
+
+
+
+
+
+.calculate-prayer {
+display: flex;
+justify-content: center;
+padding-top: 50px;
+padding-bottom: 50px;
 }

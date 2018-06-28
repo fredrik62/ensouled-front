@@ -34,7 +34,8 @@ demonHead:Number;
 aviansieHead:Number;
 abbysalHead:any;
 dragonHead:any;
-value:Number;
+value:any = [];
+total: Number;
 
 
   constructor() { }
@@ -99,12 +100,23 @@ value:Number;
     
     
     calculate() {
-    for(let x = 0; x < this.heads.length; x++) {
+      this.value = [];
+      this.total = 0;
+      for(let x = 0; x < this.heads.length; x++) {
       let allInputs = this.heads[x].binding || 0;
       let sum = this.heads[x].experience * allInputs;
-      this.value = sum;
-      console.log(this.value);
+
+      if (sum > 0) {
+      this.value.push(sum);
+        }
+      }
+
+    for (var i = 0; i < this.value.length; i++) {
+        this.total = this.total + this.value[i];
+     
+        
     }
+    
      
 }
 
