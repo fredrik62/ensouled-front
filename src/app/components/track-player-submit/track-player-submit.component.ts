@@ -13,7 +13,10 @@ rsn: String;
   ngOnInit() {
     this.activatedRoute.params.subscribe((get) => {
       this.rsn = get.username;
+  
     })
   }
 
 }
+
+     

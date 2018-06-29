@@ -36,5 +36,30 @@
   <button class="btn draw-border" (click)="calculate()">calculate</button>
 </div>
 
-<p>{{total}}</p>
+
+<div id="result" class="res-box" [ngClass]="{'card card-1': showResult }">
+  <h3 id="total">Total XP</h3>
+  <h6 id="val">{{total}}</h6>
+
+  <h3>Runes needed:</h3>
+  <div class="rune-wrapper runescape">
+      <div>
+        <img class="runes" src="/assets/images/Blood_rune.png">
+        <p>{{bloodRune}}</p>
+      </div>
+      <div>
+        <img class="runes" src="/assets/images/Nature_rune.png">
+        <p>{{natureRune}}</p>
+      </div>
+      <div>
+        <img class="runes" src="/assets/images/Soul_rune.png">
+        <p>{{soulRune}}</p>
+      </div>
+      <div>
+        <img class="runes" src="/assets/images/Body_rune.png">
+        <p>{{bodyRune}}</p>
+      </div>
+    </div>
+
+</div>
 

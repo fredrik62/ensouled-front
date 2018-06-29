@@ -9,6 +9,7 @@ import { PlayerLookupService } from '../../services/player-lookup.service';
 export class HerbloreCalculatorComponent implements OnInit {
 iconUrl: String;
 herbs: any = [];
+hh: any;
 playerStats: any = [];
 playerLevel: Number;
 username: String;
@@ -28,47 +29,55 @@ marrentillTar: Number;
 
 
     this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1529576970247_obj_sprite.gif?id='; 
-    const guamData = {
-      "herbs": [
-
-
-      {"Guam":[{"Name":"Attack Potion", "Xp": 25, "Level": 3, "binding": this.attackPotion, "id": "121"}]}, 
-      {"Guam":[{"Name":"Guam Tar", "Xp": 30, "Level": 3, "binding": this.guamTar, "id": "10142"}]},
-    ]} 
-
-    const MarrentillData = {
-      "herbs": [
-              
-    {"Marrentill":[{"Name":"Anti Potion", "Xp": 37.5, "Level": 5, "binding": this.antiPotion, "id": "175"}]}, 
-    {"Marrentill":[{"Name":"Marrentill Tar", "Xp": 42.5, "Level": 31, "binding": this.marrentillTar, "id": "10143"}]},
-  
-  ]} 
 
 
 
 
-
-
-         for (let z = 0; z < guamData.herbs.length; z++) {
-
-          const guamHerbs = {
-            name: guamData.herbs[z].Guam[0].Name,
-            guamIcon: this.iconUrl + '249'
-            
-          }
-
-          const marrentillHerbs = {
-            name: MarrentillData.herbs[z].Marrentill[0].Name,
-            marrentillIcon: this.iconUrl + '249'
-
-          }
-          console.log(marrentillHerbs);
-          this.herbs.push(guamHerbs);
+    var herb = {
+      guam: {
+        
+        potion: {
+        name: "attack potion"
       
-         }
-      
+      },
+      potion1: {
+        name: "marrentill-tar"
+      }},
 
+       marrentill: {
+        
+        potion: {
+        name: "prayer"
       
+      },
+      potion1: {
+        name: "mar"
+      }
+      }
+        
+    
+    };
+   
+    for (var key in herb) {
+      for (var key2 in herb[key]) {
+       
+      this.hh = {
+        allHerb: {
+          name: key
+        },
+        // guam: {
+        //   name: herb.guam[key2].name
+        // },
+        // marrentill: {
+        //   name: herb.marrentill[key2].name
+        // }
+      }
+      
+    }
+    this.herbs.push(this.hh);
+  }
+
+
     
    
   }

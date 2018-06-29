@@ -10,7 +10,7 @@ heads: any = [];
 totalExperience: Number;
 iconUrl: String;
 skillDetails: any;
-hideRune: boolean = false;
+showResult: boolean = false;
 
 goblinHead:Number;
 monkeyHead:Number;
@@ -34,8 +34,14 @@ demonHead:Number;
 aviansieHead:Number;
 abbysalHead:any;
 dragonHead:any;
+
 value:any = [];
 total: Number;
+totalRunes = [];
+bloodRune: Number;
+bodyRune: Number;
+natureRune: Number;
+soulRune: Number;
 
 
   constructor() { }
@@ -102,18 +108,52 @@ total: Number;
     calculate() {
       this.value = [];
       this.total = 0;
+
+      this.bloodRune = 0;
+      this.bodyRune = 0;
+      this.natureRune = 0;
+      this.soulRune = 0;
+
       for(let x = 0; x < this.heads.length; x++) {
       let allInputs = this.heads[x].binding || 0;
       let sum = this.heads[x].experience * allInputs;
 
+      //runes needed to cast spells
+      let nat = this.heads[x].natureRune * allInputs;
+      let body = this.heads[x].bodyRune * allInputs;
+      let soul = this.heads[x].soulRune * allInputs;
+      let blood= this.heads[x].bloodRune * allInputs;
+      
+
       if (sum > 0) {
+      let runes = {
+        nature: nat,
+        body: body,
+        soul: soul,
+        blood: blood
+      }
+
       this.value.push(sum);
+      this.totalRunes.push(runes);
         }
       }
 
+  
+
     for (var i = 0; i < this.value.length; i++) {
         this.total = this.total + this.value[i];
-     
+        // if (this.total === 0) {
+        //   alert("Please check your inputs");
+        // }
+        
+        this.natureRune = this.natureRune + this.totalRunes[i].nature;
+        this.bodyRune = this.bodyRune + this.totalRunes[i].body;
+        this.soulRune = this.soulRune + this.totalRunes[i].soul;
+        this.bloodRune = this.bloodRune + this.totalRunes[i].blood;
+      
+     if (this.total > 0) {
+       this.showResult = true;
+     } 
         
     }
     
