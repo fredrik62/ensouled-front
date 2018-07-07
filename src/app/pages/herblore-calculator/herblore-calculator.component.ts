@@ -9,7 +9,7 @@ import { PlayerLookupService } from '../../services/player-lookup.service';
 export class HerbloreCalculatorComponent implements OnInit {
 iconUrl: String;
 herbs: any = [];
-hh: any;
+names: any;
 playerStats: any = [];
 playerLevel: Number;
 username: String;
@@ -29,53 +29,10 @@ marrentillTar: Number;
 
 
     this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1529576970247_obj_sprite.gif?id='; 
-
-
-
-
-    var herb = {
-      guam: {
-        
-        potion: {
-        name: "attack potion"
-      
-      },
-      potion1: {
-        name: "marrentill-tar"
-      }},
-
-       marrentill: {
-        
-        potion: {
-        name: "prayer"
-      
-      },
-      potion1: {
-        name: "mar"
-      }
-      }
-        
-    
-    };
    
-    for (var key in herb) {
-      for (var key2 in herb[key]) {
-       
-      this.hh = {
-        allHerb: {
-          name: key
-        },
-        // guam: {
-        //   name: herb.guam[key2].name
-        // },
-        // marrentill: {
-        //   name: herb.marrentill[key2].name
-        // }
-      }
-      
-    }
-    this.herbs.push(this.hh);
-  }
+   
+
+ this.names = ['Guam', 'Marrentill', 'Ranarr', 'Snapdragon'];
 
 
     

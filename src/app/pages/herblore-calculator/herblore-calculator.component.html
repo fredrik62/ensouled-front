@@ -16,8 +16,24 @@
   <p class="lvl">{{playerLevel}}</p>
 </div>
 
-<div *ngFor="let x of herbs">
-  <p>{{x.allHerb.name}}</p>
+<div *ngFor="let x of names">
+  <div class="herb-wrapper">
+    <div class="center-on-page">
+     
+      <h6 id="herb-name">{{x}}</h6>
+      <input type="text"  class="textbox" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="1" [disabled]="processing" placeholder="Enter Amount"/>
+      <div class="select">
+        <select name="slct" id="slct">
+          <option>Choose an option</option>
+          <option value="1">herb 1</option>
+          <option value="2">herb 2</option>
+          <option value="3">more herbs</option>
+        </select>
+      </div>
+      
+    </div>
+   
+  </div>
 </div>
 
 
