@@ -34,6 +34,7 @@ import { HighscoreComponent } from './pages/highscore/highscore.component';
 import { GrandExchangeService } from './services/grand-exchange.service';
 import { TrackPlayerService } from './services/track-player.service';
 import { PlayerLookupService } from './services/player-lookup.service';
+import { GetPlayersService } from './services/get-players.service';
 
 
 //pipes
@@ -103,7 +104,8 @@ const routes: Routes = [
   providers: [
     GrandExchangeService,
     TrackPlayerService,
-    PlayerLookupService
+    PlayerLookupService,
+    GetPlayersService
   ],
   bootstrap: [AppComponent]
 })
