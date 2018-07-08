@@ -16,6 +16,7 @@ import { ThreeMonthChartComponent } from './components/charts/three-month-chart/
 import { SixMonthChartComponent } from './components/charts/six-month-chart/six-month-chart.component';
 import { TrackPlayerSubmitComponent } from './components/track-player-submit/track-player-submit.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HighscoreOnePlayerComponent } from './components/highscore-one-player/highscore-one-player.component';
 
 
 //pages
@@ -62,6 +63,7 @@ const routes: Routes = [
   { path: 'track-player',  component:  TrackPlayerComponent },
   { path: 'track-player/:username',  component:  TrackPlayerSubmitComponent, },
   { path: 'highscore',  component:  HighscoreComponent, },
+  { path: 'highscore/:player',  component:  HighscoreOnePlayerComponent, },
   { path: '**',  component: PageNotFoundComponent  },
  
 ];
@@ -86,6 +88,7 @@ const routes: Routes = [
     TrackPlayerSubmitComponent,
     NavBarComponent,
     HighscoreComponent,
+    HighscoreOnePlayerComponent,
     
     
     

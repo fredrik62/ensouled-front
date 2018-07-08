@@ -1,6 +1,7 @@
-<div *ngFor="let x of players">
+<div class="player-box" *ngFor="let x of players" (click)="displayPlayer(x.playerName)">
 <p>RSN {{x.playerName}}</p>
 <p>Overall {{x.overAllRank}}</p>
 <p>Total XP {{x.totalExperience}}</p>
 <p>Total Level {{x.totalLevel}}</p>
 </div>
+

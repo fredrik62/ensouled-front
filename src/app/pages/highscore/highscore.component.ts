@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetPlayersService } from '../../services/get-players.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-highscore',
@@ -8,7 +9,7 @@ import { GetPlayersService } from '../../services/get-players.service';
 })
 export class HighscoreComponent implements OnInit {
 players: any = [];
-  constructor(private getPlayersService: GetPlayersService) { }
+  constructor(private getPlayersService: GetPlayersService, private router: Router) { }
 
   ngOnInit() {
     this.getPlayersService.getAllPlayer()
@@ -26,6 +27,10 @@ players: any = [];
      this.players.push(accountData)
      }
     })
+  }
+
+  displayPlayer(name) {
+    this.router.navigate(['highscore/', name]);
   }
 
 }
