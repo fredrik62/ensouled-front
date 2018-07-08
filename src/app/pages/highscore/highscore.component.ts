@@ -22,7 +22,8 @@ players: any = [];
        playerName: res[p].username,
        overAllRank: res[p].overAllRank,
        totalExperience: res[p].totalExperience,
-       totalLevel:res[p].totalLevel
+       totalLevel:res[p].totalLevel,
+       id: res[p]._id
       } 
      this.players.push(accountData)
      }
