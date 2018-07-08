@@ -1,3 +1,6 @@
-<p>
-  highscore works!
-</p>
+<div *ngFor="let x of players">
+<p>RSN {{x.playerName}}</p>
+<p>Overall {{x.overAllRank}}</p>
+<p>Total XP {{x.totalExperience}}</p>
+<p>Total Level {{x.totalLevel}}</p>
+</div>
