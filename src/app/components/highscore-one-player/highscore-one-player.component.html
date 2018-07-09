@@ -1,6 +1,27 @@
-<div *ngFor="let x of playerStats" class="temp">
-<p>{{x.skill}}</p>
-<p>{{x.rank}}</p>
-<p>{{x.level}}</p>
-<p>{{x.xp}}</p>
-</div>
+
+<div class="tablewrapper">
+    <div class="tbl-header">
+      <table cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr>
+            <th>Skill</th>
+            <th>Rank</th>
+            <th>Level</th>
+            <th>XP</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <div class="tbl-content">
+      <table cellpadding="0" cellspacing="0" border="0"  *ngFor="let x of playerStats; let i = index">
+        <tbody>
+          <tr>
+            <td><img src="/assets/images/skill-badges/{{skillBadges[i]}}" alt="{{x.skill}}"></td>
+            <td>{{x.rank}}</td>
+            <td>{{x.level}}</td>
+            <td>{{x.xp}} XP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
