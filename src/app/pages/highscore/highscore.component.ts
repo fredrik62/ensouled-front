@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 })
 export class HighscoreComponent implements OnInit {
 players: any = [];
+error: string;
+feedbackEnabled = false;
   constructor(private getPlayersService: GetPlayersService, private router: Router) { }
 
   ngOnInit() {
@@ -28,6 +30,12 @@ players: any = [];
      this.players.push(accountData)
      }
     })
+    .catch((err) => {
+      if (err) {
+        this.error = err.error.code; 
+        this.feedbackEnabled = false;
+      } 
+    });
   }
 
   displayPlayer(name) {

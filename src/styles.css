@@ -354,3 +354,10 @@ h1 {padding: 20px 0px;}
 .btn:focus {
   outline: none;
 }
+
+/* error validation box */
+.val-box {
+  text-align: center;
+  font-weight: 900;
+  font-size: 22px;
+}

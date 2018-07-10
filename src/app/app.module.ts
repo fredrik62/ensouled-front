@@ -38,8 +38,10 @@ import { PlayerLookupService } from './services/player-lookup.service';
 import { GetPlayersService } from './services/get-players.service';
 
 
+
 //pipes
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { GetOneSkillService } from './services/get-one-skill.service';
 
 
 
@@ -64,7 +66,8 @@ const routes: Routes = [
   { path: 'track-player/:username',  component:  TrackPlayerSubmitComponent, },
   { path: 'highscore',  component:  HighscoreComponent, },
   { path: 'highscore/:player',  component:  HighscoreOnePlayerComponent, },
-  { path: '**',  component: PageNotFoundComponent  },
+  { path: '404', component: PageNotFoundComponent  },
+  { path: '**', redirectTo: '/404'}
  
 ];
 @NgModule({
@@ -93,6 +96,7 @@ const routes: Routes = [
     
     
     
+    
   ],
   imports: [
     BrowserModule,
@@ -108,7 +112,8 @@ const routes: Routes = [
     GrandExchangeService,
     TrackPlayerService,
     PlayerLookupService,
-    GetPlayersService
+    GetPlayersService,
+    GetOneSkillService
   ],
   bootstrap: [AppComponent]
 })

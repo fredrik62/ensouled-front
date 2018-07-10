@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerLookupService } from '../../services/player-lookup.service';
+import { GetOneSkillService } from '../../services/get-one-skill.service';
 
 @Component({
   selector: 'app-herblore-calculator',
@@ -7,6 +8,17 @@ import { PlayerLookupService } from '../../services/player-lookup.service';
   styleUrls: ['./herblore-calculator.component.css']
 })
 export class HerbloreCalculatorComponent implements OnInit {
+  public inputValidator(event: any) {
+    
+    const pattern = /^[a-zA-Z0-9_ ]*$/;   
+    
+    if (!pattern.test(event.target.value)) {
+      event.target.value = event.target.value.replace(/^[a-zA-Z0-9_ ]*$/g, "");
+    
+
+    }
+  }
+
 iconUrl: String;
 herbs: any = [];
 names: any;
@@ -23,7 +35,10 @@ guamTar: Number;
 antiPotion: Number;
 marrentillTar: Number;
 
-  constructor(private playerLookupService: PlayerLookupService) { }
+error: string;
+feedbackEnabled = false;
+
+  constructor(private getOneSkillService: GetOneSkillService) { }
 
   ngOnInit() {
 
@@ -44,18 +59,22 @@ marrentillTar: Number;
     if (user.length > 1 ) {
       this.loading = true;
     }
+    this.feedbackEnabled = true;
    if (user === undefined || user.length === 0 || user.length > 12) {
      alert("error with name");
    } else {
-     this.playerLookupService.getOnePlayer(user)
+     this.getOneSkillService.getOneSkill(user)
      .toPromise()
      .then((result) => {
        this.playerStats.push(result); 
        this.checkPlayerLevel();
        })
-     .catch((err) => {
-      console.log(err);
-     });
+       .catch((err) => {
+        if (err) {
+          this.error = err.error.code; 
+          this.feedbackEnabled = false;
+        } 
+      });
   }
       
   }

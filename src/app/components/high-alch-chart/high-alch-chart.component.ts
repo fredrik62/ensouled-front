@@ -31,16 +31,21 @@ hundredEighty: boolean = false;
 show30: boolean;
 show90: boolean;
 show180: boolean;
-  constructor(private activatedRoute: ActivatedRoute, private grandExchangeService: GrandExchangeService) { }
+
+
+error: string;
+feedbackEnabled = false;
+  constructor(private activatedRoute: ActivatedRoute, private grandExchangeService: GrandExchangeService, private router: Router) { }
 
 ngOnInit() {
 this.activatedRoute.params.subscribe((params) => {
 const id = params.id;
 this.grandExchangeService.getOneItem(id)
+
 .toPromise()
 .then((res) => {
 this.data = res;
-
+this.feedbackEnabled = true;
 this.itemInfo = {
 name: this.data.itemData.item.name,
 smallIcon: this.data.itemData.item.icon,
@@ -73,6 +78,16 @@ this.hundredEighty = true;
 }
 
 })
+.catch((err) => {
+  if (err) {
+    this.error = err.error.code; 
+    this.feedbackEnabled = false;
+  }
+  if (err.status === 404) {
+    this.router.navigate(['404']);
+
+  } 
+});
 })
 
 }

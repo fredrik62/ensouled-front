@@ -3,7 +3,7 @@
 
  <form id="searchform" (ngSubmit)="submitForm(form)" #form="ngForm">
    <div class="form-input">
-     <input type="text" class="textbox" name="username" placeholder="OSRS USERNAME" [(ngModel)]="username" #usernameField="ngModel"  />
+     <input type="text" [maxlength]="12" class="textbox" name="username" placeholder="OSRS USERNAME" [(ngModel)]="username" #usernameField="ngModel" minlength="1" (input)="inputValidator($event)" />
   </div>
   <button type="submit" class="btn draw-border">Get Stats</button>
 </form>
@@ -15,8 +15,10 @@
   </div>
   <p class="lvl">{{playerLevel}}</p>
 </div>
-
-<div *ngFor="let x of names">
+<div *ngIf="error" class="val-box">
+<p class="validation">{{error}}</p>
+</div>
+<!-- <div *ngFor="let x of names">
   <div class="herb-wrapper">
     <div class="center-on-page">
      
@@ -34,7 +36,7 @@
     </div>
    
   </div>
-</div>
+</div> -->
 
 
 
