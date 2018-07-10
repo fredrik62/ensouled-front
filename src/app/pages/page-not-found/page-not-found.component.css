@@ -1,7 +1,23 @@
-/* .not-found-page {
-  background-image: url("/assets/images/404-rs.jpg");
-  height: 100%;
-  margin-top: 0;
+ .not-found-page {
+  background-image: url("/assets/images/gf.jpeg");
+  background-size: 90vw;
+  margin: 0 auto;
+  height: calc(100vh - 3em);
   background-repeat: no-repeat;
+  background-position: center;
 
-} */
+}
+
+p {
+  color: #f0f0f0;
+  font-size: 22px;
+  text-transform: uppercase;
+  padding: 20px;
+  font-weight: 900;
+}
+
+@media only screen and (max-width: 600px) {
+ .not-found-page {
+  text-align: center;
+  }
+}
