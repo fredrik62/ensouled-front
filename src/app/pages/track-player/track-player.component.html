@@ -26,6 +26,12 @@
 
 <div class="form-container">
   <form  (ngSubmit)="submitForm(form)" #form="ngForm">
+      <select required [(ngModel)]="selectedOption" name="game-mode">
+          <option *ngFor="let item of sortOptions" [ngValue]="item">
+            {{item.display}}
+          </option>
+       </select>
+    
      <input type="text"  class="textbox" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="1" maxlength="12" [disabled]="processing" placeholder="Osrs Username" (input)="inputValidator($event)"/>
      <div class="form-btn-container">
        <button class="btn draw-border" type="submit" [disabled]="processing">Start tracking</button>

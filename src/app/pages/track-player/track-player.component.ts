@@ -19,10 +19,38 @@ export class TrackPlayerComponent implements OnInit {
 
     }
   }
+
+selectedOption: any;
+
+sortOptions = [
+    {
+        value: 'Regular',
+        display: 'Regular'
+    },
+    {
+        value: 'Ironman',
+        display: 'Ironman'
+    },
+    {
+        value: 'Hardcore',
+        display: 'Hardcore Ironman'
+    },
+    {
+        value: 'Ultimate',
+        display: 'Ultimate Ironman'
+    }
+];
+
  
   username: String;
   error: string;
   feedbackEnabled = false;
+
+
+ ironman: String;
+ hardcore: String;
+ ultimate: String;
+
 
   constructor(private router: Router, private trackPlayerService: TrackPlayerService) { }
 
@@ -31,26 +59,88 @@ export class TrackPlayerComponent implements OnInit {
 
 
   submitForm(form) {
-  const user = {
-  rsn: this.username
-  }
   this.feedbackEnabled = true;
- if (user.rsn === undefined || user.rsn.length === 0 || user.rsn.length > 12) {
-   alert("error with name");
- } else {
-   this.trackPlayerService.startTrackingPlayer(user)
-   .then((result) => {
-     this.router.navigate(['track-player', user.rsn]);
-     })
-   .catch((err) => {
-     if (err) {
-       this.error = err.error.code; 
-       this.feedbackEnabled = false;
-     } 
-   });
+
+  const user = {
+  rsn: this.username,
+  ironman: this.sortOptions[1].value,
+  hardcore: this.sortOptions[2].value,
+  ultimate: this.sortOptions[3].value
+}
+
+
+
+  
+  //if regular account
+  if (this.selectedOption.value === this.sortOptions[0].value) {
+    this.trackPlayerService.startTrackingRegularPlayer(user)
+    .then((result) => {
+      this.router.navigate(['track-player', user.rsn]);
+      })
+    .catch((err) => {
+      if (err) {
+        this.error = err.error.code; 
+        this.feedbackEnabled = false;
+      } 
+    });
+   }
+//if ironman account
+   if (this.selectedOption.value === this.sortOptions[1].value) {
+    this.trackPlayerService.startTrackingIronmanPlayer(user)
+    .then((result) => {
+      this.router.navigate(['track-player', user.rsn]);
+      })
+    .catch((err) => {
+      if (err) {
+        this.error = err.error.code; 
+        this.feedbackEnabled = false;
+      } 
+    });
+   }
+//if hardcore ironman account
+   if (this.selectedOption.value === this.sortOptions[2].value) {
+    this.trackPlayerService.startTrackingHardcoreIronmanPlayer(user)
+    .then((result) => {
+      this.router.navigate(['track-player', user.rsn]);
+      })
+    .catch((err) => {
+      if (err) {
+        this.error = err.error.code; 
+        this.feedbackEnabled = false;
+      } 
+    });
+   }
+//if ultimate ironman account
+   if (this.selectedOption.value === this.sortOptions[3].value) {
+    this.trackPlayerService.startTrackingUltimateIronmanPlayer(user)
+    .then((result) => {
+      this.router.navigate(['track-player', user.rsn]);
+      })
+    .catch((err) => {
+      if (err) {
+        this.error = err.error.code; 
+        this.feedbackEnabled = false;
+      } 
+    });
+   }
+// if (user.rsn === undefined || user.rsn.length === 0 || user.rsn.length > 12) {
+//   alert("error with name");
+// } else {
+
+
+  //  this.trackPlayerService.startTrackingPlayer(user)
+  //  .then((result) => {
+  //    this.router.navigate(['track-player', user.rsn]);
+  //    })
+  //  .catch((err) => {
+  //    if (err) {
+  //      this.error = err.error.code; 
+  //      this.feedbackEnabled = false;
+  //    } 
+  //  });
 }
     
 }
 
-}
+
 

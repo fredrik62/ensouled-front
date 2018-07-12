@@ -30,18 +30,22 @@ import { GrandExchangeComponent } from './components/grand-exchange/grand-exchan
 import { GrandexchangeItemChartComponent } from './components/grandexchange-item-chart/grandexchange-item-chart.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HighscoreComponent } from './pages/highscore/highscore.component';
+import { IronmanHighscoreComponent } from './pages/ironman-highscore/ironman-highscore.component';
+import { HardcoreIronmanHighscoreComponent } from './pages/hardcore-ironman-highscore/hardcore-ironman-highscore.component';
+import { RegularPlayerHighscoreComponent } from './pages/regular-player-highscore/regular-player-highscore.component';
+import { UltimateIronmanHighscoreComponent } from './pages/ultimate-ironman-highscore/ultimate-ironman-highscore.component';
 
 //services
 import { GrandExchangeService } from './services/grand-exchange.service';
 import { TrackPlayerService } from './services/track-player.service';
 import { PlayerLookupService } from './services/player-lookup.service';
 import { GetPlayersService } from './services/get-players.service';
+import { GetOneSkillService } from './services/get-one-skill.service';
 
 
 
 //pipes
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
-import { GetOneSkillService } from './services/get-one-skill.service';
 
 
 
@@ -64,8 +68,15 @@ const routes: Routes = [
   { path: 'grandexchange-2007-osrs/:id',  component:  GrandexchangeItemChartComponent },
   { path: 'track-player',  component:  TrackPlayerComponent },
   { path: 'track-player/:username',  component:  TrackPlayerSubmitComponent, },
+
   { path: 'highscore',  component:  HighscoreComponent, },
-  { path: 'highscore/:player',  component:  HighscoreOnePlayerComponent, },
+  { path: 'highscore/regular',  component:  RegularPlayerHighscoreComponent, },
+  { path: 'highscore/regular/:player',  component:  HighscoreOnePlayerComponent, },
+  { path: 'highscore/ironman',  component:  IronmanHighscoreComponent, },
+  { path: 'highscore/hardcore-ironman',  component:  HardcoreIronmanHighscoreComponent, },
+  { path: 'highscore/ultimate-ironman',  component: UltimateIronmanHighscoreComponent , },
+
+
   { path: '404', component: PageNotFoundComponent  },
   { path: '**', redirectTo: '/404'}
  
@@ -92,6 +103,10 @@ const routes: Routes = [
     NavBarComponent,
     HighscoreComponent,
     HighscoreOnePlayerComponent,
+    IronmanHighscoreComponent,
+    HardcoreIronmanHighscoreComponent,
+    RegularPlayerHighscoreComponent,
+    UltimateIronmanHighscoreComponent,
     
     
     

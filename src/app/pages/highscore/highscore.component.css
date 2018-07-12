@@ -1,5 +1,4 @@
-.player-box {
-  display: flex;
-  justify-content: space-around;
-  cursor: pointer;
+a {
+  display: block;
+  padding: 20px;
 }

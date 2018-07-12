@@ -1,9 +1,9 @@
-<div class="player-box" *ngFor="let x of players" (click)="displayPlayer(x.playerName)">
-<p>RSN {{x.playerName}}</p>
-<p>Overall {{x.overAllRank}}</p>
-<p>Total XP {{x.totalExperience}}</p>
-<p>Total Level {{x.totalLevel}}</p>
-</div>
+
+
+<a [routerLink]="['/highscore/regular']">Regular highscore</a>
+<a [routerLink]="['/highscore/ironman']">Ironmen highscore</a>
+<a [routerLink]="['/highscore/hardcore-ironman']">Hardcore highscore</a>
+<a [routerLink]="['/highscore/ultimate-ironman']">Ultimate highscore</a>
 
 <div *ngIf="error" class="val-box">
     <p class="validation">{{error}}</p>
