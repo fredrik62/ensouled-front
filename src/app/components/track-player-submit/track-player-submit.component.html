@@ -1,5 +1,12 @@
-<p>
- <b>{{rsn}}</b>, we have started tracking your account.
- </p>
-
-<a [routerLink]="['/track-player']">back</a>
+<div class="tracked-player-container">
+  <div class="tracked-text">
+    <p class="top-para">
+     <b>{{rsn}}</b>, we have started tracking your <span class="acc txt">account.</span>
+    </p>
+    <hr>
+    <p class="bottom-para">Please note, it might take up to <span class="time txt">24 hours</span>  after submitting your account to be tracked for
+      data to appear.
+    </p>
+ </div>
+  <a [routerLink]="['/highscore']" class="btn draw-border">Highscores</a>
+</div>

@@ -41,6 +41,9 @@ sortOptions = [
     }
 ];
 
+
+
+
  
   username: String;
   error: string;
@@ -50,6 +53,7 @@ sortOptions = [
  ironman: String;
  hardcore: String;
  ultimate: String;
+ selecttype: any;
 
 
   constructor(private router: Router, private trackPlayerService: TrackPlayerService) { }
@@ -67,7 +71,6 @@ sortOptions = [
   hardcore: this.sortOptions[2].value,
   ultimate: this.sortOptions[3].value
 }
-
 
 
   
@@ -125,19 +128,8 @@ sortOptions = [
    }
 // if (user.rsn === undefined || user.rsn.length === 0 || user.rsn.length > 12) {
 //   alert("error with name");
-// } else {
+// } 
 
-
-  //  this.trackPlayerService.startTrackingPlayer(user)
-  //  .then((result) => {
-  //    this.router.navigate(['track-player', user.rsn]);
-  //    })
-  //  .catch((err) => {
-  //    if (err) {
-  //      this.error = err.error.code; 
-  //      this.feedbackEnabled = false;
-  //    } 
-  //  });
 }
     
 }

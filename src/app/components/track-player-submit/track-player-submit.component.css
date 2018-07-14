@@ -1,0 +1,32 @@
+.tracked-player-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.tracked-text {
+  padding: 50px 0px;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.txt {
+  font-weight: 900;
+
+}
+.acc {
+  color: #f39c12;
+}
+b {
+  color:#00CED1;
+}
+
+.time {
+  color: red;
+}
+
+.top-para, .bottom-para {
+  padding:20px;
+}

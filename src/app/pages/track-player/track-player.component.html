@@ -26,19 +26,26 @@
 
 <div class="form-container">
   <form  (ngSubmit)="submitForm(form)" #form="ngForm">
-      <select required [(ngModel)]="selectedOption" name="game-mode">
-          <option *ngFor="let item of sortOptions" [ngValue]="item">
-            {{item.display}}
-          </option>
-       </select>
-    
-     <input type="text"  class="textbox" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="1" maxlength="12" [disabled]="processing" placeholder="Osrs Username" (input)="inputValidator($event)"/>
+
+      <div class="select-account-container select">
+        <select [(ngModel)]="selectedOption" name="game-mode">
+          <option [ngValue]="selecttype">Select Account Type</option>
+            <option *ngFor="let item of sortOptions" [ngValue]="item">
+              {{item.display}}
+            </option>
+         </select>
+      </div>
+
+      <div class="input-container">
+        <input type="text"  class="textbox" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="1" maxlength="12" [disabled]="processing" placeholder="Osrs Username" (input)="inputValidator($event)"/>
+     </div>
+
      <div class="form-btn-container">
        <button class="btn draw-border" type="submit" [disabled]="processing">Start tracking</button>
      </div>
      <div *ngIf="error" class="val-box">
         <p class="validation">{{error}}</p>
-        </div>
+     </div>
  </form>
 </div>
 
