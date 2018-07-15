@@ -73,8 +73,11 @@ const routes: Routes = [
   { path: 'highscore/regular',  component:  RegularPlayerHighscoreComponent, },
   { path: 'highscore/regular/:player',  component:  HighscoreOnePlayerComponent, },
   { path: 'highscore/ironman',  component:  IronmanHighscoreComponent, },
+  { path: 'highscore/ironman/:player',  component:  HighscoreOnePlayerComponent, },
   { path: 'highscore/hardcore-ironman',  component:  HardcoreIronmanHighscoreComponent, },
+  { path: 'highscore/hardcore-ironman/:player',  component:  HighscoreOnePlayerComponent, },
   { path: 'highscore/ultimate-ironman',  component: UltimateIronmanHighscoreComponent , },
+  { path: 'highscore/ultimate-ironman/:player',  component:  HighscoreOnePlayerComponent, },
 
 
   { path: '404', component: PageNotFoundComponent  },
