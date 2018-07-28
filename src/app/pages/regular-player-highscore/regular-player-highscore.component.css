@@ -1,6 +1,28 @@
-.player-box {
-  display: flex;
-  justify-content: space-around;
-  cursor: pointer;
-  border: 1px solid white;
+.tablewrapper {
+  padding-top: 10px;
 }
+table{
+  width:100%;
+  table-layout: fixed;
+}
+
+.tbl-content{
+
+  margin-top: 0px;
+  cursor: pointer;
+}
+th{
+  padding: 20px 15px;
+  color: #00CED1;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+td{
+  padding: 15px;
+  vertical-align:middle;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+

@@ -39,7 +39,7 @@ export class RegularPlayerHighscoreComponent implements OnInit {
     }
   
     displayPlayer(name) {
-      this.router.navigate(['highscore/normie', name]);
+      this.router.navigate(['highscore/regular', name]);
     }
   
   }

@@ -36,7 +36,7 @@
       </table>
     </div>
     <div class="tbl-content">
-      <table cellpadding="0" cellspacing="0" border="0"  *ngFor="let alchValue of geItemArray | searchFilter:searchTerm | paginate: { itemsPerPage: 50, currentPage: p }" (click)="displayItemData(geData.id)">
+      <table cellpadding="0" cellspacing="0" border="0"  *ngFor="let alchValue of geItemArray | searchFilter:searchTerm | paginate: { itemsPerPage: 50, currentPage: p }" (click)="displayItemData(alchValue.id)">
         <tbody>
           <tr>
             <td>{{alchValue.name}}</td>

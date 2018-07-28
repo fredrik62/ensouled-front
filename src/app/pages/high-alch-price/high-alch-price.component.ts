@@ -30,38 +30,41 @@ export class HighAlchPriceComponent implements OnInit {
         this.iconUrl = 'https://rsbuddy.com/items/'
         //if no nature rune price, index has changed
   
-        this.natPrice = this.item[0].data[202].sell_average;
-        this.natIcon = this.iconUrl + '561' + '.png';
-        Object.keys(this.item[0].data).forEach(key => {
-          this.geData = {
-            id: this.item[0].data[key].id,
-            image: this.iconUrl + this.item[0].data[key].id + '.png',
-            name: this.item[0].data[key].name,
-            buyAverage: this.item[0].data[key].buy_average,
-            sellAverage: this.item[0].data[key].sell_average,
-            overAllAverage: this.item[0].data[key].overall_average,
-            alchPrice: this.item[0].data[key].sp * 0.6,
-            natureRuneCost: this.natPrice,
-            total: this.natPrice + this.item[0].data[key].sell_average,
-            lossOrProfit: this.item[0].data[key].sp * 0.6 - (this.natPrice + this.item[0].data[key].sell_average),
-  
-          }
-  
-          if (this.geData.alchPrice > 300 && this.geData.total !== this.geData.natureRuneCost) {
-            this.geItemArray.push(this.geData);
-            this.geItemArray.sort((a, b) => {
-              return b.lossOrProfit - a.lossOrProfit;
-            });
-  
-          }
-          if (this.geData.lossOrProfit < 0) {
-            this.geData.negativeChange = true;
-          }
-  
-        });
-  
-      })
-  }
+        
+
+          this.natPrice = this.item[0].data[202].sell_average;
+          this.natIcon = this.iconUrl + '561' + '.png';
+          Object.keys(this.item[0].data).forEach(key => {
+            this.geData = {
+              id: this.item[0].data[key].id,
+              image: this.iconUrl + this.item[0].data[key].id + '.png',
+              name: this.item[0].data[key].name,
+              buyAverage: this.item[0].data[key].buy_average,
+              sellAverage: this.item[0].data[key].sell_average,
+              overAllAverage: this.item[0].data[key].overall_average,
+              alchPrice: this.item[0].data[key].sp * 0.6,
+              natureRuneCost: this.natPrice,
+              total: this.natPrice + this.item[0].data[key].sell_average,
+              lossOrProfit: this.item[0].data[key].sp * 0.6 - (this.natPrice + this.item[0].data[key].sell_average),
+    
+            }
+    
+            if (this.geData.alchPrice > 300 && this.geData.total !== this.geData.natureRuneCost) {
+              this.geItemArray.push(this.geData);
+              this.geItemArray.sort((a, b) => {
+                return b.lossOrProfit - a.lossOrProfit;
+              });
+    
+            }
+            if (this.geData.lossOrProfit < 0) {
+              this.geData.negativeChange = true;
+            }
+    
+          });
+    
+    
+        })
+    }
   
   reverseOrder() {
     this.geItemArray.sort((a, b) => {
