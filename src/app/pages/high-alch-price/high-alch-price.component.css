@@ -6,14 +6,19 @@ p {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 20px;
 
 }
 .high-alch-profit{
-  background: green;
+  background: #32CD32;
+  color: #f0f0f0;
+  font-weight: 900;
 }
 
 .high-alch-loss {
   background: red;
+  color: #f0f0f0;
+  font-weight: 900;
 }
 
 
@@ -22,69 +27,64 @@ table{
   table-layout: fixed;
 }
 .tbl-header{
-  background-color: rgba(255,255,255,0.3);
+  background-color: #f39c12;
  }
 .tbl-content{
-  height:70vh;
-  overflow-x:auto;
   margin-top: 0px;
   cursor: pointer;
 }
 th{
   padding: 20px 15px;
-  text-align: left;
-  font-weight: 500;
-  font-size: 12px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 16px;
   color: #fff;
   text-transform: uppercase;
+  vertical-align:middle;
+
 }
 td{
   padding: 15px;
-  text-align: left;
+  text-align: center;
   vertical-align:middle;
   font-weight: 300;
-  font-size: 12px;
-  color: #fff;
+  font-size: 16px;
+  color: #00CED1;
   border-bottom: solid 1px rgba(255,255,255,0.1);
 }
 
-
-
-
-
-/* for custom scrollbar for webkit browser*/
-
-::-webkit-scrollbar {
-    width: 0.01px;
-}  
- ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-} 
-::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+input {
+   outline: 0;
+   height: 50px;
+   max-width: 100%;
+   width:1200px;
+   line-height: 42px;
+   padding: 0 16px;
+   background-color: rgba(255, 255, 255, 0.8);
+   color: #212121;
+   border: 0;
+   -webkit-border-radius: 4px 0 0 4px;
+   border-radius: 4px 0 0 4px;
+ }
+ 
+ input:focus {
+   outline: none;
+   background-color: #FFF;
+ }
+.rune {
+  display: flex;
+  height: 45px;
+  align-items: center;
 }
 
-@media only screen and (max-width: 980px) {
-/* .is-one-third {
-  width: 100%;
-} */
-  }
+.rune > img {
+  width: 45px;
+  padding-right: 10px;
+}
+
+ span {
+ color: #32CD32;
+ font-weight: 900;
+}
 
 
- input {
-    outline: 0;
-    height: 42px;
-    width:100vw;
-    line-height: 42px;
-    padding: 0 16px;
-    background-color: rgba(255, 255, 255, 0.8);
-    color: #212121;
-    border: 0;
-    -webkit-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
-  }
-  
-  input:focus {
-    outline: none;
-    background-color: #FFF;
-  }

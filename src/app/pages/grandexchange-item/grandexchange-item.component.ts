@@ -13,7 +13,7 @@ import { SearchFilterPipe } from '../../pipes/search-filter.pipe'
 
 export class GrandexchangeItemComponent implements OnInit {
 
-  data: any = [];
+  item: any = [];
   geItemArray = [];
   geData: any;
   p: number = 1;
@@ -27,20 +27,20 @@ export class GrandexchangeItemComponent implements OnInit {
       this.grandExchangeService.getAllItems()
       .toPromise()
       .then((res) => {
-      this.data = res;
-      this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1529576970247_obj_sprite.gif?id=';      
-              
+      this.item = res;
+      this.iconUrl = 'https://rsbuddy.com/items/' 
+      
             
-      Object.keys(this.data).forEach(key => {
+      Object.keys(this.item[0].data).forEach(key => {
       this.geData = {
 
-      id: this.data[key].id,
-      name: this.data[key].name,
-      buyAverage: this.data[key].buy_average,
-      sellAverage: this.data[key].sell_average,
-      overAllAverage: this.data[key].overall_average,
-      storePrice: this.data[key].sp,
-      image: this.iconUrl + this.data[key].id
+      id: this.item[0].data[key].id,
+      name: this.item[0].data[key].name,
+      buyAverage: this.item[0].data[key].buy_average,
+      sellAverage: this.item[0].data[key].sell_average,
+      overAllAverage: this.item[0].data[key].overall_average,
+      storePrice: this.item[0].data[key].sp,
+      image: this.iconUrl + this.item[0].data[key].id + '.png'
                                 
         }
     
@@ -48,6 +48,7 @@ export class GrandexchangeItemComponent implements OnInit {
           
                     
     });
+    
                     
   })
 }

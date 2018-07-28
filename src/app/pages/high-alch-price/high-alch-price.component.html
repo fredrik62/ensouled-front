@@ -3,8 +3,11 @@
 </div>
 
 <div class="nat">
-  <p>{{natPrice}} GP per nature (Nature rune cost included in "Total Cost".)</p>
-  <button class="btn draw-border" (click)="reverseOrder()">reverse order</button>
+  <div class="rune">
+    <img src="/assets/images/Nature_rune.png" alt="nature rune">
+    <p><span>{{natPrice}} GP</span> per Nature (Cost incl. in "Total Cost".)</p>
+  </div>
+  <button class="btn draw-border" (click)="reverseOrder()">Gainers / Losers</button>
 </div>
 
 
