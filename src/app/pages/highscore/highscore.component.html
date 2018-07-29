@@ -1,11 +1,67 @@
 
+<div class="mode-container">
+  <div>
+    <h4>Regular highscore</h4>
+    
+    <div class="change" (click)="redirectRegular(1)">
+    <p>24H Highscore</p>
+    </div>
+            
+    <div class="change" (click)="redirectRegular(7)">
+    <p>Weekly Highscore</p>
+    </div>
+    <div class="change" (click)="redirectRegular(30)">
+    <p>Monthly Highscore</p>
+    </div>
 
-<a [routerLink]="['/highscore/regular']">Regular highscore</a>
-<a [routerLink]="['/highscore/ironman']">Ironmen highscore</a>
-<a [routerLink]="['/highscore/hardcore-ironman']">Hardcore highscore</a>
-<a [routerLink]="['/highscore/ultimate-ironman']">Ultimate highscore</a>
+</div>
+
+  <div>
+    <h4>Ironman highscore</h4>
+    <div class="change" (click)="redirectIronMan(1)">
+    <p>24H Highscore</p>
+    </div>
+            
+    <div class="change"  (click)="redirectIronMan(7)">
+    <p>Weekly Highscore</p>
+    </div>
+    <div class="change"  (click)="redirectIronMan(30)">
+    <p>Monthly Highscore</p>
+    </div>
+
+  </div>
+  <div>
+  <h4>Hardcore highscore</h4>
+  <div class="change" (click)="redirectHardcoreIronMan(1)">
+        <p>24H Highscore</p>
+        </div>
+                
+        <div class="change" (click)="redirectHardcoreIronMan(7)">
+        <p>Weekly Highscore</p>
+        </div>
+        <div class="change" (click)="redirectHardcoreIronMan(30)">
+        <p>Monthly Highscore</p>
+        </div>
+  </div>
+  <div>
+  <h4>Ultimate highscore</h4>
+  <div class="change" (click)="redirectUltimateIronMan(1)">
+        <p>24H Highscore</p>
+        </div>
+                
+        <div class="change" (click)="redirectUltimateIronMan(7)">
+        <p>Weekly Highscore</p>
+        </div>
+        <div class="change" (click)="redirectUltimateIronMan(30)">
+        <p>Monthly Highscore</p>
+        </div>
+  </div>
+</div>
 
 <div *ngIf="error" class="val-box">
     <p class="validation">{{error}}</p>
 </div>
 
+
+        
+      

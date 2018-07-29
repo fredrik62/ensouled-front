@@ -26,7 +26,6 @@ import { HerbloreCalculatorComponent } from './pages/herblore-calculator/herblor
 import { HighAlchPriceComponent } from './pages/high-alch-price/high-alch-price.component';
 import { TrackPlayerComponent } from './pages/track-player/track-player.component';
 import { GrandexchangeItemComponent } from './pages/grandexchange-item/grandexchange-item.component';
-import { GrandExchangeComponent } from './components/grand-exchange/grand-exchange.component';
 import { GrandexchangeItemChartComponent } from './components/grandexchange-item-chart/grandexchange-item-chart.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HighscoreComponent } from './pages/highscore/highscore.component';
@@ -92,7 +91,6 @@ const routes: Routes = [
     HighAlchPriceComponent,
     HerbloreCalculatorComponent,
     GrandexchangeItemComponent,
-    GrandExchangeComponent,
     HighAlchChartComponent,
     ToolsComponent,
     GrandexchangeItemChartComponent,

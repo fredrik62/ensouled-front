@@ -17,4 +17,64 @@ feedbackEnabled = false;
    
 
 }
+
+redirectRegular(days) {
+switch(days) {
+  case 1:
+  console.log("1");
+  break;
+  case 7:
+  console.log("7");
+  break;
+  case 30:
+  console.log("30");
+  break;
+
+}
+}
+
+redirectIronMan(days) {
+  switch(days) {
+    case 1:
+    console.log("1");
+    break;
+    case 7:
+    console.log("7");
+    break;
+    case 30:
+    console.log("30");
+    break;
+  
+  }
+  }
+
+  redirectHardcoreIronMan(days) {
+    switch(days) {
+      case 1:
+      console.log("1");
+      break;
+      case 7:
+      console.log("7");
+      break;
+      case 30:
+      console.log("30");
+      break;
+    
+    }
+    }
+
+    redirectUltimateIronMan(days) {
+      switch(days) {
+        case 1:
+        console.log("1");
+        break;
+        case 7:
+        console.log("7");
+        break;
+        case 30:
+        console.log("30");
+        break;
+      
+      }
+      }
 }
