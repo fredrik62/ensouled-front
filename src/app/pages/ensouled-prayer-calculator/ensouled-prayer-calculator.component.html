@@ -1,10 +1,10 @@
  <h3>Ensouled Head Calculator</h3>
 
-<div class="card-wrapper">
-  <div class="card card-1" *ngFor="let head of heads">
+<div class="card-wrapper container">
+  <div class="card card-1" *ngFor="let head of heads; let i = index">
       <h6>{{head.itemName}}</h6>
       <h6> Level {{head.levelRequired}}</h6>
-      <img class="icon" src="{{head.itemIdIcon}}" alt=" {{head.itemName}}">
+      <img class="icon" src="/assets/images/ensouled-heads/{{ensouledIcons[i]}}" alt=" {{head.itemName}}">
       <div class="card-input">
         <input class="user-input" type="number" min="0" value="0" [(ngModel)]="head.binding">
       </div>
@@ -37,7 +37,7 @@
 </div>
 
 
-<div id="result" class="res-box" [ngClass]="{'card card-1': showResult }">
+<div id="result" class="res-box card-1">
   <h3 id="total">Total XP</h3>
   <h6 id="val">{{total}}</h6>
 

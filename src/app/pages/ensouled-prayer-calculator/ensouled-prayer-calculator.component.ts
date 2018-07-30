@@ -42,15 +42,20 @@ bloodRune: Number;
 bodyRune: Number;
 natureRune: Number;
 soulRune: Number;
-
+ensouledIcons: Array<String>;
 
   constructor() { }
 
   ngOnInit() {
 
+this.ensouledIcons = ['Ensouled_goblin_head.png', 'Ensouled_monkey_head.png','Ensouled_imp_head.png',
+ 'Ensouled_minotaur_head.png', 'Ensouled_scorpion_head.png', 'Ensouled_bear_head.png', 'Ensouled_unicorn_head.png',
+ 'Ensouled_dog_head.png', 'Ensouled_chaos_druid_head.png','Ensouled_giant_head.png', 'Ensouled_ogre_head.png', 'Ensouled_elf_head.png',
+ 'Ensouled_troll_head.png', 'Ensouled_horror_head.png', 'Ensouled_kalphite_head.png', 'Ensouled_dagannoth_head.png',
+ 'Ensouled_bloodveld_head.png', 'Ensouled_tzhaar_head.png', 'Ensouled_demon_head.png', 'Ensouled_aviansie_head.png',
+ 'Ensouled_abyssal_head.png', 'Ensouled_dragon_head.png' ];
 
-
-    this.iconUrl = 'http://services.runescape.com/m=itemdb_oldschool/1529576970247_obj_sprite.gif?id='; 
+   
     const ensouledData = {
       "info":[
           {"Name":"Goblin Head", "Xp": 130, "Level": 3, "binding": this.goblinHead, "id": "13448", "Runes":[{"Nature": 1, "Body": 2, "Blood": 0, "Soul": 0}]}, 
@@ -90,7 +95,6 @@ soulRune: Number;
           ngModel: ensouledData.info[x].binding,
           experience: ensouledData.info[x].Xp,
           levelRequired: ensouledData.info[x].Level,
-          itemIdIcon: this.iconUrl + ensouledData.info[x].id,
           natureRune: ensouledData.info[x].Runes[0].Nature,
           bodyRune: ensouledData.info[x].Runes[0].Body,
           soulRune: ensouledData.info[x].Runes[0].Soul,
@@ -151,9 +155,7 @@ soulRune: Number;
         this.soulRune = this.soulRune + this.totalRunes[i].soul;
         this.bloodRune = this.bloodRune + this.totalRunes[i].blood;
       
-     if (this.total > 0) {
-       this.showResult = true;
-     } 
+    
         
     }
     

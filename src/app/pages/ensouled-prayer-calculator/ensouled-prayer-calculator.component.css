@@ -1,10 +1,11 @@
 
 
 h3 {
-  color:rgba(0, 206, 209, 1);
-  padding: 20px;
+  color: #f39c12;
+  text-transform: uppercase;
+  padding: 40px;
   text-align: center;
-  font-size: 22px;
+  font-size: 26px;
   display: block;
 }
 
@@ -186,7 +187,8 @@ max-width: 30px !important;
 
 
 
-
+#result {
+}
 
 
 
@@ -198,15 +200,14 @@ padding-bottom: 50px;
 }
 
 
-#result {
-  display: hidden;
-}
 
 .runescape {
   max-width: 80%;
   margin: 0 auto;
 }
+
+
 .res-box {
-  display: hidden;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
 }

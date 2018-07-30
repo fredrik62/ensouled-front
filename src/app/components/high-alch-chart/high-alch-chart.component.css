@@ -31,7 +31,7 @@ h3 {
   width: 300px;
   max-width: 344px;
   line-height: 2;
-  background: #2c3e50;
+  background-color:#24292e;
   overflow: hidden;
   border-radius: .25em;
   border-bottom: 1px solid black;
@@ -42,12 +42,13 @@ h3 {
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
-  color: #f0f0f0;
+  color: #f39c12;
 }
 
 
 #monthly-change {
-  color: green;
+  color: #32CD32;
+
   font-weight: 900;
   font-size: 20px;
 }
@@ -74,3 +75,34 @@ h3 {
   max-height: 300px;
 }
 
+.spinner-container {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+.spinner-1 {
+  width: 60px;
+  height: 60px;
+  margin: 30px auto;
+  background: transparent;
+  border-top: 4px solid #4caf50;
+  border-right: 4px solid transparent;
+  border-radius: 50%;
+  -webkit-animation: 1s spin linear infinite;
+  animation: 1s spin linear infinite;
+}
+
+
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

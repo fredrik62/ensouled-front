@@ -100,8 +100,8 @@ body {
 
 
 .is-one-third{
-  /* padding: 12px; */
-  /* background: #002e5b; */
+ 
+  background-color: #24292e;
   border-radius: 2px;
   line-height: 40px;
 }
@@ -112,10 +112,11 @@ font-size: 18px !important;
 
 .is-one-third input{
   /* padding: 8px; */
-  width: 60%;
+  width: 100%;
   border: 1px solid #d4d4d4;
   border-radius: 2px;
-  float: right;
+ 
+  background-color: #24292e;
 }
 
 .is-one-third:after{

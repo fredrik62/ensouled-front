@@ -31,6 +31,7 @@ hundredEighty: boolean = false;
 show30: boolean;
 show90: boolean;
 show180: boolean;
+loading: boolean = false;
 
 
 error: string;
@@ -99,11 +100,12 @@ feedbackEnabled = false;
       case 30:
         this.show30 = false;
         break;
-      case 90:
+        case 90:
         this.show90 = true;
         break;
-      case 180:
+        case 180:
         this.show180 = true;
+        this.loading = true;
         break;
     }
   
