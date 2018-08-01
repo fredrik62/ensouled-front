@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Pipe } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {NgxPaginationModule} from 'ngx-pagination'; // <-- import the module
+import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
 import { Chart } from 'chart.js';
 
 
@@ -17,6 +17,7 @@ import { SixMonthChartComponent } from './components/charts/six-month-chart/six-
 import { TrackPlayerSubmitComponent } from './components/track-player-submit/track-player-submit.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HighscoreOnePlayerComponent } from './components/highscore-one-player/highscore-one-player.component';
+import { TwitterFeedComponent } from './component/twitter-feed/twitter-feed.component';
 
 
 //pages
@@ -34,12 +35,14 @@ import { HardcoreIronmanHighscoreComponent } from './pages/hardcore-ironman-high
 import { RegularPlayerHighscoreComponent } from './pages/regular-player-highscore/regular-player-highscore.component';
 import { UltimateIronmanHighscoreComponent } from './pages/ultimate-ironman-highscore/ultimate-ironman-highscore.component';
 
+
 //services
 import { GrandExchangeService } from './services/grand-exchange.service';
 import { TrackPlayerService } from './services/track-player.service';
 import { PlayerLookupService } from './services/player-lookup.service';
 import { GetPlayersService } from './services/get-players.service';
 import { GetOneSkillService } from './services/get-one-skill.service';
+import { TwitterFeedService } from './services/twitter-feed.service';
 
 
 
@@ -77,6 +80,7 @@ const routes: Routes = [
   { path: 'highscore/hardcore-ironman/:player',  component:  HighscoreOnePlayerComponent, },
   { path: 'highscore/ultimate-ironman',  component: UltimateIronmanHighscoreComponent , },
   { path: 'highscore/ultimate-ironman/:player',  component:  HighscoreOnePlayerComponent, },
+  { path: 'twitter',  component: TwitterFeedComponent, },
 
 
   { path: '404', component: PageNotFoundComponent  },
@@ -108,6 +112,7 @@ const routes: Routes = [
     HardcoreIronmanHighscoreComponent,
     RegularPlayerHighscoreComponent,
     UltimateIronmanHighscoreComponent,
+    TwitterFeedComponent
     
     
     
@@ -129,7 +134,8 @@ const routes: Routes = [
     TrackPlayerService,
     PlayerLookupService,
     GetPlayersService,
-    GetOneSkillService
+    GetOneSkillService,
+    TwitterFeedService
   ],
   bootstrap: [AppComponent]
 })
