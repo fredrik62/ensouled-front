@@ -126,9 +126,7 @@ sortOptions = [
       } 
     });
    }
-// if (user.rsn === undefined || user.rsn.length === 0 || user.rsn.length > 12) {
-//   alert("error with name");
-// } 
+
 
 }
     

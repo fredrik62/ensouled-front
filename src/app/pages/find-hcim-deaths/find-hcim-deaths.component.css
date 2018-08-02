@@ -1,0 +1,32 @@
+p {
+  color: white;
+}
+
+input {
+  outline: 0;
+  height: 50px;
+  max-width: 100%;
+
+  line-height: 42px;
+  padding: 0 16px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #212121;
+  border: 0;
+  -webkit-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+
+}
+
+input:focus {
+  outline: 0;
+  background-color: #FFF;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+}
+img {
+  padding: 20px;
+  
+}

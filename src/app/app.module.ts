@@ -34,6 +34,7 @@ import { IronmanHighscoreComponent } from './pages/ironman-highscore/ironman-hig
 import { HardcoreIronmanHighscoreComponent } from './pages/hardcore-ironman-highscore/hardcore-ironman-highscore.component';
 import { RegularPlayerHighscoreComponent } from './pages/regular-player-highscore/regular-player-highscore.component';
 import { UltimateIronmanHighscoreComponent } from './pages/ultimate-ironman-highscore/ultimate-ironman-highscore.component';
+import { FindHcimDeathsComponent } from './pages/find-hcim-deaths/find-hcim-deaths.component';
 
 
 //services
@@ -48,6 +49,8 @@ import { TwitterFeedService } from './services/twitter-feed.service';
 
 //pipes
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { ServerErrorComponent } from './pages/server-error/server-error.component';
+
 
 
 
@@ -81,8 +84,10 @@ const routes: Routes = [
   { path: 'highscore/ultimate-ironman',  component: UltimateIronmanHighscoreComponent , },
   { path: 'highscore/ultimate-ironman/:player',  component:  HighscoreOnePlayerComponent, },
   { path: 'twitter',  component: TwitterFeedComponent, },
+  { path: 'find-hcim-death',  component: FindHcimDeathsComponent, },
 
-
+  
+  { path: '500-server-error',  component: ServerErrorComponent, },
   { path: '404', component: PageNotFoundComponent  },
   { path: '**', redirectTo: '/404'}
  
@@ -112,7 +117,9 @@ const routes: Routes = [
     HardcoreIronmanHighscoreComponent,
     RegularPlayerHighscoreComponent,
     UltimateIronmanHighscoreComponent,
-    TwitterFeedComponent
+    TwitterFeedComponent,
+    FindHcimDeathsComponent,
+    ServerErrorComponent,
     
     
     

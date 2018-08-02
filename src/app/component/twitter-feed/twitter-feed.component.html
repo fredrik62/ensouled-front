@@ -1,8 +1,8 @@
 
   <h3 class="hcim-title">Recent Fallen HCIM</h3>
-<div class="categories">
+
 <div class="death-card card-1" *ngFor="let x of playerInfo">
-  <p class="rsn">{{x.name}}</p>
+  <p class="rsn" >{{x.name}}</p>
 
       <div class="tablewrapper">
         
@@ -23,52 +23,13 @@
                   <tr>
                     <td class="xp">{{x.totalLevel}}</td>
                     <td class="xp">{{x.overAllRank}}</td>
-                    <td class="xp">{{x.totalLevel}}</td>
+                    <td class="xp">{{x.overAllXp}}</td>
                     </tr>
                     
                 </tbody>
               </table>
             </div>
 
- 
- <div class="img-wrapper">
-   <img src="{{x.statsAtDeath}}" alt="{{x.name}} stats at death">
-
- </div>
- <div class="time-of-death">
-   <h3>Time of Death</h3>
-   <p>{{x.timeOfDeath}}</p>
-  </div>
-
-
-  <p class="rsn">{{x.name}}</p>
-
-  <div class="tablewrapper">
-    
-        <div class="tbl-header">
-          <table cellpadding="0" cellspacing="0" border="0">
-            <thead>
-              <tr>
-                <th>Total Level</th>
-                <th>Overall Rank</th>
-                <th>Overall Xp</th>
-              </tr>
-            </thead>
-          </table>
-        </div>
-        <div class="tbl-content">
-          <table cellpadding="0" cellspacing="0" border="0">
-            <tbody>
-              <tr>
-                <td class="xp">{{x.totalLevel}}</td>
-                <td class="xp">{{x.overAllRank}}</td>
-                <td class="xp">{{x.totalLevel}}</td>
-                </tr>
-                
-            </tbody>
-          </table>
-        </div>
-
 
 <div class="img-wrapper">
 <img src="{{x.statsAtDeath}}" alt="{{x.name}} stats at death">
@@ -77,52 +38,11 @@
 <div class="time-of-death">
 <h3>Time of Death</h3>
 <p>{{x.timeOfDeath}}</p>
-</div>
-
-
-<p class="rsn">{{x.name}}</p>
-
-<div class="tablewrapper">
-  
-      <div class="tbl-header">
-        <table cellpadding="0" cellspacing="0" border="0">
-          <thead>
-            <tr>
-              <th>Total Level</th>
-              <th>Overall Rank</th>
-              <th>Overall Xp</th>
-            </tr>
-          </thead>
-        </table>
-      </div>
-      <div class="tbl-content">
-        <table cellpadding="0" cellspacing="0" border="0">
-          <tbody>
-            <tr>
-              <td class="xp">{{x.totalLevel}}</td>
-              <td class="xp">{{x.overAllRank}}</td>
-              <td class="xp">{{x.totalLevel}}</td>
-              </tr>
-              
-          </tbody>
-        </table>
-      </div>
-
-
-<div class="img-wrapper">
-<img src="{{x.statsAtDeath}}" alt="{{x.name}} stats at death">
-
-</div>
-<div class="time-of-death">
-<h3>Time of Death</h3>
-<p>{{x.timeOfDeath}}</p>
-</div>
+<div class="source">
+  <a href="{{x.postSource}}" class="credit"><span>Source:</span> @HCIM_Deaths</a>
 
 </div>
 </div>
-<!-- <div class="view-more-hcim">
-  <form [routerLink]="['/track-player']">
-   <button type="button" class="btn draw-border">View more</button>
-  </form>
 
-</div> -->
+</div>
+

@@ -8,13 +8,8 @@
   
 }
 
-.categories {
-  display: flex;
-  /* flex-wrap: wrap;
-  flex-direction: row !important; */
-  padding-bottom: 40px;
-  padding-top: 40px;
-}
+
+
 
 table{
   width:100%;
@@ -108,7 +103,15 @@ height: 350px;
   width: 250px;
 }
 
-form {
-  display: flex;
-  justify-content: center;
- }
+.source {
+  text-align: center;
+} 
+
+.source span {
+  color: #32CD32;
+  font-weight: 900;
+}
+
+.source a {
+  color: #af111c;
+}
