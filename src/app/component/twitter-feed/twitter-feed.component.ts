@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { TwitterFeedService } from '../../services/twitter-feed.service';
 import { Router } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 
 export class TwitterFeedComponent implements OnInit {
-  playerInfo: any = [];
+ @Input() playerInfo: any = [];
   error: string;
   feedbackEnabled = false;
   constructor(private twitterFeedService: TwitterFeedService, private router: Router) { }
