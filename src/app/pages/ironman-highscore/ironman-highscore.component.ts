@@ -18,6 +18,8 @@ export class IronmanHighscoreComponent implements OnInit {
     .toPromise()
     .then((players) => {
      console.log(players);
+
+     var connection = new WebSocket('ws://127.0.0.1:3000');
     })
     .catch((err) => {
       if (err) {

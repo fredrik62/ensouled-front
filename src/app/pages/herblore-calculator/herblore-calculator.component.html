@@ -18,25 +18,34 @@
 <div *ngIf="error" class="val-box">
 <p class="validation">{{error}}</p>
 </div>
-<!-- <div *ngFor="let x of names">
-  <div class="herb-wrapper">
-    <div class="center-on-page">
-     
-      <h6 id="herb-name">{{x}}</h6>
-      <input type="text"  class="textbox" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="1" [disabled]="processing" placeholder="Enter Amount"/>
-      <div class="select">
-        <select name="slct" id="slct">
-          <option>Choose an option</option>
-          <option value="1">herb 1</option>
-          <option value="2">herb 2</option>
-          <option value="3">more herbs</option>
-        </select>
-      </div>
-      
+
+
+
+
+<div class="herb-wrapper" *ngFor="let x of herbs">
+<p>{{x.name}}</p>
+<div class="herbs">
+  <div>
+    <p>{{x.pots[0]}}</p>
+    <div class="input-box">
+      <input>
+
     </div>
-   
-  </div>
-</div> -->
+</div>
+<div>
+    <p>{{x.pots[1]}}</p>
+    <input>
+</div>
+<div *ngIf="x.pots[2]">
+    <p>{{x.pots[2]}}</p>
+    <input>
+</div>
+<div *ngIf="x.pots[3]">
+    <p>{{x.pots[3]}}</p>
+    <input>
+</div>
+</div>
+</div>
 
 
 

@@ -12,8 +12,7 @@
 
 
 
-<div class="death-card card-1" *ngFor="let x of playerInfo">
-  <div class="cont-wrapper">
+<div class="death-card card-1" *ngFor="let x of playerInfo | searchFilter:searchTerm">
   <p class="rsn" >{{x.name}}</p>
 
       <div class="tablewrapper">
@@ -55,6 +54,6 @@
 
 </div>
 </div>
-</div>
+
 </div>
 
