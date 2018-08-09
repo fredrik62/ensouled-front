@@ -27,14 +27,16 @@ playerLevel: Number;
 username: String;
 loading: boolean = false;
 
-guam: any;
-marrentill: any;
-tarromin: any;
-harralander: any;
+guam: any = Number;
+marrentill: any = Number;
+tarromin: any = Number;
+harralander: any = Number;
 
 
 error: string;
 feedbackEnabled = false;
+
+selectedOption: any;
 
   constructor(private getOneSkillService: GetOneSkillService) { }
 
@@ -46,16 +48,16 @@ feedbackEnabled = false;
           "binding": this.guam,
           "id": "13448",
           "Potions":[
-            {"name": "Attack Potion", "value": 20},
-            {"name": "Guam Tar", "value": 20},
+            {"name": "Attack Potion", "experience": 25},
+            {"name": "Guam Tar", "experience": 30},
             ]
           }, 
           {"Name":"Marrentill",
           "binding": this.marrentill,
           "id": "13448",
           "Potions":[
-            {"name": "Anti Poison", "value": 20},
-            {"name": "Marrentill Tar", "value": 20},
+            {"name": "Anti Poison", "experience": 37.5},
+            {"name": "Marrentill Tar", "experience": 42.5},
              
               
             ]
@@ -64,9 +66,9 @@ feedbackEnabled = false;
           "binding": this.tarromin,
           "id": "13448",
           "Potions":[
-            {"name": "Strength Potion", "value": 20},
-            {"name": "Serum 207", "value": 20},
-            {"name": "Tarrmonin Tar", "value": 20},
+            {"name": "Strength Potion", "experience": 50},
+            {"name": "Serum 207", "experience": 50},
+            {"name": "Tarrmonin Tar", "experience": 55},
               
             ]
           }, 
@@ -74,10 +76,10 @@ feedbackEnabled = false;
           "binding": this.harralander,
           "id": "13448",
           "Potions":[
-            {"name": "Restore Potion", "value": 20},
-            {"name": "Energy Potion", "value": 20},
-            {"name": "Combat Potion", "value": 20},
-            {"name": "Harralander Tar", "value": 20},
+            {"name": "Restore Potion", "experience": 62.5},
+            {"name": "Energy Potion", "experience": 67.5},
+            {"name": "Combat Potion", "experience": 84},
+            {"name": "Harralander Tar", "experience": 72.5},
               
             ]
           }, 
@@ -88,20 +90,25 @@ feedbackEnabled = false;
 
       for (var z  = 0; z < ensouledData.info.length; z++) {
         var pots = [];
-        var name = []
+        var name = [];
+        var xp = [];
         name.push(ensouledData.info[z].Name);
            for (var j=0; j < ensouledData.info[z].Potions.length; j++) {
             
              pots.push(ensouledData.info[z].Potions[j].name);
+             xp.push(ensouledData.info[z].Potions[j].experience);
                    
        
        }
        let t = {
+         inputBinding: ensouledData.info[z].binding,
          name: name,
-         pots: pots
+         pots: pots,
+         xp: xp
        }
       this.herbs.push(t);
       }
+      console.log(this.herbs);
   }
 
   // submitForm(form) {
@@ -135,9 +142,16 @@ feedbackEnabled = false;
 //    console.log(playerHerbloreXp);
 //   }
 
-// calculate(){
-//   console.log("i have been clicked");
-// }
+calculate(){
+  console.log("i have been clicked");
+
+  for(let x = 0; x < this.herbs.length; x++) {
+    let allInputs = this.herbs[x].binding || 0;
+    // console.log(allInputs);
+    let sum = this.herbs[x].xp[0] * allInputs;
+    let sum1 = this.herbs[x].xp[1] * allInputs;
+   
+}
 
  }
 
@@ -152,3 +166,4 @@ feedbackEnabled = false;
  */
 
 
+}

@@ -24,29 +24,20 @@
 
 <div class="herb-wrapper" *ngFor="let x of herbs">
 <p>{{x.name}}</p>
+<input [(ngModel)]="x.binding" name="binding" type="number">
 <div class="herbs">
-  <div>
-    <p>{{x.pots[0]}}</p>
-    <div class="input-box">
-      <input>
-
-    </div>
-</div>
-<div>
-    <p>{{x.pots[1]}}</p>
-    <input>
-</div>
-<div *ngIf="x.pots[2]">
-    <p>{{x.pots[2]}}</p>
-    <input>
-</div>
-<div *ngIf="x.pots[3]">
-    <p>{{x.pots[3]}}</p>
-    <input>
+<select>
+    
+  <option name="pot1" >{{x.pots[0]}}</option>
+  <option name="pot2"  *ngIf="x.pots[1]">{{x.pots[1]}}</option>
+  <option name="pot3" *ngIf="x.pots[2]">{{x.pots[2]}}</option>
+  <option name="pot4"  *ngIf="x.pots[3]">{{x.pots[3]}}</option>
+        
+</select>
 </div>
 </div>
-</div>
-
+           
+          
 
 
                                                  
