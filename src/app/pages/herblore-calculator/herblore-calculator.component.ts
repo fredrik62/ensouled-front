@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerLookupService } from '../../services/player-lookup.service';
 import { GetOneSkillService } from '../../services/get-one-skill.service';
+import { all } from 'q';
 
 @Component({
   selector: 'app-herblore-calculator',
@@ -36,7 +37,22 @@ harralander: any = Number;
 error: string;
 feedbackEnabled = false;
 
-selectedOption: any;
+
+
+attackPotion: Number = 25;
+guamTar: Number = 30;
+
+antiPotion: Number = 37.5;
+marrentillTar: Number = 42.5;
+
+strengthPotion: Number = 50;
+serum: Number = 50;
+tarrominTar: Number = 55;
+
+restorePotion: Number = 62.5;
+energyPotion: Number = 67.5;
+combatPotion: Number = 84;
+harralanderTar: Number = 72.5;
 
   constructor(private getOneSkillService: GetOneSkillService) { }
 
@@ -48,16 +64,16 @@ selectedOption: any;
           "binding": this.guam,
           "id": "13448",
           "Potions":[
-            {"name": "Attack Potion", "experience": 25},
-            {"name": "Guam Tar", "experience": 30},
+            {"name": "Attack Potion", "experience": this.attackPotion},
+            {"name": "Guam Tar", "experience": this.guamTar},
             ]
           }, 
           {"Name":"Marrentill",
           "binding": this.marrentill,
           "id": "13448",
           "Potions":[
-            {"name": "Anti Poison", "experience": 37.5},
-            {"name": "Marrentill Tar", "experience": 42.5},
+            {"name": "Anti Poison", "experience": this.antiPotion},
+            {"name": "Marrentill Tar", "experience": this.marrentillTar},
              
               
             ]
@@ -66,9 +82,9 @@ selectedOption: any;
           "binding": this.tarromin,
           "id": "13448",
           "Potions":[
-            {"name": "Strength Potion", "experience": 50},
-            {"name": "Serum 207", "experience": 50},
-            {"name": "Tarrmonin Tar", "experience": 55},
+            {"name": "Strength Potion", "experience": this.strengthPotion},
+            {"name": "Serum 207", "experience": this.serum},
+            {"name": "Tarrmonin Tar", "experience": this.tarrominTar},
               
             ]
           }, 
@@ -76,10 +92,10 @@ selectedOption: any;
           "binding": this.harralander,
           "id": "13448",
           "Potions":[
-            {"name": "Restore Potion", "experience": 62.5},
-            {"name": "Energy Potion", "experience": 67.5},
-            {"name": "Combat Potion", "experience": 84},
-            {"name": "Harralander Tar", "experience": 72.5},
+            {"name": "Restore Potion", "experience": this.restorePotion},
+            {"name": "Energy Potion", "experience": this.energyPotion},
+            {"name": "Combat Potion", "experience": this.combatPotion},
+            {"name": "Harralander Tar", "experience": this.harralanderTar},
               
             ]
           }, 
@@ -144,14 +160,18 @@ selectedOption: any;
 
 calculate(){
   console.log("i have been clicked");
+var s = [];
 
   for(let x = 0; x < this.herbs.length; x++) {
     let allInputs = this.herbs[x].binding || 0;
-    // console.log(allInputs);
-    let sum = this.herbs[x].xp[0] * allInputs;
-    let sum1 = this.herbs[x].xp[1] * allInputs;
+     s.push(this.herbs[x].xp[0] * allInputs);
+     
+
    
 }
+
+var result = s.reduce((total, score) => total + score);
+console.log(result);
 
  }
 
