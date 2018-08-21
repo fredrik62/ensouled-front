@@ -50,6 +50,18 @@ import { TwitterFeedService } from './services/twitter-feed.service';
 //pipes
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
 import { ServerErrorComponent } from './pages/server-error/server-error.component';
+import { TwentyFourHourRegComponent } from './pages/highscore/twenty-four-hour-reg/twenty-four-hour-reg.component';
+import { TwentyFourHourIronmanComponent } from './pages/highscore/twenty-four-hour-ironman/twenty-four-hour-ironman.component';
+import { TwentyFourHourHcimComponent } from './pages/highscore/twenty-four-hour-hcim/twenty-four-hour-hcim.component';
+import { TwentyFourHourUimComponent } from './pages/highscore/twenty-four-hour-uim/twenty-four-hour-uim.component';
+import { WeeklyRegComponent } from './pages/highscore/weekly-reg/weekly-reg.component';
+import { WeeklyIronmanComponent } from './pages/highscore/weekly-ironman/weekly-ironman.component';
+import { WeeklyHcimComponent } from './pages/highscore/weekly-hcim/weekly-hcim.component';
+import { WeeklyUimComponent } from './pages/highscore/weekly-uim/weekly-uim.component';
+import { MonthlyRegComponent } from './pages/highscore/monthly-reg/monthly-reg.component';
+import { MonthlyIronmanComponent } from './pages/highscore/monthly-ironman/monthly-ironman.component';
+import { MonthlyHcimComponent } from './pages/highscore/monthly-hcim/monthly-hcim.component';
+import { MonthlyUimComponent } from './pages/highscore/monthly-uim/monthly-uim.component';
 
 
 
@@ -75,16 +87,40 @@ const routes: Routes = [
   { path: 'track-player/:username',  component:  TrackPlayerSubmitComponent, },
 
   { path: 'highscore',  component:  HighscoreComponent, },
+
   { path: 'highscore/regular',  component:  RegularPlayerHighscoreComponent, },
+  { path: 'highscore/regular/time/24h',  component: TwentyFourHourRegComponent },
+  { path: 'highscore/regular/time/weekly',  component: WeeklyRegComponent },
+  { path: 'highscore/regular/time/monthly',  component: MonthlyRegComponent },
   { path: 'highscore/regular/:player',  component:  HighscoreOnePlayerComponent, },
+
   { path: 'highscore/ironman',  component:  IronmanHighscoreComponent, },
+  { path: 'highscore/ironman/time/24h',  component: TwentyFourHourIronmanComponent },
+  { path: 'highscore/ironman/time/weekly',  component: WeeklyIronmanComponent },
+  { path: 'highscore/ironman/time/monthly',  component: MonthlyIronmanComponent },
   { path: 'highscore/ironman/:player',  component:  HighscoreOnePlayerComponent, },
+
   { path: 'highscore/hardcore-ironman',  component:  HardcoreIronmanHighscoreComponent, },
+  { path: 'highscore/hardcore-ironman/time/24h',  component: TwentyFourHourHcimComponent },
+  { path: 'highscore/hardcore-ironman/time/weekly',  component: WeeklyHcimComponent },
+  { path: 'highscore/hardcore-ironman/time/monthly',  component: MonthlyHcimComponent },
   { path: 'highscore/hardcore-ironman/:player',  component:  HighscoreOnePlayerComponent, },
+
   { path: 'highscore/ultimate-ironman',  component: UltimateIronmanHighscoreComponent , },
+  { path: 'highscore/ultimate-ironman/time/24h',  component: TwentyFourHourUimComponent },
+  { path: 'highscore/ultimate-ironman/time/weekly',  component: WeeklyUimComponent },
+  { path: 'highscore/ultimate-ironman/time/monthly',  component: MonthlyUimComponent },
   { path: 'highscore/ultimate-ironman/:player',  component:  HighscoreOnePlayerComponent, },
+
+
+
   { path: 'twitter',  component: TwitterFeedComponent, },
   { path: 'find-hcim-death',  component: FindHcimDeathsComponent, },
+  
+
+  
+
+
 
   
   { path: '500-server-error',  component: ServerErrorComponent, },
@@ -120,7 +156,22 @@ const routes: Routes = [
     TwitterFeedComponent,
     FindHcimDeathsComponent,
     ServerErrorComponent,
-    
+    //25h hs components begin here
+    TwentyFourHourRegComponent,
+    TwentyFourHourIronmanComponent,
+    TwentyFourHourHcimComponent,
+    TwentyFourHourUimComponent,
+    //weekly hs
+    WeeklyRegComponent,
+    WeeklyIronmanComponent,
+    WeeklyHcimComponent,
+    WeeklyUimComponent,
+    //monthly hs
+    MonthlyRegComponent,
+    MonthlyIronmanComponent,
+    MonthlyHcimComponent,
+    MonthlyUimComponent,
+
     
     
     
