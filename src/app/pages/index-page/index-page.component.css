@@ -1,5 +1,5 @@
 .hero {
-background-image: url('https://i.pinimg.com/originals/e1/c8/26/e1c826fdfb9a56b8bebbdb85dd20a703.png');
+background-image: url('assets/images/hero.png');
 background-repeat: no-repeat;
 background-size: cover;
 background-attachment: fixed;
@@ -40,7 +40,7 @@ height:calc(100vh - 70px);
 
 h1 {
   display: block;
-  padding-top: 20px;
+  padding-top: 50px;
   padding-bottom: 40px;
   color: #f39c12;
   font-weight: 900;
@@ -138,8 +138,14 @@ td{
   font-size: 16px;
   color:#00CED1;
   border-bottom: solid 1px rgba(255,255,255,0.1);
+  text-transform: capitalize;
 }
 
 p {
   padding: 20px;
+}
+
+.tweet-box {
+  padding-bottom: 40px;
+  
 }
