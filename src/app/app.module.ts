@@ -62,6 +62,10 @@ import { MonthlyRegComponent } from './pages/highscore/monthly-reg/monthly-reg.c
 import { MonthlyIronmanComponent } from './pages/highscore/monthly-ironman/monthly-ironman.component';
 import { MonthlyHcimComponent } from './pages/highscore/monthly-hcim/monthly-hcim.component';
 import { MonthlyUimComponent } from './pages/highscore/monthly-uim/monthly-uim.component';
+import { TopRegPlayersComponent } from './components/index/top-reg-players/top-reg-players.component';
+import { TopImPlayersComponent } from './components/index/top-im-players/top-im-players.component';
+import { TopHcimPlayersComponent } from './components/index/top-hcim-players/top-hcim-players.component';
+import { TopUimPlayersComponent } from './components/index/top-uim-players/top-uim-players.component';
 
 
 
@@ -171,6 +175,12 @@ const routes: Routes = [
     MonthlyIronmanComponent,
     MonthlyHcimComponent,
     MonthlyUimComponent,
+
+    
+    TopRegPlayersComponent,
+    TopImPlayersComponent,
+    TopHcimPlayersComponent,
+    TopUimPlayersComponent,
 
     
     
