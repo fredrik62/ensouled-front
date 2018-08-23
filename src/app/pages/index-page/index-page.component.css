@@ -20,10 +20,10 @@ height:calc(100vh - 70px);
   flex-wrap: wrap;
   padding-bottom: 40px;
   padding-top: 40px;
+  
 }
 
 .categories > div {
-  /* border: 1px solid green; */
   max-width: 350px;
   min-width: 275px;
   margin: 0 auto;
@@ -147,5 +147,8 @@ p {
 
 .tweet-box {
   padding-bottom: 40px;
-  
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row !important;
 }
