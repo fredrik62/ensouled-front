@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TwitterFeedComponent } from './twitter-feed.component';
+import { ThreeTwitterDeathsComponent } from './three-twitter-deaths.component';
 
-describe('TwitterFeedComponent', () => {
-  let component: TwitterFeedComponent;
-  let fixture: ComponentFixture<TwitterFeedComponent>;
+describe('ThreeTwitterDeathsComponent', () => {
+  let component: ThreeTwitterDeathsComponent;
+  let fixture: ComponentFixture<ThreeTwitterDeathsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TwitterFeedComponent ]
+      declarations: [ ThreeTwitterDeathsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TwitterFeedComponent);
+    fixture = TestBed.createComponent(ThreeTwitterDeathsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

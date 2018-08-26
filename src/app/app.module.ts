@@ -66,6 +66,8 @@ import { TopRegPlayersComponent } from './components/index/top-reg-players/top-r
 import { TopImPlayersComponent } from './components/index/top-im-players/top-im-players.component';
 import { TopHcimPlayersComponent } from './components/index/top-hcim-players/top-hcim-players.component';
 import { TopUimPlayersComponent } from './components/index/top-uim-players/top-uim-players.component';
+import { AllTwitterDeathsComponent } from './components/twitter/all-twitter-deaths/all-twitter-deaths.component';
+import { ThreeTwitterDeathsComponent } from './components/twitter/three-twitter-deaths/three-twitter-deaths.component';
 
 
 
@@ -181,6 +183,8 @@ const routes: Routes = [
     TopImPlayersComponent,
     TopHcimPlayersComponent,
     TopUimPlayersComponent,
+    AllTwitterDeathsComponent,
+    ThreeTwitterDeathsComponent,
 
     
     

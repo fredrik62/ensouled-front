@@ -1,17 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { TwitterFeedService } from '../../services/twitter-feed.service';
+import { Component, OnInit } from '@angular/core';
+import { TwitterFeedService } from '../../../services/twitter-feed.service';
 import { Router } from '@angular/router';
+import { SearchFilterPipe } from '../../../pipes/search-filter.pipe';
 
 @Component({
-  selector: 'app-twitter-feed',
-  templateUrl: './twitter-feed.component.html',
-  styleUrls: ['./twitter-feed.component.css']
+  selector: 'app-all-twitter-deaths',
+  templateUrl: './all-twitter-deaths.component.html',
+  styleUrls: ['./all-twitter-deaths.component.css']
 })
-
-
-
-export class TwitterFeedComponent implements OnInit {
- @Input() playerInfo: any = [];
+export class AllTwitterDeathsComponent implements OnInit {
+  playerInfo: any = [];
   error: string;
   feedbackEnabled = false;
   constructor(private twitterFeedService: TwitterFeedService, private router: Router) { }
@@ -19,7 +17,7 @@ export class TwitterFeedComponent implements OnInit {
 
   ngOnInit() {
     
-    this.twitterFeedService.showHcimDeaths()
+    this.twitterFeedService.showAllHcimDeaths()
     .toPromise()
     .then((deaths) => {
   
