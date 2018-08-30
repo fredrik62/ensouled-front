@@ -13,20 +13,20 @@ export class IronmanHighscoreComponent implements OnInit {
   constructor(private getPlayersService: GetPlayersService, private router: Router) { }
 
   ngOnInit() {
-    this.feedbackEnabled = true;
-    this.getPlayersService.getAllIronmanPlayers()
-    .toPromise()
-    .then((players) => {
-     console.log(players);
+    // this.feedbackEnabled = true;
+    // this.getPlayersService.getAllIronmanPlayers()
+    // .toPromise()
+    // .then((players) => {
+    //  console.log(players);
 
-     var connection = new WebSocket('ws://127.0.0.1:3000');
-    })
-    .catch((err) => {
-      if (err) {
-        this.error = err.error.code; 
-        this.feedbackEnabled = false;
-      } 
-    });
+    
+    // })
+    // .catch((err) => {
+    //   if (err) {
+    //     this.error = err.error.code; 
+    //     this.feedbackEnabled = false;
+    //   } 
+    // });
   }
 
 }
