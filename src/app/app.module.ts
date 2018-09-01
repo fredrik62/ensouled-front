@@ -17,7 +17,7 @@ import { SixMonthChartComponent } from './components/charts/six-month-chart/six-
 import { TrackPlayerSubmitComponent } from './components/track-player-submit/track-player-submit.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { HighscoreOnePlayerComponent } from './components/highscore-one-player/highscore-one-player.component';
-import { TwitterFeedComponent } from './component/twitter-feed/twitter-feed.component';
+
 
 
 //pages
@@ -120,7 +120,7 @@ const routes: Routes = [
 
 
 
-  { path: 'twitter',  component: TwitterFeedComponent, },
+
   { path: 'find-hcim-death',  component: FindHcimDeathsComponent, },
   
 
@@ -159,7 +159,7 @@ const routes: Routes = [
     HardcoreIronmanHighscoreComponent,
     RegularPlayerHighscoreComponent,
     UltimateIronmanHighscoreComponent,
-    TwitterFeedComponent,
+   
     FindHcimDeathsComponent,
     ServerErrorComponent,
     //25h hs components begin here

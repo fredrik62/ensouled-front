@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 export class GetPlayersService {
   private displayAllPlayers = "http://localhost:3000/display-all-players";
   private displayAllIronmanPlayers = "http://localhost:3000/display-all-ironman-players";
+  private displayAllIronmanPlayersWeekly = "http://localhost:3000/display-all-ironman-players-weekly";
   private displayAllHardcoreIronmanPlayers = "http://localhost:3000/display-all-hardcore-ironman-players";
   private displayAllUltimateIronmanPlayers = "http://localhost:3000/display-all-ultimate-ironman-players";
 
@@ -19,6 +20,11 @@ export class GetPlayersService {
 
    getAllIronmanPlayers() {
     return this.httpClient.get(this.displayAllIronmanPlayers)
+    .map(result =>  result);
+   }
+
+   getAllIronmanPlayersWeekly() {
+    return this.httpClient.get(this.displayAllIronmanPlayersWeekly)
     .map(result =>  result);
    }
 
