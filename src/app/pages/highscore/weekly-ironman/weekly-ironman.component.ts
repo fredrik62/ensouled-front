@@ -34,6 +34,7 @@ export class WeeklyIronmanComponent implements OnInit {
      
       }
      console.log(this.players);
+  
 
     
     })
