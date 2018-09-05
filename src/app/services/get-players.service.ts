@@ -6,9 +6,14 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class GetPlayersService {
   private displayAllPlayers = "http://localhost:3000/display-all-players";
+  //ironman
   private displayAllIronmanPlayers = "http://localhost:3000/display-all-ironman-players";
   private displayAllIronmanPlayersWeekly = "http://localhost:3000/display-all-ironman-players-weekly";
+  private displayAllIronmanPlayersMonthly = "http://localhost:3000/display-all-ironman-players-monthly";
+  //hcim
   private displayAllHardcoreIronmanPlayers = "http://localhost:3000/display-all-hardcore-ironman-players";
+
+  //uim
   private displayAllUltimateIronmanPlayers = "http://localhost:3000/display-all-ultimate-ironman-players";
 
   constructor(private httpClient: HttpClient) { }
@@ -25,6 +30,11 @@ export class GetPlayersService {
 
    getAllIronmanPlayersWeekly() {
     return this.httpClient.get(this.displayAllIronmanPlayersWeekly)
+    .map(result =>  result);
+   }
+
+   getAllIronmanPlayersMonthly() {
+    return this.httpClient.get(this.displayAllIronmanPlayersMonthly)
     .map(result =>  result);
    }
 
