@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GetPlayersService } from '../../../services/get-players.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-im-players',
@@ -7,9 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopImPlayersComponent implements OnInit {
 
-  constructor() { }
+  topDailyPlayers: any = [];
+  topWeeklyPlayers: any = [];
+  topMonthlyPlayers: any = [];
+  
+  error: string;
+  feedbackEnabled = false;
+  
+  constructor(private getPlayersService: GetPlayersService, private router: Router) { }
 
   ngOnInit() {
+    this.feedbackEnabled = true;
+    this.getPlayersService.getAllTopIronmanCategories()
+    .toPromise()
+    .then((playerdata) => {
+    
+     console.log(playerdata);
+
+    
+    })
+    .catch((err) => {
+      if (err) {
+        this.error = err.error.code; 
+        this.feedbackEnabled = false;
+      } 
+    });
   }
 
 }

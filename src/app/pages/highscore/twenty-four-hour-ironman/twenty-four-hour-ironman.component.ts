@@ -16,10 +16,10 @@ export class TwentyFourHourIronmanComponent implements OnInit {
 
   ngOnInit() {
     this.feedbackEnabled = true;
-    this.getPlayersService.getAllIronmanPlayers()
+    this.getPlayersService.getAllIronmanPlayersDaily()
     .toPromise()
     .then((players) => {
-
+  
       for (var p in players) {
         let accountData = {
         playerName: players[p].username,

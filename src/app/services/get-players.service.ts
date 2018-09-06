@@ -7,9 +7,11 @@ import { Observable } from 'rxjs';
 export class GetPlayersService {
   private displayAllPlayers = "http://localhost:3000/display-all-players";
   //ironman
-  private displayAllIronmanPlayers = "http://localhost:3000/display-all-ironman-players";
+  private displayAllIronmanPlayersDaily = "http://localhost:3000/display-all-ironman-players";
   private displayAllIronmanPlayersWeekly = "http://localhost:3000/display-all-ironman-players-weekly";
   private displayAllIronmanPlayersMonthly = "http://localhost:3000/display-all-ironman-players-monthly";
+
+  private displayAllTopIronmanCategories = "http://localhost:3000/display-all-top-ironman-players";
   //hcim
   private displayAllHardcoreIronmanPlayers = "http://localhost:3000/display-all-hardcore-ironman-players";
 
@@ -23,8 +25,8 @@ export class GetPlayersService {
     .map(result =>  result);
    }
 
-   getAllIronmanPlayers() {
-    return this.httpClient.get(this.displayAllIronmanPlayers)
+   getAllIronmanPlayersDaily() {
+    return this.httpClient.get(this.displayAllIronmanPlayersDaily)
     .map(result =>  result);
    }
 
@@ -35,6 +37,12 @@ export class GetPlayersService {
 
    getAllIronmanPlayersMonthly() {
     return this.httpClient.get(this.displayAllIronmanPlayersMonthly)
+    .map(result =>  result);
+   }
+
+
+   getAllTopIronmanCategories() {
+    return this.httpClient.get(this.displayAllTopIronmanCategories)
     .map(result =>  result);
    }
 
