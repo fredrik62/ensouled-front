@@ -5,26 +5,43 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class GetPlayersService {
-  private displayAllPlayers = "http://localhost:3000/display-all-players";
+  private displayAllRegularPlayersDaily = "http://localhost:3000/display-all-regular-players";
+  private displayAllRegularPlayersWeekly = "http://localhost:3000/display-all-regular-players-weekly";
+  private displayAllRegularPlayersMonthly = "http://localhost:3000/display-all-regular-players-monthly";
+
   //ironman
   private displayAllIronmanPlayersDaily = "http://localhost:3000/display-all-ironman-players";
   private displayAllIronmanPlayersWeekly = "http://localhost:3000/display-all-ironman-players-weekly";
   private displayAllIronmanPlayersMonthly = "http://localhost:3000/display-all-ironman-players-monthly";
 
-  private displayAllTopIronmanCategories = "http://localhost:3000/display-all-top-ironman-players";
+  
   //hcim
-  private displayAllHardcoreIronmanPlayers = "http://localhost:3000/display-all-hardcore-ironman-players";
+  private displayAllHardcoreIronmanPlayersDaily = "http://localhost:3000/display-all-hardcore-ironman-players";
+  private displayAllHardcoreIronmanPlayersWeekly = "http://localhost:3000/display-all-hardcore-ironman-players-weekly";
+  private displayAllHardcoreIronmanPlayersMonthly = "http://localhost:3000/display-all-hardcore-ironman-players-monthly";
 
   //uim
-  private displayAllUltimateIronmanPlayers = "http://localhost:3000/display-all-ultimate-ironman-players";
+  private displayAllUltimateIronmanPlayersDaily = "http://localhost:3000/display-all-ultimate-ironman-players";
+  private displayAllUltimateIronmanPlayersWeekly = "http://localhost:3000/display-all-ultimate-ironman-players-weekly";
+  private displayAllUltimateIronmanPlayersMonthly = "http://localhost:3000/display-all-ultimate-ironman-players-monthly";
 
   constructor(private httpClient: HttpClient) { }
-
-  getAllPlayers() {
-    return this.httpClient.get(this.displayAllPlayers)
+//regular players
+  getAllRegPlayersDaily() {
+    return this.httpClient.get(this.displayAllRegularPlayersDaily)
     .map(result =>  result);
    }
 
+   getAllRegPlayersWeekly() {
+    return this.httpClient.get(this.displayAllRegularPlayersWeekly)
+    .map(result =>  result);
+   }
+
+   getAllRegPlayersMonthly() {
+    return this.httpClient.get(this.displayAllRegularPlayersMonthly)
+    .map(result =>  result);
+   }
+//ironman players
    getAllIronmanPlayersDaily() {
     return this.httpClient.get(this.displayAllIronmanPlayersDaily)
     .map(result =>  result);
@@ -40,19 +57,34 @@ export class GetPlayersService {
     .map(result =>  result);
    }
 
-
-   getAllTopIronmanCategories() {
-    return this.httpClient.get(this.displayAllTopIronmanCategories)
+//hardcore ironman
+   getAllHardcoreIronmanPlayersDaily() {
+    return this.httpClient.get(this.displayAllHardcoreIronmanPlayersDaily)
     .map(result =>  result);
    }
 
-   getAllHardcoreIronmanPlayers() {
-    return this.httpClient.get(this.displayAllHardcoreIronmanPlayers)
+   getAllHardcoreIronmanPlayersWeekly() {
+    return this.httpClient.get(this.displayAllHardcoreIronmanPlayersWeekly)
     .map(result =>  result);
    }
 
-   getAllUltimateIronmanPlayers() {
-    return this.httpClient.get(this.displayAllUltimateIronmanPlayers)
+   getAllHardcoreIronmanPlayersMonthly() {
+    return this.httpClient.get(this.displayAllHardcoreIronmanPlayersMonthly)
+    .map(result =>  result);
+   }
+//ultimate
+   getAllUltimateIronmanPlayersDaily() {
+    return this.httpClient.get(this.displayAllUltimateIronmanPlayersDaily)
+    .map(result =>  result);
+   }
+
+   getAllUltimateIronmanPlayersWeekly() {
+    return this.httpClient.get(this.displayAllUltimateIronmanPlayersWeekly)
+    .map(result =>  result);
+   }
+
+   getAllUltimateIronmanPlayersMonthly() {
+    return this.httpClient.get(this.displayAllUltimateIronmanPlayersMonthly)
     .map(result =>  result);
    }
 }

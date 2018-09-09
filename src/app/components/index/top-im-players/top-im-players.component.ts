@@ -12,6 +12,7 @@ export class TopImPlayersComponent implements OnInit {
   topDailyPlayers: any = [];
   topWeeklyPlayers: any = [];
   topMonthlyPlayers: any = [];
+  rank: any = 1;
   
   error: string;
   feedbackEnabled = false;
@@ -20,20 +21,84 @@ export class TopImPlayersComponent implements OnInit {
 
   ngOnInit() {
     this.feedbackEnabled = true;
-    this.getPlayersService.getAllTopIronmanCategories()
+    this.showDailyTop();
+    this.showWeeklyTop();
+    this.showMonthlyTop();
+  }
+
+  showDailyTop() {
+    this.getPlayersService.getAllIronmanPlayersDaily()
     .toPromise()
     .then((playerdata) => {
     
-     console.log(playerdata);
-
-    
-    })
+      this.topDailyPlayers = this.findTopPlayers(playerdata);
+      console.log(this.topDailyPlayers);
+     
+     
+     })
     .catch((err) => {
       if (err) {
         this.error = err.error.code; 
         this.feedbackEnabled = false;
       } 
     });
+  }
+
+  showWeeklyTop() {
+    this.getPlayersService.getAllIronmanPlayersWeekly()
+    .toPromise()
+    .then((playerdata) => {
+    
+      this.topWeeklyPlayers = this.findTopPlayers(playerdata);
+      })
+    .catch((err) => {
+      if (err) {
+        this.error = err.error.code; 
+        this.feedbackEnabled = false;
+      } 
+    });
+  }
+
+  showMonthlyTop() {
+    this.getPlayersService.getAllIronmanPlayersMonthly()
+    .toPromise()
+    .then((playerdata) => {
+    
+     this.topMonthlyPlayers = this.findTopPlayers(playerdata);
+     })
+    .catch((err) => {
+      if (err) {
+        this.error = err.error.code; 
+        this.feedbackEnabled = false;
+      } 
+    });
+  }
+
+  findTopPlayers(players) {
+
+    const accounts = [];
+    const topAccounts = [];
+
+    for (let top in players) {
+
+      let accountData = {
+        playerName: players[top].username,
+        overAllRank: players[top].overAllRank,
+        totalExperience: players[top].totalExperience,
+        totalLevel: players[top].totalLevel, 
+        rank: this.rank++
+
+      }
+      accounts.push(accountData);
+    }
+    accounts.sort((a, b) => {
+      return b.totalExperience - a.totalExperience;
+    });
+
+    for (let i = 0; i < 3; i++) {
+      topAccounts.push(accounts[i]);
+    }
+    return topAccounts;
   }
 
 }
