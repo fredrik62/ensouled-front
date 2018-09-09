@@ -21,13 +21,13 @@ feedbackEnabled = false;
 redirectRegular(days) {
 switch(days) {
   case 1:
-  this.router.navigate(['highscore/regular/time/24h']);
+  this.router.navigate(['hiscore/regular/time/24h']);
   break;
   case 7:
-  this.router.navigate(['highscore/regular/time/weekly']);
+  this.router.navigate(['hiscore/regular/time/weekly']);
   break;
   case 30:
-  this.router.navigate(['highscore/regular/time/monthly']);
+  this.router.navigate(['hiscore/regular/time/monthly']);
   break;
 
 }
@@ -36,13 +36,13 @@ switch(days) {
 redirectIronMan(days) {
   switch(days) {
     case 1:
-    this.router.navigate(['highscore/ironman/time/24h']);
+    this.router.navigate(['hiscore/ironman/time/24h']);
     break;
     case 7:
-    this.router.navigate(['highscore/ironman/time/weekly']);
+    this.router.navigate(['hiscore/ironman/time/weekly']);
     break;
     case 30:
-    this.router.navigate(['highscore/ironman/time/monthly']);
+    this.router.navigate(['hiscore/ironman/time/monthly']);
     break;
   
   }
@@ -51,13 +51,13 @@ redirectIronMan(days) {
   redirectHardcoreIronMan(days) {
     switch(days) {
       case 1:
-      this.router.navigate(['highscore/hardcore-ironman/time/24h']);
+      this.router.navigate(['hiscore/hardcore-ironman/time/24h']);
       break;
       case 7:
-      this.router.navigate(['highscore/hardcore-ironman/time/weekly']);
+      this.router.navigate(['hiscore/hardcore-ironman/time/weekly']);
       break;
       case 30:
-      this.router.navigate(['highscore/hardcore-ironman/time/monthly']);
+      this.router.navigate(['hiscore/hardcore-ironman/time/monthly']);
       break;
     
     }
@@ -66,13 +66,13 @@ redirectIronMan(days) {
     redirectUltimateIronMan(days) {
       switch(days) {
         case 1:
-        this.router.navigate(['highscore/ultimate-ironman/time/24h']);
+        this.router.navigate(['hiscore/ultimate-ironman/time/24h']);
         break;
         case 7:
-        this.router.navigate(['highscore/ultimate-ironman/time/weekly']);
+        this.router.navigate(['hiscore/ultimate-ironman/time/weekly']);
         break;
         case 30:
-        this.router.navigate(['highscore/ultimate-ironman/time/monthly']);
+        this.router.navigate(['hiscore/ultimate-ironman/time/monthly']);
         break;
       
       }

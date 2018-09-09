@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { GetPlayersService } from '../../../services/get-players.service';
 
@@ -9,7 +9,7 @@ import { GetPlayersService } from '../../../services/get-players.service';
 })
 export class TwentyFourHourHcimComponent implements OnInit {
 
-  players: any = [];
+  @Input() players: any = [];
   error: string;
   feedbackEnabled = false;
   rank: any = 1;
@@ -17,26 +17,26 @@ export class TwentyFourHourHcimComponent implements OnInit {
 
   ngOnInit() {
     this.feedbackEnabled = true;
-    this.getPlayersService.getAllHardcoreIronmanPlayers()
+    this.getPlayersService.getAllHardcoreIronmanPlayersDaily()
     .toPromise()
     .then((players) => {
-console.log(players);
-    //   for (var p in players) {
-    //     let accountData = {
-    //     playerName: players[p].username,
-    //     overAllRank: players[p].overAllRank,
-    //     totalExperience: players[p].totalExperience,
-    //     totalLevel:players[p].totalLevel,
-    //     rank: this.rank++
-        
-    //    } 
-    //   this.players.push(accountData)
 
-    //   this.players.sort((a, b) => {
-    //     return b.totalExperience - a.totalExperience;
-    //   });
-    //   }
-    //  console.log(this.players);
+      for (var p in players) {
+        let accountData = {
+        playerName: players[p].username,
+        overAllRank: players[p].overAllRank,
+        totalExperience: players[p].totalExperience,
+        totalLevel:players[p].totalLevel,
+        rank: this.rank++
+        
+       } 
+      this.players.push(accountData)
+
+      this.players.sort((a, b) => {
+        return b.totalExperience - a.totalExperience;
+      });
+      }
+    
 
     
     })

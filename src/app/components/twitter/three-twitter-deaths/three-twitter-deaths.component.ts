@@ -19,9 +19,7 @@ export class ThreeTwitterDeathsComponent implements OnInit {
     .toPromise()
     .then((deaths) => {
       
-      var date = new Date(deaths[0].updated);
-      var newDate = date.toISOString().substring(0, 10);
-      console.log(deaths)
+    
       Object.keys(deaths).map((info) => {
         
         let death = {
@@ -31,9 +29,10 @@ export class ThreeTwitterDeathsComponent implements OnInit {
           totalLevel: deaths[info].data.totalLevel,
           statsAtDeath: deaths[info].data.statsAtDeath,
           postSource: deaths[info].data.source,
-          timeOfDeath: newDate
+          timeOfDeath: deaths[info].updated
           
          }
+         
          this.playerInfo.push(death);
        })
  

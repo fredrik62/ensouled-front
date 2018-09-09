@@ -30,10 +30,6 @@ import { GrandexchangeItemComponent } from './pages/grandexchange-item/grandexch
 import { GrandexchangeItemChartComponent } from './components/grandexchange-item-chart/grandexchange-item-chart.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { HighscoreComponent } from './pages/highscore/highscore.component';
-import { IronmanHighscoreComponent } from './pages/ironman-highscore/ironman-highscore.component';
-import { HardcoreIronmanHighscoreComponent } from './pages/hardcore-ironman-highscore/hardcore-ironman-highscore.component';
-import { RegularPlayerHighscoreComponent } from './pages/regular-player-highscore/regular-player-highscore.component';
-import { UltimateIronmanHighscoreComponent } from './pages/ultimate-ironman-highscore/ultimate-ironman-highscore.component';
 import { FindHcimDeathsComponent } from './pages/find-hcim-deaths/find-hcim-deaths.component';
 
 
@@ -68,6 +64,7 @@ import { TopHcimPlayersComponent } from './components/index/top-hcim-players/top
 import { TopUimPlayersComponent } from './components/index/top-uim-players/top-uim-players.component';
 import { AllTwitterDeathsComponent } from './components/twitter/all-twitter-deaths/all-twitter-deaths.component';
 import { ThreeTwitterDeathsComponent } from './components/twitter/three-twitter-deaths/three-twitter-deaths.component';
+import { HiscoresLayoutComponent } from './components/hiscores-layout/hiscores-layout.component';
 
 
 
@@ -92,31 +89,28 @@ const routes: Routes = [
   { path: 'track-player',  component:  TrackPlayerComponent },
   { path: 'track-player/:username',  component:  TrackPlayerSubmitComponent, },
 
-  { path: 'highscore',  component:  HighscoreComponent, },
+  { path: 'hiscore',  component:  HighscoreComponent, },
 
-  { path: 'highscore/regular',  component:  RegularPlayerHighscoreComponent, },
-  { path: 'highscore/regular/time/24h',  component: TwentyFourHourRegComponent },
-  { path: 'highscore/regular/time/weekly',  component: WeeklyRegComponent },
-  { path: 'highscore/regular/time/monthly',  component: MonthlyRegComponent },
-  { path: 'highscore/regular/:player',  component:  HighscoreOnePlayerComponent, },
+  
+  { path: 'hiscore/regular/time/24h',  component: TwentyFourHourRegComponent },
+  { path: 'hiscore/regular/time/weekly',  component: WeeklyRegComponent },
+  { path: 'hiscore/regular/time/monthly',  component: MonthlyRegComponent },
+  { path: 'hiscore/regular/:player',  component:  HighscoreOnePlayerComponent, },
 
-  { path: 'highscore/ironman',  component:  IronmanHighscoreComponent, },
-  { path: 'highscore/ironman/time/24h',  component: TwentyFourHourIronmanComponent },
-  { path: 'highscore/ironman/time/weekly',  component: WeeklyIronmanComponent },
-  { path: 'highscore/ironman/time/monthly',  component: MonthlyIronmanComponent },
-  { path: 'highscore/ironman/:player',  component:  HighscoreOnePlayerComponent, },
+  { path: 'hiscore/ironman/time/24h',  component: TwentyFourHourIronmanComponent },
+  { path: 'hiscore/ironman/time/weekly',  component: WeeklyIronmanComponent },
+  { path: 'hiscore/ironman/time/monthly',  component: MonthlyIronmanComponent },
+  { path: 'hiscore/ironman/:player',  component:  HighscoreOnePlayerComponent, },
 
-  { path: 'highscore/hardcore-ironman',  component:  HardcoreIronmanHighscoreComponent, },
-  { path: 'highscore/hardcore-ironman/time/24h',  component: TwentyFourHourHcimComponent },
-  { path: 'highscore/hardcore-ironman/time/weekly',  component: WeeklyHcimComponent },
-  { path: 'highscore/hardcore-ironman/time/monthly',  component: MonthlyHcimComponent },
-  { path: 'highscore/hardcore-ironman/:player',  component:  HighscoreOnePlayerComponent, },
+  { path: 'hiscore/hardcore-ironman/time/24h',  component: TwentyFourHourHcimComponent },
+  { path: 'hiscore/hardcore-ironman/time/weekly',  component: WeeklyHcimComponent },
+  { path: 'hiscore/hardcore-ironman/time/monthly',  component: MonthlyHcimComponent },
+  { path: 'hiscore/hardcore-ironman/:player',  component:  HighscoreOnePlayerComponent, },
 
-  { path: 'highscore/ultimate-ironman',  component: UltimateIronmanHighscoreComponent , },
-  { path: 'highscore/ultimate-ironman/time/24h',  component: TwentyFourHourUimComponent },
-  { path: 'highscore/ultimate-ironman/time/weekly',  component: WeeklyUimComponent },
-  { path: 'highscore/ultimate-ironman/time/monthly',  component: MonthlyUimComponent },
-  { path: 'highscore/ultimate-ironman/:player',  component:  HighscoreOnePlayerComponent, },
+  { path: 'hiscore/ultimate-ironman/time/24h',  component: TwentyFourHourUimComponent },
+  { path: 'hiscore/ultimate-ironman/time/weekly',  component: WeeklyUimComponent },
+  { path: 'hiscore/ultimate-ironman/time/monthly',  component: MonthlyUimComponent },
+  { path: 'hiscore/ultimate-ironman/:player',  component:  HighscoreOnePlayerComponent, },
 
 
 
@@ -155,10 +149,7 @@ const routes: Routes = [
     NavBarComponent,
     HighscoreComponent,
     HighscoreOnePlayerComponent,
-    IronmanHighscoreComponent,
-    HardcoreIronmanHighscoreComponent,
-    RegularPlayerHighscoreComponent,
-    UltimateIronmanHighscoreComponent,
+  
    
     FindHcimDeathsComponent,
     ServerErrorComponent,
@@ -185,6 +176,7 @@ const routes: Routes = [
     TopUimPlayersComponent,
     AllTwitterDeathsComponent,
     ThreeTwitterDeathsComponent,
+    HiscoresLayoutComponent,
 
     
     

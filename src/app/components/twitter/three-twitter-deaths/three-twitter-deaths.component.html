@@ -37,7 +37,7 @@
   
         <div class="time-of-death">
             <h3>Time of Death</h3>
-            <p>{{x.timeOfDeath}}</p>
+            <p>{{x.timeOfDeath | slice:0:10}}</p>
             <div class="source">
               <a href="{{x.postSource}}" class="credit"><span>Source:</span> @HCIM_Deaths</a>
             </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GetPlayersService } from '../../../services/get-players.service';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./twenty-four-hour-ironman.component.css']
 })
 export class TwentyFourHourIronmanComponent implements OnInit {
-  players: any = [];
+  @Input() players: any = [];
   error: string;
   feedbackEnabled = false;
   rank: any = 1;

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IronmanHighscoreComponent } from './ironman-highscore.component';
+import { HiscoresLayoutComponent } from './hiscores-layout.component';
 
-describe('IronmanHighscoreComponent', () => {
-  let component: IronmanHighscoreComponent;
-  let fixture: ComponentFixture<IronmanHighscoreComponent>;
+describe('HiscoresLayoutComponent', () => {
+  let component: HiscoresLayoutComponent;
+  let fixture: ComponentFixture<HiscoresLayoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IronmanHighscoreComponent ]
+      declarations: [ HiscoresLayoutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IronmanHighscoreComponent);
+    fixture = TestBed.createComponent(HiscoresLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
