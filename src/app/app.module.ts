@@ -3,8 +3,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Pipe } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NgxPaginationModule } from 'ngx-pagination'; // <-- import the module
+import { NgxPaginationModule } from 'ngx-pagination'; 
 import { Chart } from 'chart.js';
+import { NgPipesModule } from 'ngx-pipes';
 
 
 //components
@@ -189,6 +190,7 @@ const routes: Routes = [
     HttpClientModule,
     NgxPaginationModule,
     FormsModule,
+    NgPipesModule
     
  
    

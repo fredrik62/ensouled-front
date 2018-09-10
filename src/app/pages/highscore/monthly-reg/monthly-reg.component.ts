@@ -12,7 +12,6 @@ export class MonthlyRegComponent implements OnInit {
   @Input() players: any = [];
   error: string;
   feedbackEnabled = false;
-  rank: any = 1;
   constructor(private getPlayersService: GetPlayersService, private router: Router) { }
 
   ngOnInit() {
@@ -27,7 +26,6 @@ export class MonthlyRegComponent implements OnInit {
         overAllRank: players[p].overAllRank,
         totalExperience: players[p].totalExperience,
         totalLevel:players[p].totalLevel,
-        rank: this.rank++
         
        } 
       this.players.push(accountData)
@@ -36,7 +34,7 @@ export class MonthlyRegComponent implements OnInit {
         return b.totalExperience - a.totalExperience;
       });
       }
-     console.log(this.players);
+   
 
     
     })

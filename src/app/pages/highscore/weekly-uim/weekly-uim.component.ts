@@ -12,7 +12,6 @@ export class WeeklyUimComponent implements OnInit {
   @Input() players: any = [];
   error: string;
   feedbackEnabled = false;
-  rank: any = 1;
   constructor(private getPlayersService: GetPlayersService, private router: Router) { }
 
   ngOnInit() {
@@ -21,13 +20,13 @@ export class WeeklyUimComponent implements OnInit {
     .toPromise()
     .then((players) => {
 
-      for (var p in players) {
+      for (let p in players) {
         let accountData = {
         playerName: players[p].username,
         overAllRank: players[p].overAllRank,
         totalExperience: players[p].totalExperience,
         totalLevel:players[p].totalLevel,
-        rank: this.rank++
+        
         
        } 
       this.players.push(accountData)
@@ -36,10 +35,7 @@ export class WeeklyUimComponent implements OnInit {
         return b.totalExperience - a.totalExperience;
       });
       }
-    
-
-    
-    })
+     })
     .catch((err) => {
       if (err) {
         this.error = err.error.code; 

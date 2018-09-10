@@ -15,10 +15,10 @@
    </table>
  </div>
  <div class="tbl-content">
-   <table cellpadding="0" cellspacing="0" border="0" *ngFor="let x of topDailyPlayers">
+   <table cellpadding="0" cellspacing="0" border="0" *ngFor="let x of topDailyPlayers;let rank = index;">
      <tbody>
        <tr>
-         <td>{{x.rank}}</td>
+         <td>{{rank + 1}}</td>
          <td class="username">{{x.playerName}}</td>
          <td class="xp">{{x.totalExperience | number : '1.0-1'}}</td>
          </tr>
@@ -38,10 +38,10 @@
    </table>
  </div>
  <div class="tbl-content">
-  <table cellpadding="0" cellspacing="0" border="0" *ngFor="let x of topWeeklyPlayers">
+  <table cellpadding="0" cellspacing="0" border="0" *ngFor="let x of topWeeklyPlayers;let rank = index;">
     <tbody>
       <tr>
-        <td>{{x.rank}}</td>
+        <td>{{rank + 1}}</td>
         <td class="username">{{x.playerName}}</td>
         <td class="xp">{{x.totalExperience | number : '1.0-1'}}</td>
         </tr>
@@ -61,10 +61,10 @@
    </table>
  </div>
  <div class="tbl-content">
-  <table cellpadding="0" cellspacing="0" border="0" *ngFor="let x of topMonthlyPlayers">
+  <table cellpadding="0" cellspacing="0" border="0" *ngFor="let x of topMonthlyPlayers ;let rank = index;">
     <tbody>
       <tr>
-        <td>{{x.rank}}</td>
+        <td>{{rank + 1}}</td>
         <td class="username">{{x.playerName}}</td>
         <td class="xp">{{x.totalExperience | number : '1.0-1'}}</td>
         </tr>

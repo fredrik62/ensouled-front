@@ -12,7 +12,7 @@ export class TopUimPlayersComponent implements OnInit {
   topDailyPlayers: any = [];
   topWeeklyPlayers: any = [];
   topMonthlyPlayers: any = [];
-  rank: any = 1;
+  
   
   error: string;
   feedbackEnabled = false;
@@ -86,7 +86,7 @@ export class TopUimPlayersComponent implements OnInit {
         overAllRank: players[top].overAllRank,
         totalExperience: players[top].totalExperience,
         totalLevel: players[top].totalLevel, 
-        rank: this.rank++
+        
 
       }
       accounts.push(accountData);

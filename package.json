@@ -29,6 +29,7 @@
     "jquery": "^3.3.1",
     "moment": "^2.22.2",
     "ngx-pagination": "^3.1.1",
+    "ngx-pipes": "^2.3.5",
     "responsive-nav": "^1.0.39",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"

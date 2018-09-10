@@ -3,13 +3,18 @@ import { TwitterFeedService } from '../../../services/twitter-feed.service';
 import { Router } from '@angular/router';
 import { SearchFilterPipe } from '../../../pipes/search-filter.pipe';
 
+
+
 @Component({
   selector: 'app-all-twitter-deaths',
   templateUrl: './all-twitter-deaths.component.html',
-  styleUrls: ['./all-twitter-deaths.component.css']
+  styleUrls: ['./all-twitter-deaths.component.css'], 
+
+  
+  
 })
 export class AllTwitterDeathsComponent implements OnInit {
-  playerInfo: any = [];
+  playerInfo: any = [].reverse();
   error: string;
   feedbackEnabled = false;
   constructor(private twitterFeedService: TwitterFeedService, private router: Router) { }
@@ -20,7 +25,7 @@ export class AllTwitterDeathsComponent implements OnInit {
     this.twitterFeedService.showAllHcimDeaths()
     .toPromise()
     .then((deaths) => {
-     
+    
      Object.keys(deaths).map((info) => {
        
        let death = {
@@ -35,7 +40,7 @@ export class AllTwitterDeathsComponent implements OnInit {
         }
         this.playerInfo.push(death);
       })
-
+      this.playerInfo.reverse();
     
     })
     .catch((err) => {
