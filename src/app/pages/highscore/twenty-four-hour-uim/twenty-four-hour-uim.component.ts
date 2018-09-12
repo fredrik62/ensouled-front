@@ -44,7 +44,10 @@ export class TwentyFourHourUimComponent implements OnInit {
     });
     
   }
-
+  navigateToClickedPlayer($event) {
+    const username = $event;
+    this.router.navigate(['hiscore/ultimate-ironman/time/daily', username]);
+  }
 }
 
 

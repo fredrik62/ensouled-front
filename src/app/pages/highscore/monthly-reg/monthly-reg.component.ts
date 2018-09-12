@@ -45,5 +45,9 @@ export class MonthlyRegComponent implements OnInit {
       } 
     });
   }
+  navigateToClickedPlayer($event) {
+    const username = $event;
+    this.router.navigate(['hiscore/regular/time/monthly', username]);
+  }
 }
 

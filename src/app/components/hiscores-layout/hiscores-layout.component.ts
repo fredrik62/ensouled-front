@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+
 
 @Component({
   selector: 'app-hiscores-layout',
@@ -6,10 +7,17 @@ import { Component, OnInit, Input, Output } from '@angular/core';
   styleUrls: ['./hiscores-layout.component.css']
 })
 export class HiscoresLayoutComponent implements OnInit {
-
+  @Input() players: any = [];
+  @Output() showOnePlayer = new EventEmitter();
   constructor() { }
-@Input() players: any = [];
+
   ngOnInit() {
   }
+
+  displayOnePlayer(username) {
+    console.log("i am clicking on " + username);
+  this.showOnePlayer.emit(username);
+  }
+  
 
 }

@@ -43,4 +43,8 @@ export class TwentyFourHourRegComponent implements OnInit {
       } 
     });
   }
+  navigateToClickedPlayer($event) {
+    const username = $event;
+    this.router.navigate(['hiscore/regular/time/daily', username]);
+  }
 }

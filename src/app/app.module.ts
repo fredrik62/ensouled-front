@@ -104,8 +104,11 @@ const routes: Routes = [
   { path: 'hiscore/ironman/:player',  component:  HighscoreOnePlayerComponent, },
 
   { path: 'hiscore/hardcore-ironman/time/24h',  component: TwentyFourHourHcimComponent },
+  { path: 'hiscore/hardcore-ironman/time/24h/:player',  component:  HighscoreOnePlayerComponent, },
   { path: 'hiscore/hardcore-ironman/time/weekly',  component: WeeklyHcimComponent },
+  { path: 'hiscore/hardcore-ironman/time/weekly/:player',  component:  HighscoreOnePlayerComponent, },
   { path: 'hiscore/hardcore-ironman/time/monthly',  component: MonthlyHcimComponent },
+  { path: 'hiscore/hardcore-ironman/time/monthly/:player',  component:  HighscoreOnePlayerComponent, },
   { path: 'hiscore/hardcore-ironman/:player',  component:  HighscoreOnePlayerComponent, },
 
   { path: 'hiscore/ultimate-ironman/time/24h',  component: TwentyFourHourUimComponent },

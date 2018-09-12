@@ -44,5 +44,9 @@ export class MonthlyIronmanComponent implements OnInit {
     });
   }
 
+  navigateToClickedPlayer($event) {
+    const username = $event;
+    this.router.navigate(['hiscore/ironman/time/monthly', username]);
+  }
 }
 

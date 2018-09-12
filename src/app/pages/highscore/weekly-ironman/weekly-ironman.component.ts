@@ -41,6 +41,10 @@ export class WeeklyIronmanComponent implements OnInit {
       } 
     });
   }
+  navigateToClickedPlayer($event) {
+    const username = $event;
+    this.router.navigate(['hiscore/ironman/time/weekly', username]);
+  }
 
 }
     

@@ -44,6 +44,10 @@ export class MonthlyUimComponent implements OnInit {
     });
     
   }
+  navigateToClickedPlayer($event) {
+    const username = $event;
+    this.router.navigate(['hiscore/ultimate-ironman/time/monthly', username]);
+  }
 
 }
 

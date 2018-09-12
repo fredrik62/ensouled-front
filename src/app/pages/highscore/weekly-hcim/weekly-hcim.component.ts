@@ -44,6 +44,9 @@ export class WeeklyHcimComponent implements OnInit {
     });
     
   }
-
+  navigateToClickedPlayer($event) {
+    const username = $event;
+    this.router.navigate(['hiscore/hardcore-ironman/time/weekly', username]);
+  }
 }
 

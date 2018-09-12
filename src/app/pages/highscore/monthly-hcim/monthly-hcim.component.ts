@@ -45,6 +45,10 @@ export class MonthlyHcimComponent implements OnInit {
     });
     
   }
+  navigateToClickedPlayer($event) {
+    const username = $event;
+    this.router.navigate(['hiscore/hardcore-ironman/time/monthly', username]);
+  }
 
 }
 

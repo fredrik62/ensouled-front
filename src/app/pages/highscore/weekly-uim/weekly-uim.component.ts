@@ -44,7 +44,10 @@ export class WeeklyUimComponent implements OnInit {
     });
     
   }
-
+  navigateToClickedPlayer($event) {
+    const username = $event;
+    this.router.navigate(['hiscore/ultimate-ironman/time/weekly', username]);
+  }
 }
 
 
