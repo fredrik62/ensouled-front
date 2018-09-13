@@ -25,6 +25,11 @@ export class GetPlayersService {
   private displayAllUltimateIronmanPlayersWeekly = "http://localhost:3000/display-all-ultimate-ironman-players-weekly";
   private displayAllUltimateIronmanPlayersMonthly = "http://localhost:3000/display-all-ultimate-ironman-players-monthly";
 
+//these pages display category/:player
+  private displayOnePlayerDaily = "http://localhost:3000/display-one-player-daily/";
+  private displayOnePlayerWeekly = "http://localhost:3000/display-one-player-weekly/";
+  private displayOnePlayerMonthly = "http://localhost:3000/display-one-player-monthly/";
+
   constructor(private httpClient: HttpClient) { }
 //regular players
   getAllRegPlayersDaily() {
@@ -87,4 +92,19 @@ export class GetPlayersService {
     return this.httpClient.get(this.displayAllUltimateIronmanPlayersMonthly)
     .map(result =>  result);
    }
+// category/:player
+   getOnePlayerDaily(username) {
+    return this.httpClient.get(this.displayOnePlayerDaily + username)
+    .map(result =>  result);
+   }
+
+   getOnePlayerWeekly(username) {
+    return this.httpClient.get(this.displayOnePlayerWeekly + username)
+    .map(result =>  result);
+  }
+
+  getOnePlayerMonthly(username) {
+    return this.httpClient.get(this.displayOnePlayerMonthly + username)
+    .map(result =>  result);
+  }
 }

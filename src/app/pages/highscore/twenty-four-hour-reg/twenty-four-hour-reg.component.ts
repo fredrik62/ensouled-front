@@ -19,13 +19,14 @@ export class TwentyFourHourRegComponent implements OnInit {
     this.getPlayersService.getAllRegPlayersDaily()
     .toPromise()
     .then((players) => {
-  
+      
       for (let p in players) {
         let accountData = {
         playerName: players[p].username,
         overAllRank: players[p].overAllRank,
         totalExperience: players[p].totalExperience,
         totalLevel:players[p].totalLevel,
+        gameMode: players[p].mode
 
         
        } 
@@ -44,6 +45,7 @@ export class TwentyFourHourRegComponent implements OnInit {
     });
   }
   navigateToClickedPlayer($event) {
+   
     const username = $event;
     this.router.navigate(['hiscore/regular/time/24h', username]);
   }

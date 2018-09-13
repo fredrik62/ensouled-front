@@ -13,10 +13,11 @@ export class HiscoresLayoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
   displayOnePlayer(username) {
-    console.log("i am clicking on " + username);
+   
   this.showOnePlayer.emit(username);
   }
   
