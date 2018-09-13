@@ -11,7 +11,6 @@ export class MonthlyHcimComponent implements OnInit {
   @Input() players: any = [];
   error: string;
   feedbackEnabled = false;
-
   constructor(private getPlayersService: GetPlayersService, private router: Router) { }
 
   ngOnInit() {
@@ -49,6 +48,8 @@ export class MonthlyHcimComponent implements OnInit {
     const username = $event;
     this.router.navigate(['hiscore/hardcore-ironman/time/monthly', username]);
   }
+
+ 
 
 }
 

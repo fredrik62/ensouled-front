@@ -9,6 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
 export class HiscoresLayoutComponent implements OnInit {
   @Input() players: any = [];
   @Output() showOnePlayer = new EventEmitter();
+  
   constructor() { }
 
   ngOnInit() {

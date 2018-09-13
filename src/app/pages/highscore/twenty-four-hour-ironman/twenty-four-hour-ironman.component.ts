@@ -43,7 +43,7 @@ export class TwentyFourHourIronmanComponent implements OnInit {
   }
   navigateToClickedPlayer($event) {
     const username = $event;
-    this.router.navigate(['hiscore/ironman/time/daily', username]);
+    this.router.navigate(['hiscore/ironman/time/24h', username]);
   }
 }
 

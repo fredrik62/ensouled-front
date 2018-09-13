@@ -47,6 +47,6 @@ export class TwentyFourHourHcimComponent implements OnInit {
   }
   navigateToClickedPlayer($event) {
     const username = $event;
-    this.router.navigate(['hiscore/hardcore-ironman/time/daily', username]);
+    this.router.navigate(['hiscore/hardcore-ironman/time/24h', username]);
   }
 }
