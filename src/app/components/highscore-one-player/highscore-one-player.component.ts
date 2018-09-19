@@ -9,8 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./highscore-one-player.component.css']
 })
 export class HighscoreOnePlayerComponent implements OnInit {
-rsn: String;
-playerStats: any = [];
+@Input() playerStats: any = [];
 error: string;
 feedbackEnabled = false;
 skillBadges = ['Attack_icon.png', 'Defence_icon.png', 'Strength_icon.png', 'Ranged_icon.png', 'Magic_icon.png', 'Cooking_icon.png'
@@ -20,10 +19,8 @@ skillBadges = ['Attack_icon.png', 'Defence_icon.png', 'Strength_icon.png', 'Rang
   constructor(private playerLookupService: PlayerLookupService, private activatedRoute: ActivatedRoute) { }
   
   ngOnInit() {
-    this.activatedRoute.params.subscribe((get) => {
-      this.rsn = get.player;
-      console.log(this.rsn);
-  });
+   
+   
   
   }
 }

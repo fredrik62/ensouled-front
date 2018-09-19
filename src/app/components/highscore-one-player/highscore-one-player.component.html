@@ -1,5 +1,5 @@
-<!-- 
-<div class="tablewrapper">
+
+<!-- <div class="tablewrapper">
     <div class="tbl-header">
       <table cellpadding="0" cellspacing="0" border="0">
         <thead>
@@ -16,19 +16,25 @@
       <table cellpadding="0" cellspacing="0" border="0"  *ngFor="let x of playerStats; let i = index">
         <tbody>
           <tr>
-            <td><img src="/assets/images/skill-badges/{{skillBadges[i]}}" alt="{{x.skill}}"></td>
-            <td>{{x.rank}}</td>
-            <td>{{x.level}}</td>
-            <td>{{x.xp}} XP</td>
-          </tr>
+            <td><img src="/assets/images/skill-badges/{{skillBadges[i]}}" alt="{{x.skills}}"></td>
+            <td>{{x.username}}</td>
+            <!-- <td>{{x.level}}</td>
+            <td>{{x.xp}} XP</td> -->
+          <!-- </tr>
         </tbody>
       </table>
     </div>
+  </div> --> 
+
+  <div *ngFor="let x of playerStats">
+  <p>{{x.skills}}</p>
+
+
   </div>
 
   <div *ngIf="error" class="val-box">
       <p class="validation">{{error}}</p>
     </div>
-    -->
-<p>yoloo i work</p>
+   
+
   
