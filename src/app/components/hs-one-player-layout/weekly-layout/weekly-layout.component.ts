@@ -22,23 +22,31 @@ export class WeeklyLayoutComponent implements OnInit {
         this.player = data;
         //todo
         //slice data in the html
-console.log(this.player.Skills[0]);
-        for (let key in this.player) {
-        let onePlayerData = {
-          username: this.player.username,
-          overAllRank: this.player.overAllRank,
-          totalExperience: this.player.totalExperience,
-          totalLevel: this.player.totalLevel,
-          updated: this.player.updated,
-          skills: this.player.Skills[0]
-
-        }
+       const levels = this.player.Skills[0];
       
-        // console.log("this is the skill " + onePlayerData.skills[0].Agility.agilityRank);
-        // console.log(" this is the rank gain " + onePlayerData.skills[0].Agility.agility);
-        this.playerStats.push(onePlayerData);
+       for (var key in levels) {
+       if (levels.hasOwnProperty(key)) {
+      //  console.log(skills[key]);
+
+      
+      let onePlayerData = {
+        username: this.player.username,
+        overAllRank: this.player.overAllRank,
+        totalExperience: this.player.totalExperience,
+        totalLevel: this.player.totalLevel,
+        updated: this.player.updated,
+        skills: key,
+        skillXpGained: levels[key][Object.keys(levels[key])[0]],
+        skillRankChange: levels[key][Object.keys(levels[key])[1]],
         
       }
+      
+      this.playerStats.push(onePlayerData);
+  }
+      
+}
+        
+      
       })
       .catch((err) => {
         if (err) {
