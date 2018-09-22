@@ -1,3 +1,9 @@
+<div *ngFor="let gains of playerData" class="container">
+  <h2 class="rsn">{{gains.username}}</h2>
+  <div class="gains">
+      <p class="xp">{{gains.totalExperience | number : '1.0-1'}} XP</p>
+  </div>
+</div>
 
 <div class="tablewrapper container">
     <div class="tbl-header">
@@ -16,19 +22,19 @@
         <tbody>
           <tr>
             <td><img src="/assets/images/skill-badges/{{skillBadges[i]}}" alt="{{x.skills}}"></td>
-            <td>{{x.skillRankChange}}</td>
-            <td>{{x.skillXpGained}} XP</td> 
+            <td class="rank-gain rank-loss" [ngClass]="{'rank-loss': x.negativeRank }">{{x.skillRankChange}}</td>
+            <td class="xp" [ngClass]="{'xp-neutral': x.neutralXp }">{{x.skillXpGained | number : '1.0-1'}} XP</td> 
            </tr>
         </tbody>
       </table>
     </div>
+    <div *ngFor="let stats of playerData" class="container">
+        <h2 class="rsn"> Updated @ {{stats.updated}}</h2>
+    </div>
   </div> 
 
-  <!-- <div *ngFor="let x of playerStats">
-  <p>{{x.skills}}</p>
 
 
-  </div> -->
 
   <div *ngIf="error" class="val-box">
       <p class="validation">{{error}}</p>

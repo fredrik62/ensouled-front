@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HighscoreOnePlayerComponent implements OnInit {
 @Input() playerStats: any = [];
+@Input() playerData: any = [];
+rsn: String;
 error: string;
 feedbackEnabled = false;
 skillBadges = ['Attack_icon.png', 'Defence_icon.png', 'Strength_icon.png','Hitpoints_icon.png', 'Ranged_icon.png', 'Magic_icon.png', 'Cooking_icon.png'

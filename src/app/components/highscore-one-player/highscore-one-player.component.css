@@ -13,7 +13,7 @@ table{
 }
 th{
   padding: 20px 15px;
-  color: #00CED1;
+  color:#DAA520;
   font-size: 20px;
   text-transform: uppercase;
 }
@@ -27,3 +27,48 @@ td{
 }
 
 
+
+.container {
+  padding-top: 50px;
+  
+}
+
+.rsn {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 34px;
+  color:#DAA520;
+}
+
+.gains {
+  padding: 20px;
+}
+.gains p {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 34px;
+  color: #32CD32;
+}
+
+.xp {
+  color: #32CD32;
+}
+.xp-neutral {
+  color:#DAA520;
+  font-weight: 900;
+}
+
+
+
+.rank-gain{
+  
+  color: #32CD32;
+  font-weight: 900;
+}
+
+.rank-loss {
+  color: red;
+  font-weight: 900;
+}
