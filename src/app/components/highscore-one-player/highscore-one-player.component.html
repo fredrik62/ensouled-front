@@ -22,7 +22,7 @@
         <tbody>
           <tr>
             <td><img src="/assets/images/skill-badges/{{skillBadges[i]}}" alt="{{x.skills}}"></td>
-            <td class="rank-gain rank-loss" [ngClass]="{'rank-loss': x.negativeRank }">{{x.skillRankChange}}</td>
+            <td class="rank-gain rank-loss" [ngClass]="{'rank-loss': x.negativeRank }"> <span *ngIf="!x.negativeRank">+{{x.skillRankChange}}</span> <span *ngIf="x.negativeRank">{{x.skillRankChange}}</span></td>
             <td class="xp" [ngClass]="{'xp-neutral': x.neutralXp }">{{x.skillXpGained | number : '1.0-1'}} XP</td> 
            </tr>
         </tbody>
