@@ -1,9 +1,10 @@
+
+
 <!-- <div *ngIf="!show180" class="spinner-container">
     <div [ngClass]="{'spinner-1': loading }">
-      <p>loading</p>
     </div>
 
-
+  -->
 <div class="item-data container" *ngFor="let x of item">
 <h3>{{x.name}}</h3>
 <div class="item-wrapper">
@@ -25,17 +26,17 @@
 <div class="item-change-data">
   <div class="change">
 <p>30 Day Change</p>
-<p id="monthly-change" [ngClass]="{'loss': thirty }" >{{thirtyDayChange}}%</p>
+<p id="monthly-change" [ngClass]="{'loss': x.thirty }" >{{thirtyDayChange}}%</p>
 </div>
 
 <div class="change">
   <p>90 Day Change</p>
-  <p id="monthly-change" [ngClass]="{'loss': ninety }">{{ninetyDayChange}}%</p>
+  <p id="monthly-change" [ngClass]="{'loss': x.ninenty }">{{ninetyDayChange}}%</p>
 </div>
 
 <div class="change">
   <p>180 Day Change</p>
-  <p id="monthly-change" [ngClass]="{'loss': hundredEighty }">{{hundredEightyDayChange}}%</p>
+  <p id="monthly-change" [ngClass]="{'loss': x.hundredEighty }">{{hundredEightyDayChange}}%</p>
 </div>
 </div> 
 
@@ -63,7 +64,7 @@
   
 </div>
 </div>
-</div> -->
+
 
 
 

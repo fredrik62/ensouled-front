@@ -45,19 +45,23 @@ feedbackEnabled = false;
   
         .toPromise()
         .then((res) => {
+          
           this.data = res;
+          
           this.feedbackEnabled = true;
+          
           this.itemInfo = {
-            name: this.data.itemData.item.name,
-            smallIcon: this.data.itemData.item.icon,
-            largeIcon: this.data.itemData.item.icon_large,
-            itemDescription: this.data.itemData.item.description,
-            current: this.data.itemData.item.current.price,
-            day30: this.data.itemData.item.day30.change,
-            day90: this.data.itemData.item.day90.change,
-            day180: this.data.itemData.item.day180.change
+            name: this.data.item.name,
+            smallIcon: this.data.item.icon,
+            largeIcon: this.data.item.icon_large,
+            itemDescription: this.data.item.description,
+            current: this.data.item.current.price,
+            day30: this.data.item.day30.change,
+            day90: this.data.item.day90.change,
+            day180: this.data.item.day180.change
           }
           this.item.push(this.itemInfo);
+          
   
           //parse the percentage
           this.thirtyDayChange = parseInt(this.itemInfo.day30);
@@ -65,15 +69,15 @@ feedbackEnabled = false;
           this.hundredEightyDayChange = parseInt(this.itemInfo.day180);
   
           if (this.thirtyDayChange < 0) {
-            this.thirty = true;
+            this.itemInfo.thirty = true;
           }
   
           if (this.ninetyDayChange < 0) {
-            this.ninenty = true;
+            this.itemInfo.ninenty = true;
           }
   
           if (this.hundredEightyDayChange < 0) {
-            this.hundredEighty = true;
+            this.itemInfo.hundredEighty = true;
           }
   
         })

@@ -7,19 +7,25 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class GrandExchangeService {
-private baseURL = "http://localhost:3000/"
-private apiUrl = "http://localhost:3000/item/"
+private allItemsURL = "http://localhost:3000/"
+private oneItemUrl = "http://localhost:3000/item/"
+private chartUrl = "http://localhost:3000/item-chart/"
 public sharedData: any;
 
   constructor(private httpClient: HttpClient) { }
 
   getAllItems() {
-    return this.httpClient.get(this.baseURL)
+    return this.httpClient.get(this.allItemsURL)
     .map(result =>  result);
    }
 
    getOneItem(id) {
-    return this.httpClient.get(this.apiUrl + id)
+    return this.httpClient.get(this.oneItemUrl + id)
+    .map(result =>  result);
+   }
+
+   getOneItemChart(id) {
+    return this.httpClient.get(this.chartUrl + id)
     .map(result =>  result);
    }
 

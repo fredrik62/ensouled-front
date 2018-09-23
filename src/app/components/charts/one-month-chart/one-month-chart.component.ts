@@ -17,10 +17,11 @@ data: any;
 ngOnInit() {
   this.activatedRoute.params.subscribe((params) => {
   const id = params.id;
-  this.grandExchangeService.getOneItem(id)
+  this.grandExchangeService.getOneItemChart(id)
   .toPromise()
     .then((res) => {
     this.data = res;
+    console.log(this.data);
     const x = this.data;
     const dailyTime180 = [];
     const dailyPrice = [];
@@ -29,10 +30,10 @@ ngOnInit() {
             
     //getting key and value from my object
     for (let i = 0; i < 180; i++) {
-        const a = Object.entries(x.graphData.daily)[i][0];
-        const b = Object.entries(x.graphData.daily)[i][1];
-        const c = Object.entries(x.graphData.average)[i][0];
-        const d = Object.entries(x.graphData.average)[i][1];
+        const a = Object.entries(x.daily)[i][0];
+        const b = Object.entries(x.daily)[i][1];
+        const c = Object.entries(x.average)[i][0];
+        const d = Object.entries(x.average)[i][1];
     
         const convertedDaily = Number(a);
         const convertedAverage = Number(c);
