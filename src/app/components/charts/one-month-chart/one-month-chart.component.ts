@@ -59,10 +59,11 @@ ngOnInit() {
     ap.push(averagePrice[x]);
     } 
     //   //reversing the array for the chart
-    const reversedDt = dt.reverse();
-    const reversedAt = at.reverse();
-    const reversedDp = dp.reverse();
-    const reversedAp = ap.reverse();
+   var reversedDt = dt.reverse();
+   var reversedAt = at.reverse();
+   var reversedDp = dp.reverse();
+   var reversedAp = ap.reverse();
+   
 
              
     this.chart = new Chart('myChart', {

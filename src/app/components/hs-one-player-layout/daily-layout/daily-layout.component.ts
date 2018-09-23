@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetPlayersService } from '../../../services/get-players.service';
+import { PlayerLookupService } from '../../../services/player-lookup.service';
 
 @Component({
   selector: 'app-daily-layout',
@@ -13,7 +14,7 @@ export class DailyLayoutComponent implements OnInit {
   player: any = [];
   onePlayerData: any;
   error: string;
-  constructor(private activatedRoute: ActivatedRoute, private getPlayersService: GetPlayersService, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private getPlayersService: GetPlayersService, private router: Router, private playerLookupService: PlayerLookupService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((get) => {
@@ -30,7 +31,10 @@ export class DailyLayoutComponent implements OnInit {
             totalExperience: this.player.totalExperience,
             totalLevel: this.player.totalLevel,
             updated: this.player.updated,
+            mode: this.player.mode
           }
+
+          this.experienceChart(account);
           this.playerData.push(account);
 
           const levels = this.player.Skills[0];
@@ -43,6 +47,8 @@ export class DailyLayoutComponent implements OnInit {
                 skills: key,
                 skillXpGained: levels[key][Object.keys(levels[key])[0]],
                 skillRankChange: levels[key][Object.keys(levels[key])[1]],
+                negativeRank: null,
+                neutralXp: null
 
               }
               if (this.onePlayerData.skillRankChange < 0) {
@@ -71,6 +77,15 @@ export class DailyLayoutComponent implements OnInit {
         });
     })
   }
+  experienceChart(username) {
+    const accountUsername = username;
+    this.getPlayersService.getOnePlayerWeekly(username)
+    .toPromise()
+     .then((data) => {
+     console.log(data);
+     })
+
+   }
 }
       
         

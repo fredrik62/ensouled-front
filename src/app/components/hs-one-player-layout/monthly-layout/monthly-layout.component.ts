@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetPlayersService } from '../../../services/get-players.service';
+import { PlayerLookupService } from '../../../services/player-lookup.service';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-monthly-layout',
@@ -14,8 +16,10 @@ export class MonthlyLayoutComponent implements OnInit {
   neutralXp: Boolean = false;
   player: any = [];
   onePlayerData: any;
+  onePlayerChartData: any;
+  onePlayerChartData1: any;
   error: string;
-  constructor(private activatedRoute: ActivatedRoute, private getPlayersService: GetPlayersService, private router: Router) { }
+  constructor(private activatedRoute: ActivatedRoute, private getPlayersService: GetPlayersService, private router: Router, private playerLookupService: PlayerLookupService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((get) => {
@@ -25,6 +29,7 @@ export class MonthlyLayoutComponent implements OnInit {
         .then((data) => {
           this.player = data;
           
+          
           let account = {
 
             username: this.player.username,
@@ -32,7 +37,9 @@ export class MonthlyLayoutComponent implements OnInit {
             totalExperience: this.player.totalExperience,
             totalLevel: this.player.totalLevel,
             updated: this.player.updated,
+            mode: this.player.mode
           }
+          
           this.playerData.push(account);
 
           const levels = this.player.Skills[0];
@@ -45,6 +52,8 @@ export class MonthlyLayoutComponent implements OnInit {
                 skills: key,
                 skillXpGained: levels[key][Object.keys(levels[key])[0]],
                 skillRankChange: levels[key][Object.keys(levels[key])[1]],
+                negativeRank: null,
+                neutralXp: null
 
               }
               if (this.onePlayerData.skillRankChange < 0) {
@@ -72,7 +81,7 @@ export class MonthlyLayoutComponent implements OnInit {
           }
         });
     })
-  }
+  } 
 }
       
         

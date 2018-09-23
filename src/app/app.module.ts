@@ -70,6 +70,7 @@ import { TwitterFeedService } from './services/twitter-feed.service';
 
 //pipes
 import { SearchFilterPipe } from './pipes/search-filter.pipe';
+import { ExperienceChartComponent } from './components/experience-chart/experience-chart.component';
 
 
 
@@ -179,7 +180,8 @@ const routes: Routes = [
     //layouts
     DailyLayoutComponent,
     WeeklyLayoutComponent,
-    MonthlyLayoutComponent
+    MonthlyLayoutComponent,
+    ExperienceChartComponent
 
     
     

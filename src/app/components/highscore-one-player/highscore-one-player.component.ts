@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HighscoreOnePlayerComponent implements OnInit {
 @Input() playerStats: any = [];
 @Input() playerData: any = [];
+@Input() chart: any = [];
 rsn: String;
 error: string;
 feedbackEnabled = false;

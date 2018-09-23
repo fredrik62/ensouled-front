@@ -26,7 +26,8 @@ export class ThreeMonthChartComponent implements OnInit {
  const dp = [];
  const at = [];
  const ap = [];
-for(let x = 179; x >= 90; x--) { 
+ 
+ for(let x = 179; x >= 90; x--) { 
   dt.push(dailyTime180[x]);
   dp.push(dailyPrice[x]);
   at.push(averageTime180[x]);
@@ -35,10 +36,10 @@ for(let x = 179; x >= 90; x--) {
   
 
 //   //reversing the array for the chart
- var reversedDt = dt.reverse();
- var reversedAt = at.reverse();
- var reversedDp = dp.reverse();
- var reversedAp = ap.reverse();
+ const reversedDt = dt.reverse();
+ const reversedAt = at.reverse();
+ const reversedDp = dp.reverse();
+ const reversedAp = ap.reverse();
 
  //chart
 
