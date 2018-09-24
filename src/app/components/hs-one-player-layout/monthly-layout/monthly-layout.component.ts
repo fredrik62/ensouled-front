@@ -36,7 +36,7 @@ export class MonthlyLayoutComponent implements OnInit {
             overAllRank: this.player.overAllRank,
             totalExperience: this.player.totalExperience,
             totalLevel: this.player.totalLevel,
-            updated: this.player.updated,
+            updated: new Date(this.player.updated).toString(),
             mode: this.player.mode
           }
           
@@ -44,7 +44,7 @@ export class MonthlyLayoutComponent implements OnInit {
 
           const levels = this.player.Skills[0];
 
-          for (var key in levels) {
+          for (let key in levels) {
             if (levels.hasOwnProperty(key)) {
 
 

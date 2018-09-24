@@ -11,6 +11,8 @@ import { Chart } from 'chart.js';
 })
 export class ExperienceChartComponent implements OnInit {
   chart: any = [];
+  total: any = [];
+  updated: any = [];
   error: string;
  
   constructor(private activatedRoute: ActivatedRoute, private playerLookupService: PlayerLookupService, private router: Router) { }
@@ -22,16 +24,28 @@ export class ExperienceChartComponent implements OnInit {
         .toPromise()
         .then((data) => {
         const graph = data;
-        console.log(data);
+        
+
+        Object.keys(graph).map(key => {
+          const experience = graph[key].totalExperience;
+          const player = graph[key].updatedAt;
+          const event = new Date(player);
+          this.total.push(experience);
+          this.updated.push(event.toString());
+          
+          
+      });
+    console.log(this.updated);
+    console.log(this.total);
     
-     
+
      this.chart = new Chart('myChart', {
       type: 'line',
       data: {
-          labels: [12,3,4,8],
+          labels: this.updated,
           datasets: [{
-                  data: [1,48,8,9],
-                  borderColor: '#00CED1',
+                  data: this.total,
+                  borderColor: '#32CD32',
                   fill: false,
               },
               
@@ -39,19 +53,24 @@ export class ExperienceChartComponent implements OnInit {
       },
       options: {
           legend: {
-              display: false
+            display: false
           },
+          
           scales: {
               xAxes: [{
-                  // display: this.desktopDisplay
+                  
                   display: false
                   
               }],
               yAxes: [{
+                ticks: {
+                  fontSize: 14,
+                  fontColor: '#32CD32'
+              },
                   display: true
               }]
           }
-      }
+      } 
     })
 
 

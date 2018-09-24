@@ -37,7 +37,7 @@ td{
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 34px;
+  font-size: 24px;
   color:#DAA520;
 }
 
@@ -71,4 +71,9 @@ td{
 .rank-loss {
   color: red;
   font-weight: 900;
+}
+
+
+.xp-chart {
+  padding-bottom: 40px;
 }

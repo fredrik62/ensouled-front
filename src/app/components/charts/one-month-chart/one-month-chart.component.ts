@@ -45,7 +45,7 @@ ngOnInit() {
         averagePrice.push(d);
     }
     //sending data to the service so the other charts can have the data
-    this.grandExchangeService.setGraphData(dailyTime180, dailyPrice, averageTime180, averagePrice);
+    // this.grandExchangeService.setGraphData(dailyTime180, dailyPrice, averageTime180, averagePrice);
     //pushed 30 days of chart data to these variables
     const dt = [];
     const dp = [];
@@ -65,7 +65,7 @@ ngOnInit() {
    var reversedDp = dp.reverse();
    var reversedAp = ap.reverse();
    
-
+  
              
     this.chart = new Chart('myChart', {
       type: 'line',
@@ -73,12 +73,12 @@ ngOnInit() {
           labels: reversedDt,
           datasets: [{
                   data: reversedDp,
-                  borderColor: '#00CED1',
+                  borderColor: '#f39c12',
                   fill: false,
               },
               {
                   data: reversedAp,
-                  borderColor: '#FFFF00',
+                  borderColor: '#32CD32',
                   fill: false,
               },
           ]
