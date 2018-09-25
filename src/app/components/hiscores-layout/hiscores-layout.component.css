@@ -13,7 +13,8 @@ table{
 }
 th{
   padding: 20px 15px;
-  color: #00CED1;
+  color: #DAA520;
+  font-weight: 900;
   font-size: 20px;
   text-transform: uppercase;
 }
@@ -28,4 +29,15 @@ td{
 
 .username {
   text-transform: capitalize;
+  color: #DAA520;
+  font-weight: 900;
+}
+
+.p-data {
+  font-weight: 900;
+  color: #32CD32
+}
+
+.players:hover {
+  background-color:#24292e;
 }

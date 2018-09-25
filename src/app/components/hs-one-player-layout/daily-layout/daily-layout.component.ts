@@ -11,18 +11,23 @@ import { PlayerLookupService } from '../../../services/player-lookup.service';
 export class DailyLayoutComponent implements OnInit {
   @Input() playerStats: any = [];
   @Input() playerData: any = [];
+  negativeRank: Boolean = false;
+  neutralXp: Boolean = false;
   player: any = [];
   onePlayerData: any;
+  onePlayerChartData: any;
+  onePlayerChartData1: any;
   error: string;
   constructor(private activatedRoute: ActivatedRoute, private getPlayersService: GetPlayersService, private router: Router, private playerLookupService: PlayerLookupService) { }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((get) => {
       const username = get.player;
-      this.getPlayersService.getOnePlayerDaily(username)
+      this.getPlayersService.getOnePlayerMonthly(username)
         .toPromise()
         .then((data) => {
           this.player = data;
+          
           
           let account = {
 
@@ -30,16 +35,15 @@ export class DailyLayoutComponent implements OnInit {
             overAllRank: this.player.overAllRank,
             totalExperience: this.player.totalExperience,
             totalLevel: this.player.totalLevel,
-            updated: this.player.updated,
+            updated: new Date(this.player.updated).toString(),
             mode: this.player.mode
           }
-
-          this.experienceChart(account);
+          
           this.playerData.push(account);
 
           const levels = this.player.Skills[0];
 
-          for (var key in levels) {
+          for (let key in levels) {
             if (levels.hasOwnProperty(key)) {
 
 
@@ -59,6 +63,7 @@ export class DailyLayoutComponent implements OnInit {
               }
 
               this.playerStats.push(this.onePlayerData);
+              
 
             }
           }
@@ -76,16 +81,7 @@ export class DailyLayoutComponent implements OnInit {
           }
         });
     })
-  }
-  experienceChart(username) {
-    const accountUsername = username;
-    this.getPlayersService.getOnePlayerWeekly(username)
-    .toPromise()
-     .then((data) => {
-     console.log(data);
-     })
-
-   }
+  } 
 }
       
         

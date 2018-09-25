@@ -80,7 +80,7 @@ export class ExperienceChartComponent implements OnInit {
         .then((data) => {
         const graph = data;
         console.log(graph);
-        
+       
 
         Object.keys(graph).map(key => {
           const experience = graph[key].totalExperience;
@@ -137,7 +137,7 @@ export class ExperienceChartComponent implements OnInit {
           this.skillFarming.push(xp.Farming);
           this.skillRunecraft.push(xp.Runecraft);
           this.skillHunter.push(xp.Hunter);
-          this.skillConstruction(xp.Construction);
+          this.skillConstruction.push(xp.Construction);
           
       });
 
@@ -173,6 +173,8 @@ const skill = {
 for (let i = 0; i < skill.badges.length; i++) {
   this.binding.push(skill.badges[i].binding);
 }
+
+this.graph(this.total);
      })
         .catch((err) => {
           if (err) {
@@ -195,91 +197,101 @@ for (let i = 0; i < skill.badges.length; i++) {
       checkSkill (skill) {
         switch (skill) {
             case "Attack":
-                this.graph("Attack");
+                this.graph(this.skillAttack);
                 break;
             case "Defence":
-                this.graph("Defence");
+                this.graph(this.skillDefence);
                 break;
             case "Strength":
-                this.graph("Strength");
+                this.graph(this.skillStrength);
                 break;
             case "Hitpoints":
-                this.graph("Hitpoints");
+                this.graph(this.skillHitpoints);
                 break;
             case "Ranged":
-                this.graph("Ranged");
+                this.graph(this.skillRanged);
                 break;
             case "Prayer":
-                this.graph("Prayer");
+                this.graph(this.skillPrayer);
                 break;
             case "Magic":
-                this.graph("Magic");
+                this.graph(this.skillMagic);
                 break;
             case "Cooking":
-                this.graph("Cooking");
+                this.graph(this.skillCooking);
                 break;
             case "Woodcutting":
-                this.graph("Woodcutting");
+                this.graph(this.skillWoodcutting);
                 break;
             case "Fletching":
-                this.graph("Fletching");
+                this.graph(this.skillFletching);
                 break;
             case "Fishing":
-                this.graph("Fishing");
+                this.graph(this.skillFishing);
                 break;
             case "Firemaking":
-                this.graph("Firemaking");
+                this.graph(this.skillFiremaking);
                 break;
             case "Crafting":
-                this.graph("Crafting");
+                this.graph(this.skillCrafting);
                 break;
             case "Smithing":
-                this.graph("Smithing");
+                this.graph(this.skillSmithing);
                 break;
             case "Mining":
-                this.graph("Mining");
+                this.graph(this.skillMining);
                 break;
             case "Herblore":
-                this.graph("Herblore");
+                this.graph(this.skillHerblore);
                 break;
             case "Agility":
-                this.graph("Agility");
+                this.graph(this.skillAgility);
                 break;
             case "Thieving":
-                this.graph("Thieving");
+                this.graph(this.skillThieving);
                 break;
             case "Slayer":
-                this.graph("Slayer");
+                this.graph(this.skillSlayer);
                 break;
             case "Farming":
-                this.graph("Farming");
+                this.graph(this.skillFarming);
                 break;
             case "Runecraft":
-                this.graph("Runecraft");
+                this.graph(this.skillRunecraft);
                 break;
             case "Hunter":
-                this.graph("Hunter");
+                this.graph(this.skillHunter);
                 break;
             case "Construction":
-                this.graph("Construction");
+                this.graph(this.skillConstruction);
                 break;
          
            }
           }
           
           graph(skill) {
-          console.log(skill);
 
+            //this is the background for the chart
+            Chart.plugins.register({
+              beforeDraw: function(chartInstance) {
+                var ctx = chartInstance.chart.ctx;
+                ctx.fillStyle = '#24292e';
+                ctx.fillRect(0, 0, chartInstance.chart.width, chartInstance.chart.height);
+              }
+            });
 
+           
      this.chart = new Chart('myChart', {
       type: 'line',
       data: {
           labels: this.updated,
           datasets: [{
-                  data: this.total,
+                  data: skill,
                   borderColor: '#32CD32',
                   fill: false,
               },
+              
+
               
           ]
       },
@@ -306,6 +318,6 @@ for (let i = 0; i < skill.badges.length; i++) {
     })
          }
    
-        
+      
 
 }  

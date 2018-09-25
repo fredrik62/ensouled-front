@@ -64,6 +64,7 @@ export class MonthlyLayoutComponent implements OnInit {
               }
 
               this.playerStats.push(this.onePlayerData);
+              
 
             }
           }

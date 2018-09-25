@@ -4,19 +4,57 @@
   flex-direction: row !important;
   flex-wrap: wrap;
   padding-bottom: 40px;
+  padding-top: 15px;
 }
 
 .badge-box {
-  border: 1px solid green;
   width: 50px;
   height: 50px;
+  position:relative;
+  background-color:#24292e;
+  overflow: hidden;
+  border-radius: .25em;
+  border-bottom: 1px solid black;
+  cursor: pointer;
 }
 
+.badge-box:hover {
+  background-color: #191919;
+}
 .badge {
- 
+  max-height: 100%;  
+  max-width: 100%; 
+  width: auto;
+  height: auto;
+  position: absolute;  
+  top: 0;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  margin: auto;
+
 }
 
 img {
   width: 25px;
   height: 25px;
+}
+
+.overall-total {
+  background-color:#24292e;
+  overflow: hidden;
+  border-radius: .25em;
+  border-bottom: 1px solid black;
+  height: 50px;
+  text-align: center;
+  width: 150px;
+  color: #DAA520;
+  font-weight: 900;
+  line-height: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.overall-total:hover {
+  background-color: #191919;
 }
