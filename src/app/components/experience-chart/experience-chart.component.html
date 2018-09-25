@@ -1,6 +1,13 @@
 <div *ngIf="!chart">
     ..loading
     </div>
+
+
+    <div class="badge-container">
+        <div class="badge-box" *ngFor="let x of binding;let i = index" (click)="checkSkill(x)">
+            <img class="badge" src="/assets/images/skill-badges/{{skillBadges[i]}}">
+        </div>
+    </div>
 <div>
     <canvas id="myChart" width="400" height="250">--{{chart}}--</canvas>
 </div>
