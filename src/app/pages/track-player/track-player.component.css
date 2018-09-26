@@ -1,12 +1,15 @@
 h1 {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 40px;
+  color: #DAA520;
 }
 
 h6 {
   color: white;
   font-size: 20px;
 }
+
+
 
 .form-container {
   display: flex;
@@ -51,11 +54,13 @@ form {
 
 .track-player-details {
   padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  
+
 }
 
 .high-score {
@@ -78,12 +83,14 @@ form {
   font-size: 20px;
   font-weight: 400;
   padding-bottom: 30px;
+  color: #DAA520;
 }
 
 .high-score > h3{
   text-align: center;
   padding-top: 20px;
   font-size: 22px;
+  color: #DAA520;
   
 }
 
