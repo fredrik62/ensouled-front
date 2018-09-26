@@ -12,7 +12,7 @@ import { Chart } from 'chart.js';
 export class ExperienceChartComponent implements OnInit {
   chart: any = [];
   total: any = [];
-  skill: any = [];
+  skill: boolean = false;
   updated: any = [];
   binding: any = [];
   error: string;
@@ -317,6 +317,7 @@ this.graph(this.total);
       } 
     })
          }
+
    
       
 

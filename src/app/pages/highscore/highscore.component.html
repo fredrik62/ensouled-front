@@ -1,63 +1,76 @@
-<div class="hs-wrapper">
-<div class="mode-container">
-  <div>
-    <h4>Regular highscore</h4>
+<div class="hs-wrap-container container">
+  <div class="category-box">
+    <h4>Regular hiscore</h4>
     
     <div class="change" (click)="redirectRegular(1)">
-    <p>24H Highscore</p>
+    <p>24H Hiscore</p>
     </div>
             
     <div class="change" (click)="redirectRegular(7)">
-    <p>Weekly Highscore</p>
+    <p>Weekly Hiscore</p>
     </div>
     <div class="change" (click)="redirectRegular(30)">
-    <p>Monthly Highscore</p>
+    <p>Monthly Hiscore</p>
     </div>
 
 </div>
 
-  <div>
-    <h4>Ironman highscore</h4>
+  <div class="category-box">
+    <h4>Ironman hiscore</h4>
     <div class="change" (click)="redirectIronMan(1)">
-    <p>24H Highscore</p>
+    <p>24H Hiscore</p>
     </div>
             
     <div class="change"  (click)="redirectIronMan(7)">
-    <p>Weekly Highscore</p>
+    <p>Weekly Hiscore</p>
     </div>
     <div class="change"  (click)="redirectIronMan(30)">
-    <p>Monthly Highscore</p>
+    <p>Monthly Hiscore</p>
     </div>
+   </div>
 
-  </div>
-  <div>
-  <h4>Hardcore highscore</h4>
+  <div class="category-box">
+  <h4>Hardcore hiscore</h4>
   <div class="change" (click)="redirectHardcoreIronMan(1)">
-        <p>24H Highscore</p>
+        <p>24H Hiscore</p>
         </div>
                 
         <div class="change" (click)="redirectHardcoreIronMan(7)">
-        <p>Weekly Highscore</p>
+        <p>Weekly Hiscore</p>
         </div>
         <div class="change" (click)="redirectHardcoreIronMan(30)">
-        <p>Monthly Highscore</p>
+        <p>Monthly Hiscore</p>
         </div>
   </div>
-  <div>
-  <h4>Ultimate highscore</h4>
+
+  <div class="category-box">
+  <h4>Ultimate hiscore</h4>
   <div class="change" (click)="redirectUltimateIronMan(1)">
-        <p>24H Highscore</p>
+        <p>24H Hiscore</p>
         </div>
                 
         <div class="change" (click)="redirectUltimateIronMan(7)">
-        <p>Weekly Highscore</p>
+        <p>Weekly Hiscore</p>
         </div>
         <div class="change" (click)="redirectUltimateIronMan(30)">
-        <p>Monthly Highscore</p>
+        <p>Monthly Hiscore</p>
         </div>
   </div>
 </div>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 <div *ngIf="error" class="val-box">
     <p class="validation">{{error}}</p>

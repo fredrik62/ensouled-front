@@ -1,4 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter  } from '@angular/core';
+import { SearchFilterPipe } from '../../pipes/search-filter.pipe';
+
 
 
 @Component({

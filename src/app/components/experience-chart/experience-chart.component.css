@@ -21,6 +21,10 @@
 .badge-box:hover {
   background-color: #191919;
 }
+
+/* .badge-box:active {
+  background-color: red !important;
+} */
 .badge {
   max-height: 100%;  
   max-width: 100%; 
@@ -34,6 +38,7 @@
   margin: auto;
 
 }
+
 
 img {
   width: 25px;
@@ -58,3 +63,4 @@ img {
 .overall-total:hover {
   background-color: #191919;
 }
+

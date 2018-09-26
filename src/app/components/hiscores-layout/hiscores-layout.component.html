@@ -1,5 +1,6 @@
 
-<div class="tablewrapper container">
+
+ <div class="tablewrapper container">
     <div class="tbl-header">
           <table cellpadding="0" cellspacing="0" border="0">
               <thead>
@@ -12,7 +13,7 @@
     </table>
   </div>
   <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0"  *ngFor="let x of players ;let rank = index;" (click)="displayOnePlayer(x.playerName)">
+    <table cellpadding="0" cellspacing="0" border="0"  *ngFor="let x of players | searchFilter:searchTerm ;let rank = index;" (click)="displayOnePlayer(x.playerName)">
         <tbody>
             <tr class="players">
                 <td class="p-data">{{rank + 1}}</td>
@@ -22,7 +23,8 @@
           </tbody>
       </table>
     </div>
-    </div>
+    </div> 
+ 
                 
   
   

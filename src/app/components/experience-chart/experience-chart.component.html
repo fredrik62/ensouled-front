@@ -7,7 +7,7 @@
     </div>
 
     <div class="badge-container">
-        <div class="badge-box" *ngFor="let x of binding;let i = index" (click)="checkSkill(x)">
+        <div class="badge-box" *ngFor="let x of binding;let i = index" (click)="checkSkill(x)" [ngClass]="{'selected': x.skill }">
             <img class="badge" src="/assets/images/skill-badges/{{skillBadges[i]}}">
         </div>
     </div>
