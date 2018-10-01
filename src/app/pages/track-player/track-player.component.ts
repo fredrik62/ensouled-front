@@ -45,26 +45,30 @@ sortOptions = [
 
 
  
-  username: String;
-  error: string;
-  feedbackEnabled = false;
-
-
- ironman: String;
- hardcore: String;
- ultimate: String;
- selecttype: any;
+username: String;
+error: string;
+feedbackEnabled = false;
+loading: boolean = false;
+result: any = [];
+ironman: String;
+hardcore: String;
+ultimate: String;
+selecttype: any;
 
 
   constructor(private router: Router, private trackPlayerService: TrackPlayerService) { }
 
   ngOnInit() {
   }
-
-
+  
+  
   submitForm(form) {
-  this.feedbackEnabled = true;
-
+    this.feedbackEnabled = true;
+    this.loading = true;
+      if (this.selectedOption === undefined) {
+        this.loading = false;
+        this.error = 'Select Correct Game Mode'; 
+      }
   const user = {
   rsn: this.username,
   ironman: this.sortOptions[1].value,
@@ -84,6 +88,7 @@ sortOptions = [
       if (err) {
         this.error = err.error.code; 
         this.feedbackEnabled = false;
+        this.loading = false;
       } 
     });
    }
@@ -97,6 +102,7 @@ sortOptions = [
       if (err) {
         this.error = err.error.code; 
         this.feedbackEnabled = false;
+        this.loading = false;
       } 
     });
    }
@@ -110,6 +116,7 @@ sortOptions = [
       if (err) {
         this.error = err.error.code; 
         this.feedbackEnabled = false;
+        this.loading = false;
       } 
     });
    }
@@ -123,6 +130,7 @@ sortOptions = [
       if (err) {
         this.error = err.error.code; 
         this.feedbackEnabled = false;
+        this.loading = false;
       } 
     });
    }

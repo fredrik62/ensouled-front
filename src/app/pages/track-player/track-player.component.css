@@ -14,7 +14,7 @@ h6 {
 .form-container {
   display: flex;
   justify-content: center;
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   padding-top: 40px;
 }
 
@@ -110,12 +110,12 @@ form {
 
 
 .val-box {
-  border: 1px solid green;
   text-align: center;
   padding: 30px;
   font-weight: 900;
   font-size: 22px;
   color: RGB(255, 0, 17);
+  position: absolute;
 }
 
 
@@ -175,4 +175,36 @@ select::-ms-expand {
 
 .input-container {
   margin: 0 auto !important;
+}
+
+.spinner-container {
+  display: block;
+  width: 100px;
+  margin: 0 auto;
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+}
+.spinner-1 {
+  width: 60px;
+  height: 60px;
+  margin: 30px auto;
+  background: transparent;
+  border-top: 4px solid #4caf50;
+  border-right: 4px solid transparent;
+  border-radius: 50%;
+  -webkit-animation: 1s spin linear infinite;
+  animation: 1s spin linear infinite;
+}
+
+
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -41,6 +41,9 @@
       <div class="input-container">
         <input type="text"  class="textbox" name="username" [(ngModel)]="username" #usernameField="ngModel" required minlength="1" maxlength="12" [disabled]="processing" placeholder="Osrs Username" (input)="inputValidator($event)"/>
      </div>
+     <div *ngIf="!prayerLevel" class="spinner-container">
+        <div [ngClass]="{'spinner-1': loading }"></div>
+    </div>
 
      <div class="form-btn-container">
        <button class="btn draw-border" type="submit" [disabled]="processing">Start tracking</button>
