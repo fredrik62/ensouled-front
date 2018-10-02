@@ -70,7 +70,6 @@ h3 {
 
 
 h6 {
-  text-align: center;
   font-size: 18px;
   padding: 20px;
   color: #f39c12;
@@ -115,12 +114,7 @@ h6 {
 }
 
 
-.icon {
-  display: block;
-  height: 45px;
-  margin: 0 auto;
-  padding-bottom: 10px;
-}
+
 
 .card-input {
 display: flex;
@@ -131,7 +125,7 @@ outline: 0;
 height: 32px;
 max-width: 344px;
 padding: 0 16px;
-background: #2c3e50;
+background: #f39c12;
 color: #212121;
 border: 0;
 -webkit-border-radius: 4px 0 0 4px;
@@ -210,4 +204,54 @@ padding-bottom: 50px;
 .res-box {
   width: 70%;
   margin: 0 auto;
+}
+
+.tb-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+
+
+table {
+  max-width: 960px;
+  margin: 10px auto;
+}
+
+caption {
+  font-size: 1.6em;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
+thead th {
+  font-weight: 400;
+  background: #8a97a0;
+  color: #FFF;
+}
+
+tr {
+  background: #f4f7f8;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+}
+
+tr:nth-child(even) {
+  background: #e8eeef;
+}
+
+th, td {
+  padding: 20px;
+  font-weight: 300;
+}
+
+.input-field {
+  text-align: center !important;
+}
+
+.icon {
+  display: block;
+  margin: 0 auto;
+  height: 25px;
 }
