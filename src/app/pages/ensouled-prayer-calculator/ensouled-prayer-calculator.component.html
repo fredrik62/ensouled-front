@@ -1,70 +1,51 @@
  <h3>Ensouled Head Calculator</h3>
 
-<!-- <div class="card-wrapper container">
-  <div class="card card-1" *ngFor="let head of heads; let i = index">
-      <h6>{{head.itemName}}</h6>
-      <h6> Level {{head.levelRequired}}</h6>
-      <img class="icon" src="/assets/images/ensouled-heads/{{ensouledIcons[i]}}" alt=" {{head.itemName}}">
-      <div class="card-input">
-        <input class="user-input" type="number" min="0" value="0" [(ngModel)]="head.binding">
-      </div>
-      <div class="rune-wrapper">
-        
-          <div>
-            <img class="runes" src="/assets/images/Blood_rune.png">
-            <p>{{head.bloodRune}}</p>
-          </div>
-          <div>
-            <img class="runes" src="/assets/images/Nature_rune.png">
-            <p>{{head.natureRune}}</p>
-          </div>
-          <div>
-            <img class="runes" src="/assets/images/Soul_rune.png">
-            <p>{{head.soulRune}}</p>
-          </div>
-          <div>
-            <img class="runes" src="/assets/images/Body_rune.png">
-            <p>{{head.bodyRune}}</p>
-          </div>
-        </div>
 
-  </div>
-</div> -->
-
-<!-- <div class="tb-container">
-  <div class="prayerStuff" *ngFor="let head of heads; let i = index">
-    <div class="bone">
-        <h6>{{head.itemName}}</h6> 
-        <img class="icon" src="/assets/images/ensouled-heads/{{ensouledIcons[i]}}" alt=" {{head.itemName}}">
-    </div>
-    <div class="bone-input">
-        <input class="user-input" type="number" min="0" value="0" [(ngModel)]="head.binding">
-    </div>
-  </div>
-</div> -->
-
-
+<div class="tb-container">
 <table>
     <thead>
       <tr>
-        <th scope="col">Ensouled Head</th>
-        <th scope="col">Experience</th>
-        <th scope="col">Level Required</th>
-        <th scope="col input-field">Input</th>
+        <th scope="col" class="game-item">Ensouled Head</th>
+        <th scope="col" class="game-xp">Experience</th>
+        <th scope="col" class="lvl-req">Level Required</th>
+        <th scope="col input-field" class="amount">Amount</th>
      
       </tr>
     </thead>
     <tbody *ngFor="let head of heads; let i = index">
       <tr>
-        <th scope="row"> <img class="icon" src="/assets/images/ensouled-heads/{{ensouledIcons[i]}}" alt=" {{head.itemName}}"> <br> {{head.itemName}}</th>
-        <th scope="row">{{head.experience}} Xp</th>
-        <th scope="row"> Level {{head.levelRequired}}</th>
+        <th scope="row" class="game-item"> <img class="icon" src="/assets/images/ensouled-heads/{{ensouledIcons[i]}}" alt=" {{head.itemName}}"> <br> {{head.itemName}}</th>
+        <th scope="row" class="game-xp">{{head.experience}} Xp</th>
+        <th scope="row" class="lvl-req"> Level {{head.levelRequired}}</th>
         <td><input class="user-input" type="number" min="0" value="0" [(ngModel)]="head.binding"></td>
         
       </tr>
       
     </tbody>
   </table>
+
+  <table>
+      <thead>
+        <tr>
+          <th scope="col" class="game-item">Bones</th>
+          <th scope="col" class="game-xp">Experience</th>
+          <th scope="col" class="lvl-req">Level Required</th>
+          <th scope="col input-field" class="amount">Amount</th>
+       
+        </tr>
+      </thead>
+      <tbody *ngFor="let bone of bones; let i = index">
+        <tr>
+          <th scope="row" class="game-item"> <img class="icon" src="/assets/images/bones/{{boneIcons[i]}}" alt=" {{bone.itemName}}"> <br> {{bone.itemName}}</th>
+          <th scope="row" class="game-xp">{{bone.experience}} Xp</th>
+          <th scope="row" class="lvl-req"> Level {{bone.levelRequired}}</th>
+          <td><input class="user-input" type="number" min="0" value="0" [(ngModel)]="bone.binding"></td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
 
 <div class="calculate-prayer">
   <button class="btn draw-border" (click)="calculate()">calculate</button>

@@ -7,9 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class EnsouledPrayerCalculatorComponent implements OnInit {
 heads: any = [];
+bones: any = [];
 totalExperience: Number;
 iconUrl: String;
 skillDetails: any;
+boneDetails: any;
 showResult: boolean = false;
 
 goblinHead:Number;
@@ -32,8 +34,27 @@ bloodveldHead:Number;
 tzhaarHead:Number;
 demonHead:Number;
 aviansieHead:Number;
-abbysalHead:any;
-dragonHead:any;
+abbysalHead:Number;
+dragonHead:Number;
+
+Bones:Number;
+Wolfbones:Number;
+Burntbones:Number; 
+Monkeybones:Number;
+Batbones:Number;
+Jogrebones:Number;
+Bigbones:Number;
+Zogrebones:Number;
+Shaikahanbones:Number;
+Babydragonbones:Number;
+Ourgbones:Number;
+Wyvernbones:Number;
+Dragonbones:Number;
+Fayrgbones:Number;
+Lavadragonbones:Number;
+Raurgbones:Number;
+Dagannothbones:Number;
+Superiordragonbones:Number;
 
 value:any = [];
 total: Number;
@@ -43,6 +64,7 @@ bodyRune: Number;
 natureRune: Number;
 soulRune: Number;
 ensouledIcons: Array<String>;
+boneIcons: Array<String>;
 
   constructor() { }
 
@@ -104,6 +126,50 @@ this.ensouledIcons = ['Ensouled_goblin_head.png', 'Ensouled_monkey_head.png','En
         
   
       }
+
+      this.boneIcons = ['bones.png', 'wolf_bones.png','burnt_bones.png',
+      'monkey_bones.png', 'bat_bones.png', 'jogre_bones.png', 'big_bones.png',
+      'zogre_bones.png', 'shaikahan_bones.png','babydragon_bones.png', 'ourg_bones.png', 'wyvern_bones.png',
+      'dragon_bones.png', 'fayrg_bones.png', 'lava_dragon_bones.png', 'raurg_bones.png',
+      'dagannoth_bones.png', 'superior_dragon_bones.png'];
+
+      const boneData = {
+        "info":[
+          {"Name":"Bones", "Xp": 130, "Level": 1, "binding": this.Bones}, 
+          {"Name":"Wolf Bones", "Xp": 182, "Level": 1, "binding": this.Wolfbones},
+          {"Name":"Burnt Bones", "Xp": 286, "Level": 1, "binding": this.Burntbones},
+          {"Name":"Monkey Bones", "Xp": 364, "Level": 1, "binding": this.Monkeybones},
+          {"Name":"Bat Bones", "Xp": 130, "Level": 1, "binding": this.Batbones}, 
+          {"Name":"Jogre Bones", "Xp": 182, "Level": 1, "binding": this.Jogrebones},
+          {"Name":"Big Bones", "Xp": 286, "Level": 1, "binding": this.Bigbones},
+          {"Name":"Zogre Bones", "Xp": 364, "Level": 1, "binding": this.Zogrebones},
+          {"Name":"Shaikahan Bones", "Xp": 364, "Level": 1, "binding": this.Shaikahanbones},
+          {"Name":"Baby Dragon Bones", "Xp": 130, "Level": 1, "binding": this.Babydragonbones}, 
+          {"Name":"Ourg Bones", "Xp": 182, "Level": 1, "binding": this.Ourgbones},
+          {"Name":"Wyvern Bones", "Xp": 286, "Level": 1, "binding": this.Wyvernbones},
+          {"Name":"Dragon Bones", "Xp": 364, "Level": 1, "binding": this.Dragonbones},
+          {"Name":"Fayrg Bones", "Xp": 364, "Level": 1, "binding": this.Fayrgbones},
+          {"Name":"Lava Dragon Bones", "Xp": 130, "Level": 1, "binding": this.Lavadragonbones}, 
+          {"Name":"Raurg Bones", "Xp": 182, "Level": 1, "binding": this.Raurgbones},
+          {"Name":"Dagannoth Bones", "Xp": 286, "Level": 1, "binding": this.Dagannothbones},
+          {"Name":"Superior Dragon Bones", "Xp": 364, "Level": 70, "binding": this.Superiordragonbones},
+
+
+        ]};
+        for (let x = 0; x < boneData.info.length; x++ ) {
+
+          this.boneDetails = {
+            itemName: boneData.info[x].Name,
+            ngModel: boneData.info[x].binding,
+            experience: boneData.info[x].Xp,
+            levelRequired: boneData.info[x].Level,
+          
+          }
+          this.bones.push(this.boneDetails);
+          
+    
+        }
+      
     }
     
     
@@ -126,7 +192,7 @@ this.ensouledIcons = ['Ensouled_goblin_head.png', 'Ensouled_monkey_head.png','En
       let nat = this.heads[x].natureRune * allInputs;
       let body = this.heads[x].bodyRune * allInputs;
       let soul = this.heads[x].soulRune * allInputs;
-      let blood= this.heads[x].bloodRune * allInputs;
+      let blood = this.heads[x].bloodRune * allInputs;
       
 
       if (sum > 0) {
